@@ -152,116 +152,6 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-egg-e5-82-bb-e8-9b-8b-e7-9a-84get-post-e4-bb-a5-e5-8f-8apost-e8-b7-a8-e5-9f-9f-e9-97-ae-e9-a2-98" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/26/egg-e5-82-bb-e8-9b-8b-e7-9a-84get-post-e4-bb-a5-e5-8f-8apost-e8-b7-a8-e5-9f-9f-e9-97-ae-e9-a2-98/">egg-get post 以及post跨域问题</a>
-    </h1>
-  
-
-        
-        <a href="/2019/08/26/egg-e5-82-bb-e8-9b-8b-e7-9a-84get-post-e4-bb-a5-e5-8f-8apost-e8-b7-a8-e5-9f-9f-e9-97-ae-e9-a2-98/" class="archive-article-date">
-  	<time datetime="2019-08-26T06:49:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>一、get请求 *gg为get，pp为post</p>
-<p>代码截图：</p>
-<p><img src="http://yumud.com/wp-content/uploads/2019/08/image-42.png" alt></p>
-<p>app/router.js</p>
-<p><img src="http://yumud.com/wp-content/uploads/2019/08/image-43.png" alt></p>
-<p>app/controller/gg.js</p>
-<p>使用postman，输入地址，send即可，得到数据就是成功了，鼓掌！</p>
-<p><img src="http://yumud.com/wp-content/uploads/2019/08/image-44.png" alt></p>
-<p>成功截图！</p>
-<p>二、post请求</p>
-<p>也是截图：</p>
-<p><img src="http://yumud.com/wp-content/uploads/2019/08/image-45.png" alt></p>
-<p>app/router.js</p>
-<p><img src="http://yumud.com/wp-content/uploads/2019/08/image-46.png" alt></p>
-<p>app/controller/pp.js</p>
-<p><img src="http://yumud.com/wp-content/uploads/2019/08/image-47.png" alt></p>
-<p>成功截图！</p>
-<p>但是你没有成功截图，hh 使用egg调用POST请求时，浏览器会触发405报错</p>
-<p>需要使用egg-cors插件</p>
-<p>npm i egg-cors –save</p>
-<p>设置config/config.default.js</p>
-<p><img src="http://yumud.com/wp-content/uploads/2019/08/image-52.png" alt></p>
-<p>里面的链接写你自己的hh</p>
-<p>设置config/plugin.js</p>
-<p><img src="http://yumud.com/wp-content/uploads/2019/08/image-53.png" alt></p>
-<p>酱样子</p>
-<p>就可以成功了-_-</p>
-<p>三、jsonp请求</p>
-<p><img src="http://yumud.com/wp-content/uploads/2019/08/image-48.png" alt></p>
-<p>app/router.js</p>
-<p><img src="http://yumud.com/wp-content/uploads/2019/08/image-50.png" alt></p>
-<p>app/demo/count.json</p>
-<p><img src="http://yumud.com/wp-content/uploads/2019/08/image-51.png" alt></p>
-<p>app/controller/demo.js</p>
-<p><img src="http://yumud.com/wp-content/uploads/2019/08/image-49.png" alt></p>
-<p>成功~</p>
-<p>参考文章： <a href="https://www.jianshu.com/p/45c9cb7c4a54" target="_blank" rel="noopener">https://www.jianshu.com/p/45c9cb7c4a54</a> 上面更为详细。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/嗨-egg//" class="article-tag-list-link color1">嗨~egg</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/26/egg-e5-82-bb-e8-9b-8b-e7-9a-84get-post-e4-bb-a5-e5-8f-8apost-e8-b7-a8-e5-9f-9f-e9-97-ae-e9-a2-98/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-js-e7-9a-84-e4-b8-80-e4-ba-9b-e9-a2-98-e3-80-90-e5-be-85-e8-a1-a5-e5-85-85-e3-80-91" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1135,6 +1025,92 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/08/20/node-e6-9d-82-e4-b8-83-e6-9d-82-e5-85-ab/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-async-await" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/20/async-await/">Async/await</a>
+    </h1>
+  
+
+        
+        <a href="/2019/08/20/async-await/" class="archive-article-date">
+  	<time datetime="2019-08-20T02:06:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>这里的await类似于yield</p>
+<p><img src="http://yumud.com/wp-content/uploads/2019/08/image-18.png" alt></p>
+<p>yield写法 yield就是中断点</p>
+<p><img src="http://yumud.com/wp-content/uploads/2019/08/image-19.png" alt></p>
+<p>并发操作 yield[a.save(), b.save()]</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/es6//" class="article-tag-list-link color4">es6</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/es6/芝士就是力量！//" class="article-tag-list-link color3">芝士就是力量！</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/es6/芝士就是力量！/面试//" class="article-tag-list-link color3">面试</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/08/20/async-await/">展开全文 >></a>
         </p>
       
 
