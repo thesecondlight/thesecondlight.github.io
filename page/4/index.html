@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/page/4/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="en">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-e4-ba-91-e6-9c-8d-e5-8a-a1-e5-99-a8-e7-9a-84-e9-85-8d-e7-bd-ae-e9-97-ae-e9-a2-98-ef-bc-88windows-ef-bc-89" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/07/e4-ba-91-e6-9c-8d-e5-8a-a1-e5-99-a8-e7-9a-84-e9-85-8d-e7-bd-ae-e9-97-ae-e9-a2-98-ef-bc-88windows-ef-bc-89/" class="article-date">
+  <time datetime="2019-07-07T07:31:49.000Z" itemprop="datePublished">2019-07-07</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/芝士就是力量！/">芝士就是力量！</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/07/e4-ba-91-e6-9c-8d-e5-8a-a1-e5-99-a8-e7-9a-84-e9-85-8d-e7-bd-ae-e9-97-ae-e9-a2-98-ef-bc-88windows-ef-bc-89/">云服务器的配置问题（windows）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>先搞一个免费试用的玩一下，直接买个一年的可能兴趣扁扁-_-</p>
+<p>华为云最近有一个七天免费试用，阿里云之前好像有搞过三个月几块钱，反正短期都挺便宜的。</p>
+<ol>
+<li>搞来云服务器</li>
+<li>点开控制台，点击实例，看一下自己的IP（公网IP），重置一下密码（就在这一栏标题为操作，点开找找）</li>
+<li>mstsc远程连接，输入IP，点开详细，输入用户名，密码，用户名差不多是Administrator(购买成功后系统会发送信息给你，里面有用户名),密码就是第二步你重置的那个密码⭐（进不来刷新几次）</li>
+<li>进入服务器，下载xampp,wordpress，把xampp里面的htdocs文件中的内容删除，wordpress里面的内容复制到xampp的htdocs文件夹中</li>
+<li>点击xampp-control进入</li>
+</ol>
+<p><img src="http://106.12.29.51/wp-content/uploads/2019/07/image-2.png" alt></p>
+<p>点击apache，mysql前面的XX，变成√，点击后面的start，变成如图，点击mysql后面的Admin，进入phpmyadmin</p>
+<p>6.新建一个数据库</p>
+<p>7.输入IP，输入打不开，回控制台配置安全组，允许80端口⭐</p>
+<p>8.输入IP，按提示一步一步走，数据库名就是第六步你建的数据库名字，记住你wordpress的用户名和密码</p>
+<p>9.就没啥大问题了，进来到处点点，换换主题，写写文章（把你想上线的项目放到htdocs文件夹下，通过ip/项目文件夹名访问）</p>
+<p>又写完了，鼓掌！</p>
+<p>有问题留言哦，末尾放一个B站的教程视频，很耐思，他还出了一个linux的教程，视频很短，不过讲的很棒</p>
+<p><a href="https://www.bilibili.com/video/av52657003" target="_blank" rel="noopener">https://www.bilibili.com/video/av52657003</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/07/07/e4-ba-91-e6-9c-8d-e5-8a-a1-e5-99-a8-e7-9a-84-e9-85-8d-e7-bd-ae-e9-97-ae-e9-a2-98-ef-bc-88windows-ef-bc-89/" data-id="ck07s2r300009w0qxlnp3xct8" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-wordpress-e6-90-ac-e5-ae-b6" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/07/wordpress-e6-90-ac-e5-ae-b6/" class="article-date">
+  <time datetime="2019-07-07T07:03:45.000Z" itemprop="datePublished">2019-07-07</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/芝士就是力量！/">芝士就是力量！</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/07/wordpress-e6-90-ac-e5-ae-b6/">wordpress搬家</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>给我可怜的七天免费试用搬了个家。</p>
+<p>1. 导出phpmyadmin里面的某个sql文件，（某个—&gt;就是里面有你wordpress相关内容的一个数据库）</p>
+<p>2.进入wordpress后台，选择工具-&gt;导出（这步应该和第三步重复了某些内容，但是保险起见，都备份比较好）</p>
+<p>3.把htdocs里面的文件打包，搞出来（比较方便，因为里面有你的主题或者插件什么的）</p>
+<p>4.在导入的时候，安装插件，但是失败—&gt;在服务器里面安装，刷新几次(有个教程让改权限，我没得改)</p>
+<p>5.IP问题！！！⭐ 咋还是原来的ip地址呢！！！在phpmyadmin里面（就是第一步你导出的那个sql文件），找到wp-options，改一下第一条记录</p>
+<p><img src="http://106.12.29.51/wp-content/uploads/2019/07/image.png" alt></p>
+<p>就是这个，点开改成你现在用的IP。</p>
+<p>6.wordpress后台，点击仪表盘-&gt;设置，改一下wordpress地址，和站点地址</p>
+<p>到此结束！鼓掌！</p>
+<p>划重点（但是应该都知道）：不用非得在服务器里面改这些，毕竟很卡，你可以在外面ip/wp-admin，也可以访问的 -_-</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/07/07/wordpress-e6-90-ac-e5-ae-b6/" data-id="ck07s2r3y001xw0qxx882dw7h" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-e5-be-ae-e4-bf-a1-e5-b0-8f-e7-a8-8b-e5-ba-8f-e7-99-bb-e5-bd-95-e9-9d-99-e6-80-81-e9-a1-b5-e9-9d-a2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/02/e5-be-ae-e4-bf-a1-e5-b0-8f-e7-a8-8b-e5-ba-8f-e7-99-bb-e5-bd-95-e9-9d-99-e6-80-81-e9-a1-b5-e9-9d-a2/" class="article-date">
+  <time datetime="2019-07-02T03:13:07.000Z" itemprop="datePublished">2019-07-02</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/小程序/">小程序</a>►<a class="article-category-link" href="/categories/小程序/芝士就是力量！/">芝士就是力量！</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/02/e5-be-ae-e4-bf-a1-e5-b0-8f-e7-a8-8b-e5-ba-8f-e7-99-bb-e5-bd-95-e9-9d-99-e6-80-81-e9-a1-b5-e9-9d-a2/">微信小程序登录-静态页面</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>初期上手小程序的时候做的一个小demo，可以初期作练习用</p>
+<p><img src="http://119.3.179.108/wp-content/uploads/2019/07/jie.png" alt></p>
+<p>效果图</p>
+<p>具体步骤在CSDN我写的一篇文章有<a href="https://blog.csdn.net/qq_36664799/article/details/88736849" target="_blank" rel="noopener">https://blog.csdn.net/qq_36664799/article/details/88736849</a></p>
+<p>里面有源码，需要其它内容的可以留言。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/07/02/e5-be-ae-e4-bf-a1-e5-b0-8f-e7-a8-8b-e5-ba-8f-e7-99-bb-e5-bd-95-e9-9d-99-e6-80-81-e9-a1-b5-e9-9d-a2/" data-id="ck07s2r37000hw0qxddha8q40" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-e7-9e-a7-e4-b8-80-e7-9e-a7-e7-9c-8b-e4-b8-80-e7-9c-8b-e8-b5-b0-e8-bf-87-e8-b7-af-e8-bf-87-e4-b8-8d-e8-a6-81-e9-94-99-e8-bf-87-e4-ba-86" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/02/e7-9e-a7-e4-b8-80-e7-9e-a7-e7-9c-8b-e4-b8-80-e7-9c-8b-e8-b5-b0-e8-bf-87-e8-b7-af-e8-bf-87-e4-b8-8d-e8-a6-81-e9-94-99-e8-bf-87-e4-ba-86/" class="article-date">
+  <time datetime="2019-07-02T00:50:20.000Z" itemprop="datePublished">2019-07-02</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Demo/">Demo</a>►<a class="article-category-link" href="/categories/Demo/小程序/">小程序</a>►<a class="article-category-link" href="/categories/Demo/小程序/芝士就是力量！/">芝士就是力量！</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/02/e7-9e-a7-e4-b8-80-e7-9e-a7-e7-9c-8b-e4-b8-80-e7-9c-8b-e8-b5-b0-e8-bf-87-e8-b7-af-e8-bf-87-e4-b8-8d-e8-a6-81-e9-94-99-e8-bf-87-e4-ba-86/">瞧一瞧看一看,走过路过不要错过了</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="http://119.3.179.108/wp-content/uploads/2019/06/gh_8490c442bd64_258-1-1.jpg" alt></p>
+<p>扫一下这个可爱的小程序吧[又:bug卡路里]</p>
+<p>其实仔细看看，觉得这个小程序不错，或许是因为这是第一个成品–&gt;so，来做一个真正不错的小程序怎么样，初期构思是一个校内互助小程序，已经在写策划，准备素材了 [联系邮箱:<a href="mailto:1092876640@qq.com" target="_blank" rel="noopener">1092876640@qq.com</a>]</p>
+<p>———————-<em>分类介绍</em>———————-</p>
+<p>芝士就是力量==&gt;里面主要是遇到的各种bug</p>
+<p>Demo==&gt;小游戏，小程序，管理系统等等等，做的demo都会存上来</p>
+<p>一天一块钱==&gt;里面是刷的题，磕代码！</p>
+<p>其他文件夹如名所示。</p>
+<p>想要其他笔记的可以发邮箱，或者评论哒，有道云还存了一些，没得感情一点点挪了hh</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/07/02/e7-9e-a7-e4-b8-80-e7-9e-a7-e7-9c-8b-e4-b8-80-e7-9c-8b-e8-b5-b0-e8-bf-87-e8-b7-af-e8-bf-87-e4-b8-8d-e8-a6-81-e9-94-99-e8-bf-87-e4-ba-86/" data-id="ck07s2r38000jw0qxc942hgox" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-e4-bb-bf-e9-a5-bf-e4-ba-86-e4-b9-88-e5-8d-95-e9-a1-b5-e9-9d-a2vue" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/06/30/e4-bb-bf-e9-a5-bf-e4-ba-86-e4-b9-88-e5-8d-95-e9-a1-b5-e9-9d-a2vue/" class="article-date">
+  <time datetime="2019-06-30T14:49:48.000Z" itemprop="datePublished">2019-06-30</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Demo/">Demo</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/30/e4-bb-bf-e9-a5-bf-e4-ba-86-e4-b9-88-e5-8d-95-e9-a1-b5-e9-9d-a2vue/">奶茶店APP  (vue)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>使用vue2+vue-router2+vue-cli2+vue-resource+stylus+webpack</p>
+<p>展示地址<a href="http://106.12.29.51" target="_blank" rel="noopener">：</a> <a href="http://yumud.com/beat/" target="_blank" rel="noopener"></a> <a href="http://yumud.com/eleme/" target="_blank" rel="noopener">http://yumud.com/eleme/</a></p>
+<p>---------------------------------------------------------------------------------------------------------------------</p>
+<p>需要注意的几个点(我做的时候出现的错误+重要的点):</p>
+<p><strong>1.</strong>有些教程给的是vue1.0的一些写法，然后vue2.0就各种报错。</p>
+<p><strong>2.</strong>初始化vue项目的时候打开了eslint，注意空格</p>
+<p><strong>3.</strong>better-scroll插件设置click:true，否则移动端滑动没得效果</p>
+<p><strong>4.</strong>设备上的像素=样式像素*设备像素比</p>
+<p><strong>5.</strong>背景模糊filter:blur(10px)</p>
+<p><strong>6.</strong>transition过渡效果(添加的动态效果)</p>
+<pre><code>fade-enter
+
+fade-enter-active
+
+fade-leave
+
+fade-leave-active</code></pre><p>具体-&gt;<a href="https://cn.vuejs.org/v2/api/#transition" target="_blank" rel="noopener">https://cn.vuejs.org/v2/api/#transition</a></p>
+<p><strong>7.</strong>页面切换时，避免重新渲染  keep-alive</p>
+<pre><code>&lt;keep-alive&gt;  &lt;router-view:seller=&quot;seller&quot;&gt;&lt;/router-view&gt;  &lt;/keep-     alive&gt;</code></pre><p><strong>8.</strong>vue1.0页面跳转用<a>，so你用<router-link to>来进行导航的编写</router-link></a></p>
+<p><strong>9.</strong>安装vue-resource，通过this.$http.get发送get请求，then()获取数据，具体看这个<a href="https://blog.csdn.net/qq_36664799/article/details/93740511" target="_blank" rel="noopener">https://blog.csdn.net/qq_36664799/article/details/93740511</a> 踩坑之后写的一篇博客，很多种方法获取数据</p>
+<p>10.注意引用组件的时候，写对地址呀亲</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/06/30/e4-bb-bf-e9-a5-bf-e4-ba-86-e4-b9-88-e5-8d-95-e9-a1-b5-e9-9d-a2vue/" data-id="ck07s2r2y0007w0qxjw31i6ky" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-e5-9b-be-e4-b9-a6-e7-ae-a1-e7-90-86-e7-b3-bb-e7-bb-9fphp-e5-ae-9e-e7-8e-b0" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/06/30/e5-9b-be-e4-b9-a6-e7-ae-a1-e7-90-86-e7-b3-bb-e7-bb-9fphp-e5-ae-9e-e7-8e-b0/" class="article-date">
+  <time datetime="2019-06-30T14:30:17.000Z" itemprop="datePublished">2019-06-30</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Demo/">Demo</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/30/e5-9b-be-e4-b9-a6-e7-ae-a1-e7-90-86-e7-b3-bb-e7-bb-9fphp-e5-ae-9e-e7-8e-b0/">图书管理系统(php实现)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>使用php实现对图书的增删改查。（我不贴图了，这个挺简洁的，直接打开看吧）</p>
+<p>展示地址: <a href="http://yumud.com/vfp" target="_blank" rel="noopener">http://yumud.com/vfp</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/06/30/e5-9b-be-e4-b9-a6-e7-ae-a1-e7-90-86-e7-b3-bb-e7-bb-9fphp-e5-ae-9e-e7-8e-b0/" data-id="ck07s2r32000dw0qxip7wcn2r" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-vue-e8-b0-83-e7-94-a8-e6-8e-a5-e5-8f-a3" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/06/30/vue-e8-b0-83-e7-94-a8-e6-8e-a5-e5-8f-a3/" class="article-date">
+  <time datetime="2019-06-30T13:51:20.000Z" itemprop="datePublished">2019-06-30</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/芝士就是力量！/">芝士就是力量！</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/30/vue-e8-b0-83-e7-94-a8-e6-8e-a5-e5-8f-a3/">vue调用接口</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>这是我的csdn一篇关于vue调用接口的链接(贴图太麻烦了，直接转过去吧)</p>
+<p>展示地址:<a href="https://blog.csdn.net/qq_36664799/article/details/93740511" target="_blank" rel="noopener">https://blog.csdn.net/qq_36664799/article/details/93740511</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/06/30/vue-e8-b0-83-e7-94-a8-e6-8e-a5-e5-8f-a3/" data-id="ck07s2r3z0020w0qxea0xjqnf" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-e5-be-ae-e4-bf-a1-e5-b0-8f-e7-a8-8b-e5-ba-8f-e5-90-8e-e5-8f-b0-e4-bc-a0-e5-80-bcwx-request-ef-bc-8c-e5-87-ba-e7-8e-b0undefined" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/06/30/e5-be-ae-e4-bf-a1-e5-b0-8f-e7-a8-8b-e5-ba-8f-e5-90-8e-e5-8f-b0-e4-bc-a0-e5-80-bcwx-request-ef-bc-8c-e5-87-ba-e7-8e-b0undefined/" class="article-date">
+  <time datetime="2019-06-30T13:46:00.000Z" itemprop="datePublished">2019-06-30</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/小程序/">小程序</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/30/e5-be-ae-e4-bf-a1-e5-b0-8f-e7-a8-8b-e5-ba-8f-e5-90-8e-e5-8f-b0-e4-bc-a0-e5-80-bcwx-request-ef-bc-8c-e5-87-ba-e7-8e-b0undefined/">微信小程序后台传值wx.request，出现undefined</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>用数据集记录中的字段进行查询where({字段:this.data.前台输入绑定的value}) 注意：</p>
+<p><img src="http://119.3.179.108/wp-content/uploads/2019/06/20190408184534200.png" alt></p>
+<p>res.data[0].name，不然会输出undefined； 还有一种可能是： 后台使用string类型，前端输出undefined，可使用JSON.stringify(res.data[0].age）进行转换</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/06/30/e5-be-ae-e4-bf-a1-e5-b0-8f-e7-a8-8b-e5-ba-8f-e5-90-8e-e5-8f-b0-e4-bc-a0-e5-80-bcwx-request-ef-bc-8c-e5-87-ba-e7-8e-b0undefined/" data-id="ck07s2r34000ew0qxqzmndojj" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-hello-world-1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/06/30/hello-world-1/" class="article-date">
+  <time datetime="2019-06-30T12:38:31.000Z" itemprop="datePublished">2019-06-30</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/芝士就是力量！/">芝士就是力量！</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/30/hello-world-1/">你看这个bug它又大又圆！</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>记录各种各样的bug~</p>
+<p>请关注一下这个可爱但是鸡肋的小程序吧</p>
+<p><img src="http://119.3.179.108/wp-content/uploads/2019/06/gh_8490c442bd64_258-1-1.jpg" alt></p>
+<p>虽然本意是做一个热量查询,饮食调节的小程序,但是功能不怎么完善，不过当成随手记挺方便的,后续会不断完善，公众号也会好好做起来，争取一周发一次健康养生小文章吧(公众号也叫”CC卡路里”)。</p>
+<p>这是我的csdn地址<a href="https://blog.csdn.net/qq_36664799" target="_blank" rel="noopener">https://blog.csdn.net/qq_36664799</a>，里面有各种bug和吐槽~</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/06/30/hello-world-1/" data-id="ck07s2r3k0017w0qxd9oksh8q" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Demo/">Demo</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Demo/小游戏/">小游戏</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Demo/小程序/">小程序</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Demo/小程序/芝士就是力量！/">芝士就是力量！</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/es6/">es6</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/es6/芝士就是力量！/">芝士就是力量！</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/es6/芝士就是力量！/面试/">面试</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/">js</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/js/node/">node</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/js/node/面试/">面试</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/芝士就是力量！/">芝士就是力量！</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/js/芝士就是力量！/面试/">面试</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/面试/">面试</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/koa/">koa</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/">mysql</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/node/">node</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/node/芝士就是力量！/">芝士就是力量！</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/node/芝士就是力量！/面试/">面试</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/嗨-egg/">嗨~egg</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/小程序/">小程序</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/小程序/芝士就是力量！/">芝士就是力量！</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/正则表达式/">正则表达式</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/芝士就是力量！/">芝士就是力量！</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/芝士就是力量！/面试/">面试</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/09/06/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/05/e6-94-be-e5-9c-a8demo-e9-87-8c-e9-9d-a2/">放在demo里面[校内互助小程序]</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/05/mysql-e7-ac-ac-e4-ba-8c-e6-ac-a1-e7-b3-bb-e7-bb-9f-e5-ad-a6-e4-b9-a0-e6-97-b6-e7-9a-84-e7-ac-94-e8-ae-b0/">mysql--第二次系统学习时的笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/05/e6-88-91-e4-b8-80-e7-82-b9-e4-b8-80-e7-82-b9-e4-ba-86-e8-a7-a3-e7-9a-84-e6-ad-a3-e5-88-99-e8-a1-a8-e8-be-be-e5-bc-8f/">我一点一点了解的正则表达式</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/05/git-e5-9f-ba-e6-9c-ac-e6-93-8d-e4-bd-9c/">git--基本操作</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>git--基本操作 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="是大一开始用git，随手记的笔记，加粗为常用【记得把本地生成的ssh搞到github的设置里】【有点儿乱，但是只要之前粗略了解过，你再用这个查操作就很简单了，不乱！】 总而言之，言而总之 【你啥也没有，只是下载了git，如下操作】新建一个仓库，上传到github git init git add . git commit -m ‘备注’ git remote add origin https://">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git--基本操作">
+<meta property="og:url" content="http://yoursite.com/2019/09/05/git-e5-9f-ba-e6-9c-ac-e6-93-8d-e4-bd-9c/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="是大一开始用git，随手记的笔记，加粗为常用【记得把本地生成的ssh搞到github的设置里】【有点儿乱，但是只要之前粗略了解过，你再用这个查操作就很简单了，不乱！】 总而言之，言而总之 【你啥也没有，只是下载了git，如下操作】新建一个仓库，上传到github git init git add . git commit -m ‘备注’ git remote add origin https://">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://yumud.com/wp-content/uploads/2019/09/image-6.png">
+<meta property="og:updated_time" content="2019-09-06T07:08:15.814Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="git--基本操作">
+<meta name="twitter:description" content="是大一开始用git，随手记的笔记，加粗为常用【记得把本地生成的ssh搞到github的设置里】【有点儿乱，但是只要之前粗略了解过，你再用这个查操作就很简单了，不乱！】 总而言之，言而总之 【你啥也没有，只是下载了git，如下操作】新建一个仓库，上传到github git init git add . git commit -m ‘备注’ git remote add origin https://">
+<meta name="twitter:image" content="http://yumud.com/wp-content/uploads/2019/09/image-6.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-git-e5-9f-ba-e6-9c-ac-e6-93-8d-e4-bd-9c" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/09/05/git-e5-9f-ba-e6-9c-ac-e6-93-8d-e4-bd-9c/" class="article-date">
+  <time datetime="2019-09-05T11:56:27.000Z" itemprop="datePublished">2019-09-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/git/">git</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      git--基本操作
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>是大一开始用git，随手记的笔记，加粗为常用【记得把本地生成的ssh搞到github的设置里】【有点儿乱，但是只要之前粗略了解过，你再用这个查操作就很简单了，不乱！】</p>
+<p>总而言之，言而总之</p>
+<p><strong>【你啥也没有，只是下载了git，如下操作】新建一个仓库，上传到github</strong></p>
+<p>git init</p>
+<p>git add .</p>
+<p>git commit -m ‘备注’</p>
+<p>git remote add origin <a href="https://balabal" target="_blank" rel="noopener">https://balabal</a></p>
+<p>git pull –rebase origin master[远程仓库不为空，必须做这一步]</p>
+<p>git push -u origin master</p>
+<p><strong>【你git clone完代码，也修改了，要上传，如下操作】</strong></p>
+<p>git add .</p>
+<p>git commit -m “备注”</p>
+<p>git push origin master (从远程库更新本地库)</p>
+<p>git pull origin <branch> 上传到某一分支<branch></branch></branch></p>
+<p><img src="http://yumud.com/wp-content/uploads/2019/09/image-6.png" alt></p>
+<p>很久了，忘了从哪里截的–</p>
+<p><strong>git status查看项目的当前状态</strong></p>
+<p>git init 将该文件夹变为git仓库<br>将工作目录的文件放入git仓库只需要两步：</p>
+<p>-git add 文件名</p>
+<p>-git commit -m “你干了什么”</p>
+<p><strong>git log</strong>命令显示从最近到最远的提交日志 <strong>查看历史</strong></p>
+<p>type 显示txt中的内容<br>查看状态 git status</p>
+<p>倒退一步（最近的一次操作）: 、</p>
+<p>git reset HARD~</p>
+<p>git reset –hard 版本号（commit_d前几位就行，次数不多的情况下）</p>
+<p>使用git log查看提交记录，以便于要回退到哪个版本</p>
+<p>git reflog查看命令历史<br>恢复原有操作（就是撤销你的这次的操作）：</p>
+<p>将暂存区域恢复之前的状态哦</p>
+<p>git checkout – 文件名</p>
+<p>放入暂存区撤销</p>
+<p>git reset head 文件名</p>
+<p>git checkout – 文件名<br>删除</p>
+<p>在cmd中del 文件名</p>
+<p>git rm 文件名</p>
+<p>git commit -m “”</p>
+<p>在版本库里删除无法找回</p>
+<p>在误删的情况下可以</p>
+<p>git checkout – 文件名  </p>
+<p>关联一个远程库</p>
+<p>本地-&gt;远程git remote add origin <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:thesecondlight/xxx.git</p>
+<p>关联后推送内容 git push -u origin master 第一次推送master分支所有内容之后git push origin master<br>『出现remote origin already exists git remote rm origin』<br>从远程库克隆下一个本地库 远程库-&gt;本地库git clone <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:thesecondlight/xxx.git</p>
+<p>从远程库更新本地库git pull origin master</p>
+<p>新建一个.txt</p>
+<p>echo “this is a txt”&gt;&gt;read.txt<br><strong>查看尚未缓存的改动 变更的内容git diff</strong></p>
+<p>查看已缓存的改动 git diff –cashed<br>删除文件 git rm -f(强制) <file><br>重命名 git mv old new<br><strong>创建分支 git branch (branchname)</strong></file></p>
+<p><strong>切换分支git checkout (branchname)</strong><br>创建并切换git checkout -b branchname<br>合并分支命令git merge branchname</p>
+<p>合并（branchname）指定分支到当前分支列出分支git branch<br>删除分支git branch -d branchname<br>常见报错<a href="http://blog.csdn.net/dengjianqiang2011/article/details/9260435" target="_blank" rel="noopener">http://blog.csdn.net/dengjianqiang2011/article/details/9260435</a><br><strong>git pull origin master更新本地库push推送</strong></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/09/05/git-e5-9f-ba-e6-9c-ac-e6-93-8d-e4-bd-9c/" data-id="ck07s2r3f000ww0qxmp390lr4" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/09/05/e6-88-91-e4-b8-80-e7-82-b9-e4-b8-80-e7-82-b9-e4-ba-86-e8-a7-a3-e7-9a-84-e6-ad-a3-e5-88-99-e8-a1-a8-e8-be-be-e5-bc-8f/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          我一点一点了解的正则表达式
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/09/04/koa-e5-b0-8f-e7-9f-a5-e8-af-86/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">koa小知识</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Demo/">Demo</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Demo/小游戏/">小游戏</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Demo/小程序/">小程序</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Demo/小程序/芝士就是力量！/">芝士就是力量！</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/es6/">es6</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/es6/芝士就是力量！/">芝士就是力量！</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/es6/芝士就是力量！/面试/">面试</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/">js</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/js/node/">node</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/js/node/面试/">面试</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/芝士就是力量！/">芝士就是力量！</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/js/芝士就是力量！/面试/">面试</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/面试/">面试</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/koa/">koa</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/">mysql</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/node/">node</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/node/芝士就是力量！/">芝士就是力量！</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/node/芝士就是力量！/面试/">面试</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/嗨-egg/">嗨~egg</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/小程序/">小程序</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/小程序/芝士就是力量！/">芝士就是力量！</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/正则表达式/">正则表达式</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/芝士就是力量！/">芝士就是力量！</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/芝士就是力量！/面试/">面试</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/09/06/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/05/e6-94-be-e5-9c-a8demo-e9-87-8c-e9-9d-a2/">放在demo里面[校内互助小程序]</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/05/mysql-e7-ac-ac-e4-ba-8c-e6-ac-a1-e7-b3-bb-e7-bb-9f-e5-ad-a6-e4-b9-a0-e6-97-b6-e7-9a-84-e7-ac-94-e8-ae-b0/">mysql--第二次系统学习时的笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/05/e6-88-91-e4-b8-80-e7-82-b9-e4-b8-80-e7-82-b9-e4-ba-86-e8-a7-a3-e7-9a-84-e6-ad-a3-e5-88-99-e8-a1-a8-e8-be-be-e5-bc-8f/">我一点一点了解的正则表达式</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/05/git-e5-9f-ba-e6-9c-ac-e6-93-8d-e4-bd-9c/">git--基本操作</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
