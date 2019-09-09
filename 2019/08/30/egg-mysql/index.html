@@ -17,7 +17,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yumud.com/wp-content/uploads/2019/08/image-60.png">
 <meta property="og:image" content="http://yumud.com/wp-content/uploads/2019/08/image-61.png">
-<meta property="og:updated_time" content="2019-09-06T07:08:15.814Z">
+<meta property="og:updated_time" content="2019-09-09T12:06:28.234Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="egg-mysql">
 <meta name="twitter:description" content="首先，安装与配置 npm install egg-mysql  config/plugin.js 然后在config/config.default.js里面按照下图添加一下，password是连接mysql的密码（注意数据库的版本，版本过低可能报错==&amp;gt;报这个” Client does not support authentication protocol requested by serv">
@@ -26,7 +26,7 @@
     <link rel="alternative" href="/atom.xml" title="yumud" type="application/atom+xml">
   
   
-    <link rel="icon" href="/favicon.png">
+    <link rel="icon" href="http://yumud.com/wp-content/uploads/2019/07/西瓜.png">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
@@ -62,14 +62,14 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/">分类</a></li>
+				<li><a href="/categories">分类</a></li>
 	        
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
     		
     			
-    			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">所有文章</a>
+    			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">搜索一下</a>
     			
             
     			
@@ -77,7 +77,7 @@
     			
             
     			
-    			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
+    			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于</a>
     			
             
 		</nav>
@@ -142,7 +142,7 @@
 				
 					<li style="width: 50%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/">分类</a></li>
+					<li style="width: 50%"><a href="/categories">分类</a></li>
 		        
 				</ul>
 			</nav>
@@ -176,8 +176,10 @@
       </header>
     
     <div class="article-entry" itemprop="articleBody">
-      
-        <p>首先，安装与配置</p>
+     
+
+	
+		<p>首先，安装与配置</p>
 <p>npm install egg-mysql</p>
 <p><img src="http://yumud.com/wp-content/uploads/2019/08/image-60.png" alt></p>
 <p>config/plugin.js</p>
@@ -189,35 +191,8 @@
 <p>‘use strict’;<br>const Controller = require(‘egg’).Controller;<br>class HomeController extends Controller { async index() { const result=<strong>await this.app.mysql.query(“select * from test1”);</strong> this.ctx.body=result; }}<br>module.exports = HomeController;  </p>
 <p>如果你没出错，就完成了，其他的操作语句，去官方文档看一下，报错一般是mysql版本问题</p>
 
-      
+	
 
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>我要一杯珍珠奶茶！<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="http://yumud.com/wp-content/uploads/2019/09/18C0UGX01@6QLN3MK2_F.jpg">
-                      <span class="reward-type">支付宝</span>
-                    </div>
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
     </div>
     <div class="article-info article-info-index">
       
@@ -334,9 +309,39 @@
 
 
   
+  <div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="egg-mysql" data-title="egg-mysql" data-url="/2019/08/30/egg-mysql/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+  
   
   
 
+  
+  <div id="SOHUCS" sid="egg-mysql" ></div> 
+<script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
+<script type="text/javascript">
+    window.changyan.api.config({
+        appid: "true",
+        conf: "true"
+    });
+</script>
+</script>
   
 
   
@@ -372,7 +377,7 @@
 		toc_hide_index: true,
 		root: "/",
 		innerArchive: true,
-		showTags: false
+		showTags: true
 	}
 </script>
 
@@ -405,7 +410,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">搜索一下</a></li>
       
         
       
@@ -413,7 +418,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
       
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于</a></li>
       
         
     </ul>

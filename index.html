@@ -22,7 +22,7 @@
     <link rel="alternative" href="/atom.xml" title="yumud" type="application/atom+xml">
   
   
-    <link rel="icon" href="/favicon.png">
+    <link rel="icon" href="http://yumud.com/wp-content/uploads/2019/07/西瓜.png">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
@@ -58,14 +58,14 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/">分类</a></li>
+				<li><a href="/categories">分类</a></li>
 	        
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
     		
     			
-    			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">所有文章</a>
+    			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">搜索一下</a>
     			
             
     			
@@ -73,7 +73,7 @@
     			
             
     			
-    			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
+    			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于</a>
     			
             
 		</nav>
@@ -138,7 +138,7 @@
 				
 					<li style="width: 50%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/">分类</a></li>
+					<li style="width: 50%"><a href="/categories">分类</a></li>
 		        
 				</ul>
 			</nav>
@@ -155,44 +155,282 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-e6-94-be-e5-9c-a8demo-e9-87-8c-e9-9d-a2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-weui-e7-9a-84-e4-bd-bf-e7-94-a8" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/05/e6-94-be-e5-9c-a8demo-e9-87-8c-e9-9d-a2/">放在demo里面[校内互助小程序]</a>
+      <a class="article-title" href="/2019/09/09/weui-e7-9a-84-e4-bd-bf-e7-94-a8/">WeUI的使用</a>
     </h1>
   
 
         
-        <a href="/2019/09/05/e6-94-be-e5-9c-a8demo-e9-87-8c-e9-9d-a2/" class="archive-article-date">
-  	<time datetime="2019-09-05T12:37:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-05</time>
+        <a href="/2019/09/09/weui-e7-9a-84-e4-bd-bf-e7-94-a8/" class="archive-article-date">
+  	<time datetime="2019-09-09T08:27:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-09</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
+     
+
+	
+		<p>安装：打开<a href="https://github.com/weui/weui-wxss/" target="_blank" rel="noopener">https://github.com/weui/weui-wxss/</a> git clone文件</p>
+<p><img src="http://yumud.com/wp-content/uploads/2019/09/image-15.png" alt></p>
+<p>如上图，把这个文件复制一份到你根目录下，在全局app.wxss中引用weui.wxss <strong>@import ‘weui.wxss’;</strong></p>
+
+	
+
+    </div>
+    <div class="article-info article-info-index">
       
-        <p>只要我留的坑多，我就一定会填的，给校内互助的构想占个位置</p>
-<p>要解决的问题和初期构想：</p>
-<p><strong>登录验证</strong> 安全问题，使用教务系统账号密码？使用身份证过于麻烦，随意注册登录没有安全性</p>
-<p><strong>保证金</strong>，用户发布或者接单要不要收取一定的费用，防止资源浪费</p>
-<p><strong>垃圾任务</strong> 垃圾任务怎么挑选出来</p>
-<p><strong>紧急任务</strong> 收取费用，这个要收，hh=&gt;付费置顶任务，一天只允许三篇置顶，只有一天的时限 [暂定一天￥1,一月￥9.9]，如果是垃圾任务（hdd）就删除，防止误删,所以我要手动删。</p>
-<p>收费的话，个人小程序不允许，得有证，所以，我要留个联系方式，“ 手动收钱 ”，“ 手动置顶 ”</p>
-<p><strong>发布任务数量</strong> 一天三个，超过收费</p>
-<p><strong>接单数量</strong> 一天三个，超过收费</p>
-<p><strong>任务可被接单人数</strong> 如果没有选定是大量，则只允许三人接单，发布者进行挑选，截止时间到，进入垃圾箱，解散该任务[要不要有回收站？]选定是大量，则被允许接单为发布者选定的人数。</p>
-<p><strong>反悔</strong> 发布者取消，接单者取消，无碍？还是设置点儿惩罚</p>
-<p><strong>交易</strong> 成功后，发布者可以选定接单者，查看信息，加好友或者邮箱联系，金钱交易不在小程序中，完全的线下交易，或其他平台交易，小程序只负责发单，接单，<strong>不承担任何责任</strong></p>
-<p><strong>用户投诉</strong> 直接在主页面设置投诉</p>
-<p><strong>预留账号</strong> 记得预留一个账号，把接收的投诉信息搞出来，“投诉处理页面”，可以直接在此页面进行投诉信息处理。</p>
+      
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/小程序//" class="article-tag-list-link color4">小程序</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/09/09/weui-e7-9a-84-e4-bd-bf-e7-94-a8/">展开全文 >></a>
+        </p>
+      
 
       
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-pta-1003-e6-88-91-e8-a6-81-e9-80-9a-e8-bf-87-ef-bc-81" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/09/pta-1003-e6-88-91-e8-a6-81-e9-80-9a-e8-bf-87-ef-bc-81/">pta -1003我要通过！</a>
+    </h1>
+  
+
+        
+        <a href="/2019/09/09/pta-1003-e6-88-91-e8-a6-81-e9-80-9a-e8-bf-87-ef-bc-81/" class="archive-article-date">
+  	<time datetime="2019-09-09T08:06:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+     
+
+	
+		<p>题目我都没看懂…</p>
+<p><img src="http://yumud.com/wp-content/uploads/2019/09/image-14.png" alt></p>
+<p>真的是白痴。</p>
+
+	
+
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/一天一块钱//" class="article-tag-list-link color1">一天一块钱</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/09/09/pta-1003-e6-88-91-e8-a6-81-e9-80-9a-e8-bf-87-ef-bc-81/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-e5-86-92-e6-b3-a1-e6-8e-92-e5-ba-8f" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/07/e5-86-92-e6-b3-a1-e6-8e-92-e5-ba-8f/">冒泡排序</a>
+    </h1>
+  
+
+        
+        <a href="/2019/09/07/e5-86-92-e6-b3-a1-e6-8e-92-e5-ba-8f/" class="archive-article-date">
+  	<time datetime="2019-09-07T10:21:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+     
+
+	
+		<p>从最基础的冒泡排序开始。</p>
+<p>[等一下，回家写]–废话.jpg</p>
+<p>[然而我回家也没写，我填了一下之前的坑] –废话.jpg</p>
+<p>[然而今天也没有刷题，我躺着敲工作反思，电脑很热。确切的说，不是今天没有刷题，现在已经凌晨了] –废话.jpg</p>
+<p>————————–正经.jpg ————————–</p>
+<p>相邻两个数比较一下，然后小(大)放在前面，例如1852</p>
+<p>18不需要换 1852</p>
+<p>85=&gt;58 1582</p>
+<p>82=&gt;28 1528(最大的已经到了最后)</p>
+<p>152</p>
+<p>15 不需要 152</p>
+<p>52=&gt;25 125</p>
+<p><strong>1258</strong>完成</p>
+<p>就是个嵌套的for循环，然后temp中间变量，把两个值换一下。假设有n个数，就要走n-1步，第i步中需要n-i次比较</p>
+<p>粘代码</p>
+<p>不，我用c还是java写，同学让我学c++，那这样两个就都会了，我感觉有点不对劲，但还是先用C++写吧</p>
+<p><img src="http://yumud.com/wp-content/uploads/2019/09/image-13.png" alt></p>
+
+	
+
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/算法//" class="article-tag-list-link color3">算法</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/09/07/e5-86-92-e6-b3-a1-e6-8e-92-e5-ba-8f/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-cc-e5-8d-a1-e8-b7-af-e9-87-8c-e8-80-b6" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/07/cc-e5-8d-a1-e8-b7-af-e9-87-8c-e8-80-b6/">CC卡路里 耶</a>
+    </h1>
+  
+
+        
+        <a href="/2019/09/07/cc-e5-8d-a1-e8-b7-af-e9-87-8c-e8-80-b6/" class="archive-article-date">
+  	<time datetime="2019-09-07T06:42:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+     
+
+	
+		<p><img src="http://yumud.com/wp-content/uploads/2019/06/gh_8490c442bd64_258-1-1.jpg" alt></p>
+<p>微信扫一扫查看，或搜索”CC卡路里”查看。</p>
+<p>主要功能：查询食物热量，记录每日饮食，BMI身体质量测试。</p>
+<p><strong>优化</strong>：</p>
+<p>△加数据分析，每个月或15天，对用户记录的饮食热量进行分析=&gt;但是，没有达到记录量怎么办，目前用户不多，稳定用户更少，这样做出来的数据分析不为准=&gt;没有达到记录量，弹出“记录过少，无法生成健康账单”</p>
+<p>△ 查询页面，很严重，部分手机左滑出现1/3空白；部分手机虽然进行左滑操作，页面不出现1/3空白，但是下方会出现横向滑动条。</p>
+
+	
+
     </div>
     <div class="article-info article-info-index">
       
@@ -205,10 +443,6 @@
         		<li class="article-tag-list-item">
         			<a href="/categories/Demo//" class="article-tag-list-link color5">Demo</a>
         		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Demo/小程序//" class="article-tag-list-link color4">小程序</a>
-        		</li>
       		
 		</ul>
 	</div>
@@ -216,7 +450,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/09/05/e6-94-be-e5-9c-a8demo-e9-87-8c-e9-9d-a2/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/09/07/cc-e5-8d-a1-e8-b7-af-e9-87-8c-e8-80-b6/">展开全文 >></a>
         </p>
       
 
@@ -246,33 +480,36 @@
 
 
   
-    <article id="post-mysql-e7-ac-ac-e4-ba-8c-e6-ac-a1-e7-b3-bb-e7-bb-9f-e5-ad-a6-e4-b9-a0-e6-97-b6-e7-9a-84-e7-ac-94-e8-ae-b0" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-pta-1002-e5-86-99-e5-87-ba-e8-bf-99-e4-b8-aa-e6-95-b0" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/05/mysql-e7-ac-ac-e4-ba-8c-e6-ac-a1-e7-b3-bb-e7-bb-9f-e5-ad-a6-e4-b9-a0-e6-97-b6-e7-9a-84-e7-ac-94-e8-ae-b0/">mysql--第二次系统学习时的笔记</a>
+      <a class="article-title" href="/2019/09/07/pta-1002-e5-86-99-e5-87-ba-e8-bf-99-e4-b8-aa-e6-95-b0/">pta -1002写出这个数</a>
     </h1>
   
 
         
-        <a href="/2019/09/05/mysql-e7-ac-ac-e4-ba-8c-e6-ac-a1-e7-b3-bb-e7-bb-9f-e5-ad-a6-e4-b9-a0-e6-97-b6-e7-9a-84-e7-ac-94-e8-ae-b0/" class="archive-article-date">
-  	<time datetime="2019-09-05T12:20:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-05</time>
+        <a href="/2019/09/07/pta-1002-e5-86-99-e5-87-ba-e8-bf-99-e4-b8-aa-e6-95-b0/" class="archive-article-date">
+  	<time datetime="2019-09-07T01:56:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-07</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
-      
-        <p>直接粘贴会串行，贴个链接</p>
-<p>文档：hhhMYSQL.note<br>链接：</p>
-<p><a href="http://note.youdao.com/noteshare?id=6d7727b115b2b7c3498c726b876bcfbd&sub=155CA2FFD61948EFAF00D4936D406087" target="_blank" rel="noopener">http://note.youdao.com/noteshare?id=6d7727b115b2b7c3498c726b876bcfbd&amp;sub=155CA2FFD61948EFAF00D4936D406087</a></p>
+     
 
-      
+	
+		<p>题目： <strong>读入一个正整数 **_</strong>n<strong>_</strong>，计算其各位数字之和，用汉语拼音写出和的每一位数字。**</p>
+<p>思路=&gt;%10 /10把每一位数字存起来，写个switch case包函数里面用来判断每一位数字是什么字母</p>
+<p>我实施了一半，写不出来</p>
+<p>百度：把对应的字母存在一个二维数组中，%10 /10操作</p>
+<p><img src="http://yumud.com/wp-content/uploads/2019/09/image-9.png" alt></p>
 
-      
+	
+
     </div>
     <div class="article-info article-info-index">
       
@@ -283,7 +520,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/mysql//" class="article-tag-list-link color1">mysql</a>
+        			<a href="/categories/一天一块钱//" class="article-tag-list-link color1">一天一块钱</a>
         		</li>
       		
 		</ul>
@@ -292,7 +529,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/09/05/mysql-e7-ac-ac-e4-ba-8c-e6-ac-a1-e7-b3-bb-e7-bb-9f-e5-ad-a6-e4-b9-a0-e6-97-b6-e7-9a-84-e7-ac-94-e8-ae-b0/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/09/07/pta-1002-e5-86-99-e5-87-ba-e8-bf-99-e4-b8-aa-e6-95-b0/">展开全文 >></a>
         </p>
       
 
@@ -322,38 +559,36 @@
 
 
   
-    <article id="post-e6-88-91-e4-b8-80-e7-82-b9-e4-b8-80-e7-82-b9-e4-ba-86-e8-a7-a3-e7-9a-84-e6-ad-a3-e5-88-99-e8-a1-a8-e8-be-be-e5-bc-8f" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-pta-1001-e5-ae-b3-e6-ad-bb-e4-ba-ba-e4-b8-8d-e5-81-bf-e5-91-bd-e7-9a-843n1-e7-8c-9c-e6-83-b3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/05/e6-88-91-e4-b8-80-e7-82-b9-e4-b8-80-e7-82-b9-e4-ba-86-e8-a7-a3-e7-9a-84-e6-ad-a3-e5-88-99-e8-a1-a8-e8-be-be-e5-bc-8f/">我一点一点了解的正则表达式</a>
+      <a class="article-title" href="/2019/09/07/pta-1001-e5-ae-b3-e6-ad-bb-e4-ba-ba-e4-b8-8d-e5-81-bf-e5-91-bd-e7-9a-843n1-e7-8c-9c-e6-83-b3/">pta -1001害死人不偿命的(3n+1)猜想</a>
     </h1>
   
 
         
-        <a href="/2019/09/05/e6-88-91-e4-b8-80-e7-82-b9-e4-b8-80-e7-82-b9-e4-ba-86-e8-a7-a3-e7-9a-84-e6-ad-a3-e5-88-99-e8-a1-a8-e8-be-be-e5-bc-8f/" class="archive-article-date">
-  	<time datetime="2019-09-05T12:13:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-05</time>
+        <a href="/2019/09/07/pta-1001-e5-ae-b3-e6-ad-bb-e4-ba-ba-e4-b8-8d-e5-81-bf-e5-91-bd-e7-9a-843n1-e7-8c-9c-e6-83-b3/" class="archive-article-date">
+  	<time datetime="2019-09-07T01:53:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-07</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
-      
-        <ol>
-<li><strong>/</strong>\*<em>/*</em>g, “” 全局用空替换\ [第一个\为转义字符]</li>
-<li>在做CC卡路里的时候，用到了模糊查询</li>
-</ol>
-<p><img src="http://yumud.com/wp-content/uploads/2019/09/image-7.png" alt></p>
-<p>在数据库test中，根据用户输入的字段，查询数据库，显示模糊查询的结果，i为大小写不敏感</p>
-<p>微信小程序文档正则=&gt;<a href="https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-client-api/database/db.regexp.html" target="_blank" rel="noopener">https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-client-api/database/db.regexp.html</a></p>
-<p>3.用一个，记录一个hh</p>
+     
 
-      
+	
+		<p>题目： <strong>对给定的任一不超过 1000 的正整数 **_</strong>n<strong>_</strong>，简单地数一下，需要多少步（砍几下）才能得到 <strong>_</strong>n<strong>_</strong>=1？** [对3(n+1)猜想感兴趣的自行百度哦]</p>
+<p>超简单，但是我在scanf那里加了<strong>\n</strong>，然后编译执行，输入数据，就卡住了</p>
+<p>百度：scanf中的\n不是指换行，而是忽略一切空白符，直到下一个空白符出现</p>
+<p><img src="http://yumud.com/wp-content/uploads/2019/09/image-8.png" alt></p>
+<p>真的是敲代码就是个白痴–</p>
 
-      
+	
+
     </div>
     <div class="article-info article-info-index">
       
@@ -364,7 +599,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/正则表达式//" class="article-tag-list-link color1">正则表达式</a>
+        			<a href="/categories/一天一块钱//" class="article-tag-list-link color1">一天一块钱</a>
         		</li>
       		
 		</ul>
@@ -373,7 +608,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/09/05/e6-88-91-e4-b8-80-e7-82-b9-e4-b8-80-e7-82-b9-e4-ba-86-e8-a7-a3-e7-9a-84-e6-ad-a3-e5-88-99-e8-a1-a8-e8-be-be-e5-bc-8f/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/09/07/pta-1001-e5-ae-b3-e6-ad-bb-e4-ba-ba-e4-b8-8d-e5-81-bf-e5-91-bd-e7-9a-843n1-e7-8c-9c-e6-83-b3/">展开全文 >></a>
         </p>
       
 
@@ -403,77 +638,33 @@
 
 
   
-    <article id="post-git-e5-9f-ba-e6-9c-ac-e6-93-8d-e4-bd-9c" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-e5-89-8d-e8-a8-80" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/05/git-e5-9f-ba-e6-9c-ac-e6-93-8d-e4-bd-9c/">git--基本操作</a>
+      <a class="article-title" href="/2019/09/07/e5-89-8d-e8-a8-80/">前言【一天一块钱】</a>
     </h1>
   
 
         
-        <a href="/2019/09/05/git-e5-9f-ba-e6-9c-ac-e6-93-8d-e4-bd-9c/" class="archive-article-date">
-  	<time datetime="2019-09-05T11:56:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-05</time>
+        <a href="/2019/09/07/e5-89-8d-e8-a8-80/" class="archive-article-date">
+  	<time datetime="2019-09-07T01:47:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-07</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
-      
-        <p>是大一开始用git，随手记的笔记，加粗为常用【记得把本地生成的ssh搞到github的设置里】【有点儿乱，但是只要之前粗略了解过，你再用这个查操作就很简单了，不乱！】</p>
-<p>总而言之，言而总之</p>
-<p><strong>【你啥也没有，只是下载了git，如下操作】新建一个仓库，上传到github</strong></p>
-<p>git init</p>
-<p>git add .</p>
-<p>git commit -m ‘备注’</p>
-<p>git remote add origin <a href="https://balabal" target="_blank" rel="noopener">https://balabal</a></p>
-<p>git pull –rebase origin master[远程仓库不为空，必须做这一步]</p>
-<p>git push -u origin master</p>
-<p><strong>【你git clone完代码，也修改了，要上传，如下操作】</strong></p>
-<p>git add .</p>
-<p>git commit -m “备注”</p>
-<p>git push origin master (从远程库更新本地库)</p>
-<p>git pull origin <branch> 上传到某一分支<branch></branch></branch></p>
-<p><img src="http://yumud.com/wp-content/uploads/2019/09/image-6.png" alt></p>
-<p>很久了，忘了从哪里截的–</p>
-<p><strong>git status查看项目的当前状态</strong></p>
-<p>git init 将该文件夹变为git仓库<br>将工作目录的文件放入git仓库只需要两步：</p>
-<p>-git add 文件名</p>
-<p>-git commit -m “你干了什么”</p>
-<p><strong>git log</strong>命令显示从最近到最远的提交日志 <strong>查看历史</strong></p>
-<p>type 显示txt中的内容<br>查看状态 git status</p>
-<p>倒退一步（最近的一次操作）: 、</p>
-<p>git reset HARD~</p>
-<p>git reset –hard 版本号（commit_d前几位就行，次数不多的情况下）</p>
-<p>使用git log查看提交记录，以便于要回退到哪个版本</p>
-<p>git reflog查看命令历史<br>恢复原有操作（就是撤销你的这次的操作）：</p>
-<p>将暂存区域恢复之前的状态哦</p>
-<p>git checkout – 文件名</p>
-<p>放入暂存区撤销</p>
-<p>git reset head 文件名</p>
-<p>git checkout – 文件名<br>删除</p>
-<p>在cmd中del 文件名</p>
-<p>git rm 文件名</p>
-<p>git commit -m “”</p>
-<p>在版本库里删除无法找回</p>
-<p>在误删的情况下可以</p>
-<p>git checkout – 文件名  </p>
-<p>关联一个远程库</p>
-<p>本地-&gt;远程git remote add origin <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:thesecondlight/xxx.git</p>
-<p>关联后推送内容 git push -u origin master 第一次推送master分支所有内容之后git push origin master<br>『出现remote origin already exists git remote rm origin』<br>从远程库克隆下一个本地库 远程库-&gt;本地库git clone <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:thesecondlight/xxx.git</p>
-<p>从远程库更新本地库git pull origin master</p>
-<p>新建一个.txt</p>
-<p>echo “this is a txt”&gt;&gt;read.txt<br><strong>查看尚未缓存的改动 变更的内容git diff</strong></p>
-<p>查看已缓存的改动 git diff –cashed<br>删除文件 git rm -f(强制) <file><br>重命名 git mv old new<br><strong>创建分支 git branch (branchname)</strong></file></p>
-<p><strong>切换分支git checkout (branchname)</strong><br>创建并切换git checkout -b branchname<br>合并分支命令git merge branchname</p>
-<p>合并（branchname）指定分支到当前分支列出分支git branch<br>删除分支git branch -d branchname<br>常见报错<a href="http://blog.csdn.net/dengjianqiang2011/article/details/9260435" target="_blank" rel="noopener">http://blog.csdn.net/dengjianqiang2011/article/details/9260435</a><br><strong>git pull origin master更新本地库push推送</strong></p>
+     
 
-      
+	
+		<p>大一大二坚持每天刷一题，然后考了三次二级C语言，没有过哈哈哈。</p>
+<p>之前在CSDN记了几次，发现效果不大，然后就只是单纯在电脑上刷题没有记录，现在要重新开始了，每天一题！我要考证！[真的是一个敲代码的白痴–]</p>
 
-      
+	
+
     </div>
     <div class="article-info article-info-index">
       
@@ -484,7 +675,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/git//" class="article-tag-list-link color4">git</a>
+        			<a href="/categories/一天一块钱//" class="article-tag-list-link color1">一天一块钱</a>
         		</li>
       		
 		</ul>
@@ -493,7 +684,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/09/05/git-e5-9f-ba-e6-9c-ac-e6-93-8d-e4-bd-9c/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/09/07/e5-89-8d-e8-a8-80/">展开全文 >></a>
         </p>
       
 
@@ -523,39 +714,38 @@
 
 
   
-    <article id="post-koa-e5-b0-8f-e7-9f-a5-e8-af-86" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-e7-ac-ac-e4-b8-80-e4-bb-bd-e5-b7-a5-e4-bd-9c-e5-8f-8d-e6-80-9d" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/04/koa-e5-b0-8f-e7-9f-a5-e8-af-86/">koa小知识</a>
+      <a class="article-title" href="/2019/09/06/e7-ac-ac-e4-b8-80-e4-bb-bd-e5-b7-a5-e4-bd-9c-e5-8f-8d-e6-80-9d/">第一份工作反思</a>
     </h1>
   
 
         
-        <a href="/2019/09/04/koa-e5-b0-8f-e7-9f-a5-e8-af-86/" class="archive-article-date">
-  	<time datetime="2019-09-04T07:40:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-04</time>
+        <a href="/2019/09/06/e7-ac-ac-e4-b8-80-e4-bb-bd-e5-b7-a5-e4-bd-9c-e5-8f-8d-e6-80-9d/" class="archive-article-date">
+  	<time datetime="2019-09-06T11:47:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-06</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>全局添加层级：</strong></p>
-<p><img src="http://yumud.com/wp-content/uploads/2019/09/image-2.png" alt></p>
-<p>加了一个yumu层</p>
-<p><img src="http://yumud.com/wp-content/uploads/2019/09/image-3.png" alt></p>
-<p>访问时需要加一个/yumu,然后加/**,才能访问到，下面还是这么写就行，访问时注意就好了。[注意，此为全局设置]</p>
-<p><img src="http://yumud.com/wp-content/uploads/2019/09/image-4.png" alt></p>
-<p><strong>单个页面添加层级：</strong></p>
-<p><img src="http://yumud.com/wp-content/uploads/2019/09/image-5.png" alt></p>
-<p>酱样儿</p>
+     
 
-      
+	
+		<p>因为走错了另外一家公司的门hhh</p>
+<p>应该是饶了一个圈子，从后门进去的，进去的一瞬间感觉像培训，又没看到人在工作，印象不太好，先做笔试题，然后三个人一起面试，面试官也没问啥，就让自我介绍了一下，然后问了一下项目，仔细介绍一下你的项目，问了那个得奖的手游怎么做的，hh，我做的模型…就是代码不是我搞，我搞的人物模型，最后问有什么想问他的，没得，疑惑脸，没有？没有想问的？然后人事过来，三个人当时留下了一个详谈，就溜溜了。</p>
+<p>晚上hr打电话说，薪资，待遇，高温补贴，节假日福利什么的，当时很不爽，怎么当时没留下，现在又来电话谈，聊了一会说考虑一下。</p>
+<p>再后来就是入职了现在的公司，签完合同才知道周一周三固定加班到九点，有点儿懵，当时应该是花呗没欠钱，不然为什么留这家公司，是两外一家公司不够大，还是五百块不是钱，还是三个月的高温补贴不是钱，鬼迷心窍，觉得两个月实习期很棒。</p>
+<p>现在真的棒棒了，房子一年的合同，工作两个月的实习期，感觉要凉凉了，为什么不选择做前端，也没有选择做小程序，感觉另外一家外包公司也不错，小小的，薪资也很nice，就是前台冷冷淡淡的，还不是漂亮姐姐，但是那是一次表现不错的面试了，小程序啊，好想去搞小程序，专门去做小程序多棒啊，现在好凉，好后悔，怎么才面试了三天，就做了决定，面了四家公司，三份offer(虽然有大有小)，但是为什么选了一份最不靠谱的，这个九月强制性996好烦啊，每天摸鱼好不爽，我不喜欢九点在公司，我想九点在家里磕代码，我想九点在江边发呆。</p>
+<p>反思: 入职之前，要留一周的思考时间，要好好想，要知道什么口头承诺都是可以变的，加班也很随便，然而钱不能，没得加班费.（花呗到底了，好难啊。）</p>
+<p>还有现在最后悔的，待遇很好的那家公司，有浙大学长学姐，好羡慕啊，现在他们已经开始校招了，我到底错过了什么啊…</p>
 
-      
+	
+
     </div>
     <div class="article-info article-info-index">
       
@@ -566,7 +756,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/koa//" class="article-tag-list-link color4">koa</a>
+        			<a href="/categories/日常//" class="article-tag-list-link color3">日常</a>
         		</li>
       		
 		</ul>
@@ -575,7 +765,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/09/04/koa-e5-b0-8f-e7-9f-a5-e8-af-86/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/09/06/e7-ac-ac-e4-b8-80-e4-bb-bd-e5-b7-a5-e4-bd-9c-e5-8f-8d-e6-80-9d/">展开全文 >></a>
         </p>
       
 
@@ -605,204 +795,65 @@
 
 
   
-    <article id="post-koa-bodyparser-e4-b8-ad-e9-97-b4-e4-bb-b6-e7-9a-84-e4-bd-bf-e7-94-a8" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-e3-80-90-e6-90-ac-e5-ae-b6-e4-ba-8c-e3-80-91-wordpress-e6-90-acgithubhexo" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/04/koa-bodyparser-e4-b8-ad-e9-97-b4-e4-bb-b6-e7-9a-84-e4-bd-bf-e7-94-a8/">koa-bodyparser中间件的使用[未完]</a>
+      <a class="article-title" href="/2019/09/06/e3-80-90-e6-90-ac-e5-ae-b6-e4-ba-8c-e3-80-91-wordpress-e6-90-acgithubhexo/">【搬家二】--wordpress搬github+hexo[又：github+hexo建站]</a>
     </h1>
   
 
         
-        <a href="/2019/09/04/koa-bodyparser-e4-b8-ad-e9-97-b4-e4-bb-b6-e7-9a-84-e4-bd-bf-e7-94-a8/" class="archive-article-date">
-  	<time datetime="2019-09-04T05:44:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-04</time>
+        <a href="/2019/09/06/e3-80-90-e6-90-ac-e5-ae-b6-e4-ba-8c-e3-80-91-wordpress-e6-90-acgithubhexo/" class="archive-article-date">
+  	<time datetime="2019-09-06T08:09:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-06</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
-      
-        <p>可以自己写代码解析post请求，例如酱样儿</p>
-<p><img src="http://yumud.com/wp-content/uploads/2019/09/image.png" alt></p>
-<p><img src="http://yumud.com/wp-content/uploads/2019/09/image-1.png" alt></p>
-<p>文件夹根目录下新建index.js</p>
-<p>也可以使用koa-bodyparser这个中间件，一个造好的轮子=&gt;</p>
-<p>koa-bodyparser可以把koa2上下文的formData数据解析到ctx.request.body中,来看一下代码</p>
-<p>先安装 npm install –save koa-bodyparser@3</p>
-<p><a href="https://blog.csdn.net/zhouzy539/article/details/97247916" target="_blank" rel="noopener">https://blog.csdn.net/zhouzy539/article/details/97247916</a>（npm install, npm install –save, npm install –save-dev的区别）</p>
-<p>等一下，看一下视频，看文档没懂</p>
+     
 
-      
+	
+		<p>三个月服务器快到期了hh，之前冲动消费买了一年的，啥也没干，一年过去了，这次三个月满满当当，过得可真快啊</p>
+<p>搬家搬家</p>
+<p><strong>1.创建仓库</strong></p>
+<p>在github里创建一个<strong>username.github.io</strong>的仓库 [<strong>username</strong>就是你github的用户名]，创建完，就可以通过<strong>username.github.io</strong> 访问你的网站了</p>
+<p><strong>2.绑定域名</strong>[你开心就绑定]</p>
+<p>买域名，备案，解析，添加</p>
+<p><img src="http://yumud.com/wp-content/uploads/2019/09/image-10-1024x180.png" alt></p>
+<p>ip，就是你在自己电脑上ping一下username.github.io，get!</p>
+<p>然后在github中那个项目下新建一个CNAME的文件(无后缀),里面写你的域名。</p>
+<p><strong>3.配置SSH key</strong>[差不多就这样，看不懂百度]</p>
+<pre><code>ssh-keygen -t rsa -C &quot;邮件地址&quot;
+在本机生成一个.ssh\id_rsa.pub文件，把里面的东西复制到github设置中,SSH and GPG keys 添加即可。</code></pre><p><strong>4.测试是否成功</strong></p>
+<p>ssh -T <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a></p>
+<p>就是输入这个，一个字母也别改=&gt;</p>
+<p><img src="http://yumud.com/wp-content/uploads/2019/09/image-11.png" alt></p>
+<p>成功</p>
+<p>-------------------------------------- 开始搞hexo ————————————–</p>
+<p>安装 <strong>npm install -g hexo</strong></p>
+<p>认真新建一个文件夹，初始化 <strong>hexo init</strong></p>
+<p><strong>hexo g</strong> //生成</p>
+<p><strong>hexo s</strong> //启动服务</p>
+<p>原始主题不好看，可以去官网看一下 <a href="https://hexo.io/themes/" target="_blank" rel="noopener">https://hexo.io/themes/</a></p>
+<p>改成你新下载的主题:</p>
+<p>修改<code>_config.yml</code>中的<code>theme: landscape</code>改为<code>theme: 新主题名</code>，然后重新执行<code>hexo g</code>来重新生成。</p>
+<p>-------------------------------------- 上传到github————————————–</p>
+<p>修改_config.xml</p>
+<p><img src="http://yumud.com/wp-content/uploads/2019/09/image-12.png" alt></p>
+<p>deploy这部分，记得改成你自己的名字</p>
+<p>git bash中直接执行hexo d，</p>
+<p>如果报错，在git bash中执行 <strong>npm install hexo-deployer-git –save</strong>，然后hexo d</p>
+<p>——到此建站结束，要开始写文章了，不过我直接把我wordpress的导出，搞过来的</p>
+<p>迁移</p>
+<p>安装插件 <strong>npm install hexo-migrator-wordpress –save</strong></p>
+<p>在wordpress仪表盘中导出数据，<strong>hexo migrate wordpress</strong> source为导出的文件路径———</p>
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/koa//" class="article-tag-list-link color4">koa</a>
-        		</li>
-      		
-		</ul>
-	</div>
+	
 
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/09/04/koa-bodyparser-e4-b8-ad-e9-97-b4-e4-bb-b6-e7-9a-84-e4-bd-bf-e7-94-a8/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-egg-mysql" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/30/egg-mysql/">egg-mysql</a>
-    </h1>
-  
-
-        
-        <a href="/2019/08/30/egg-mysql/" class="archive-article-date">
-  	<time datetime="2019-08-30T06:48:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>首先，安装与配置</p>
-<p>npm install egg-mysql</p>
-<p><img src="http://yumud.com/wp-content/uploads/2019/08/image-60.png" alt></p>
-<p>config/plugin.js</p>
-<p>然后在config/config.default.js里面按照下图添加一下，password是连接mysql的密码（注意数据库的版本，版本过低可能报错==&gt;报这个” Client does not support authentication protocol requested by server; consider upgrading MySQL client（客户端不支持服务器请求的身份验证协议；请考虑升级MySQL客户端） “====&gt;升级mysql(即重装哈哈哈哈哈)）</p>
-<p><img src="http://yumud.com/wp-content/uploads/2019/08/image-61.png" alt></p>
-<p>config/config.default.js</p>
-<p>然后简单的操作一下</p>
-<p>在app/controller下新建一个suibian.js，查询test1表中的所有数据</p>
-<p>‘use strict’;<br>const Controller = require(‘egg’).Controller;<br>class HomeController extends Controller { async index() { const result=<strong>await this.app.mysql.query(“select * from test1”);</strong> this.ctx.body=result; }}<br>module.exports = HomeController;  </p>
-<p>如果你没出错，就完成了，其他的操作语句，去官方文档看一下，报错一般是mysql版本问题</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/嗨-egg//" class="article-tag-list-link color1">嗨~egg</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/30/egg-mysql/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-e5-88-ab-e4-ba-ba-e7-9a-84-e8-8a-9d-e5-a3-ab" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/29/e5-88-ab-e4-ba-ba-e7-9a-84-e8-8a-9d-e5-a3-ab/">别人的芝士~</a>
-    </h1>
-  
-
-        
-        <a href="/2019/08/29/e5-88-ab-e4-ba-ba-e7-9a-84-e8-8a-9d-e5-a3-ab/" class="archive-article-date">
-  	<time datetime="2019-08-29T10:23:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>1.get和post的区别</p>
-<p><a href="https://www.cnblogs.com/logsharing/p/8448446.html" target="_blank" rel="noopener">https://www.cnblogs.com/logsharing/p/8448446.html</a></p>
-<p><img src="http://yumud.com/wp-content/uploads/2019/08/image-59.png" alt></p>
-<p>提取的重点</p>
-<p>2.egg连接数据库报错：Client does not support authentication protocol requested by server; consider upgrading MySQL client（客户端不支持服务器请求的身份验证协议；请考虑升级MySQL客户端）</p>
-<p>（我的错误显示在页面中为insert等操作未定义）</p>
-<p>升级数据库===&gt;重装哈哈哈哈哈</p>
-<p>3.正则 <a href="https://www.cnblogs.com/minz/p/5975444.html" target="_blank" rel="noopener">https://www.cnblogs.com/minz/p/5975444.html</a></p>
-
-      
-
-      
     </div>
     <div class="article-info article-info-index">
       
@@ -815,10 +866,6 @@
         		<li class="article-tag-list-item">
         			<a href="/categories/芝士就是力量！//" class="article-tag-list-link color3">芝士就是力量！</a>
         		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/芝士就是力量！/面试//" class="article-tag-list-link color3">面试</a>
-        		</li>
       		
 		</ul>
 	</div>
@@ -826,7 +873,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/29/e5-88-ab-e4-ba-ba-e7-9a-84-e8-8a-9d-e5-a3-ab/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/09/06/e3-80-90-e6-90-ac-e5-ae-b6-e4-ba-8c-e3-80-91-wordpress-e6-90-acgithubhexo/">展开全文 >></a>
         </p>
       
 
@@ -856,46 +903,39 @@
 
 
   
-    <article id="post-egg-cant-find-viewengine-for" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-e8-b6-85-e5-b0-8f-e7-9a-84demo" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/27/egg-cant-find-viewengine-for/">egg --Can&#39;t find viewEngine for ****</a>
+      <a class="article-title" href="/2019/09/06/e8-b6-85-e5-b0-8f-e7-9a-84demo/">一些点子</a>
     </h1>
   
 
         
-        <a href="/2019/08/27/egg-cant-find-viewengine-for/" class="archive-article-date">
-  	<time datetime="2019-08-27T06:38:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-27</time>
+        <a href="/2019/09/06/e8-b6-85-e5-b0-8f-e7-9a-84demo/" class="archive-article-date">
+  	<time datetime="2019-09-06T07:52:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-06</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
-      
-        <p>关于在egg中使用view，报错“can’t find viewEngine for ***”</p>
-<p>的修改方法</p>
-<p>参考文档：<a href="https://www.npmjs.com/package/egg-view" target="_blank" rel="noopener">https://www.npmjs.com/package/egg-view</a></p>
-<p>npm install egg-view-ejs –save</p>
-<p>然后修改config文件夹下的这两个js文件</p>
-<p><img src="http://yumud.com/wp-content/uploads/2019/08/image-54.png" alt></p>
-<p>config/plugin.js</p>
-<p><img src="http://yumud.com/wp-content/uploads/2019/08/image-55.png" alt></p>
-<p>config/config.default.js<br>————————————————-分割线——————————————————分割线————————————————————————–</p>
-<p>我的具体操作，截图，画圈</p>
-<p><img src="http://yumud.com/wp-content/uploads/2019/08/image-56.png" alt></p>
-<p>app/view/home/home.ejs  </p>
-<p>这里也可以链接前端的css，js文件，如下图，改成你自己的链接即可。</p>
-<p><img src="http://yumud.com/wp-content/uploads/2019/08/image-58.png" alt></p>
-<p><img src="http://yumud.com/wp-content/uploads/2019/08/image-57.png" alt></p>
-<p>app/controller/home.js</p>
+     
 
-      
+	
+		<p><a href="http://yumud.com/2019/09/05/%E6%94%BE%E5%9C%A8demo%E9%87%8C%E9%9D%A2/" target="_blank" rel="noopener">[校内互助小程序]</a></p>
+<p><a href="http://yumud.com/2019/09/07/cc%E5%8D%A1%E8%B7%AF%E9%87%8C-%E8%80%B6/" target="_blank" rel="noopener">[CC卡路里]优化</a></p>
+<p>[外出安全]</p>
+<p>这个还没的雏形，真的只是一个点子，起因是入职的那个周末搬家，半夜打车搬行李过来，自己一个人真的很害怕，尤其是当司机很吓人，有什么奇怪的举动的时候，手机电量低的吓人，充电宝在后备箱的行李箱里，又不敢挂断和朋友的电话，当时觉得，完了，心脏病复发的感觉，心跳好快，一直在电话里重复，“你在门口等我，我快到了”，手都在抖，并没有人在等我。</p>
+<p>然后就在那么害怕的时候，我竟然在想，做一个可以安全互助的软件，你发布紧急求助，然后别人接受，在特定的地方等你(或者直接在打车路途中等你，加入路程)，更为安全的是在你打车的之前，就和你一起，然后陪你一起到达目的地。</p>
+<p>但是女生接受这种任务可能性不大，男生你又害怕不安全，而且酬劳设置很高，不然相对时间来说，这种任务并不值得去做。</p>
+<p>或者直接报警，显然报警并不适合这种情况，你并不能在你主观觉得危险的时候就报警，得到回应的几率很小。</p>
+<p>安全啊，安全真的重要，每个人都很重要，但每个人得到的安全保障不一样，就假如我在杭州出了意外，我在北京的朋友和我对了暗号，即使知道我出事了，她也并不能立即赶过来，而且赶过来真的有用吗，她知道我出事的地点也微乎其微，只是知道，只是在平安的时候放心罢了…</p>
 
-      
+	
+
     </div>
     <div class="article-info article-info-index">
       
@@ -906,7 +946,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/嗨-egg//" class="article-tag-list-link color1">嗨~egg</a>
+        			<a href="/categories/Demo//" class="article-tag-list-link color5">Demo</a>
         		</li>
       		
 		</ul>
@@ -915,117 +955,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/27/egg-cant-find-viewengine-for/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-egg-e5-82-bb-e8-9b-8b-e7-9a-84get-post-e4-bb-a5-e5-8f-8apost-e8-b7-a8-e5-9f-9f-e9-97-ae-e9-a2-98" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/26/egg-e5-82-bb-e8-9b-8b-e7-9a-84get-post-e4-bb-a5-e5-8f-8apost-e8-b7-a8-e5-9f-9f-e9-97-ae-e9-a2-98/">egg-get post 以及post跨域问题</a>
-    </h1>
-  
-
-        
-        <a href="/2019/08/26/egg-e5-82-bb-e8-9b-8b-e7-9a-84get-post-e4-bb-a5-e5-8f-8apost-e8-b7-a8-e5-9f-9f-e9-97-ae-e9-a2-98/" class="archive-article-date">
-  	<time datetime="2019-08-26T06:49:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>一、get请求 *gg为get，pp为post</p>
-<p>代码截图：</p>
-<p><img src="http://yumud.com/wp-content/uploads/2019/08/image-42.png" alt></p>
-<p>app/router.js</p>
-<p><img src="http://yumud.com/wp-content/uploads/2019/08/image-43.png" alt></p>
-<p>app/controller/gg.js</p>
-<p>使用postman，输入地址，send即可，得到数据就是成功了，鼓掌！</p>
-<p><img src="http://yumud.com/wp-content/uploads/2019/08/image-44.png" alt></p>
-<p>成功截图！</p>
-<p>二、post请求</p>
-<p>也是截图：</p>
-<p><img src="http://yumud.com/wp-content/uploads/2019/08/image-45.png" alt></p>
-<p>app/router.js</p>
-<p><img src="http://yumud.com/wp-content/uploads/2019/08/image-46.png" alt></p>
-<p>app/controller/pp.js</p>
-<p><img src="http://yumud.com/wp-content/uploads/2019/08/image-47.png" alt></p>
-<p>成功截图！</p>
-<p>但是你没有成功截图，hh 使用egg调用POST请求时，浏览器会触发405报错</p>
-<p>需要使用egg-cors插件</p>
-<p>npm i egg-cors –save</p>
-<p>设置config/config.default.js</p>
-<p><img src="http://yumud.com/wp-content/uploads/2019/08/image-52.png" alt></p>
-<p>里面的链接写你自己的hh</p>
-<p>设置config/plugin.js</p>
-<p><img src="http://yumud.com/wp-content/uploads/2019/08/image-53.png" alt></p>
-<p>酱样子</p>
-<p>就可以成功了-_-</p>
-<p>三、jsonp请求</p>
-<p><img src="http://yumud.com/wp-content/uploads/2019/08/image-48.png" alt></p>
-<p>app/router.js</p>
-<p><img src="http://yumud.com/wp-content/uploads/2019/08/image-50.png" alt></p>
-<p>app/demo/count.json</p>
-<p><img src="http://yumud.com/wp-content/uploads/2019/08/image-51.png" alt></p>
-<p>app/controller/demo.js</p>
-<p><img src="http://yumud.com/wp-content/uploads/2019/08/image-49.png" alt></p>
-<p>成功~</p>
-<p>参考文章： <a href="https://www.jianshu.com/p/45c9cb7c4a54" target="_blank" rel="noopener">https://www.jianshu.com/p/45c9cb7c4a54</a> 上面更为详细。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/嗨-egg//" class="article-tag-list-link color1">嗨~egg</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/26/egg-e5-82-bb-e8-9b-8b-e7-9a-84get-post-e4-bb-a5-e5-8f-8apost-e8-b7-a8-e5-9f-9f-e9-97-ae-e9-a2-98/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/09/06/e8-b6-85-e5-b0-8f-e7-9a-84demo/">展开全文 >></a>
         </p>
       
 
@@ -1057,7 +987,7 @@
   
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 
@@ -1090,7 +1020,7 @@
 		toc_hide_index: true,
 		root: "/",
 		innerArchive: true,
-		showTags: false
+		showTags: true
 	}
 </script>
 
@@ -1123,7 +1053,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">搜索一下</a></li>
       
         
       
@@ -1131,7 +1061,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
       
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于</a></li>
       
         
     </ul>
