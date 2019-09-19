@@ -8,20 +8,21 @@
   <link rel="dns-prefetch" href>
   <title>【搬家二】--wordpress搬github+hexo[又：github+hexo建站] | yumud</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="三个月服务器快到期了hh，之前冲动消费买了一年的，啥也没干，一年过去了，这次三个月满满当当，过得可真快啊 搬家搬家 1.创建仓库 在github里创建一个username.github.io的仓库 [username就是你github的用户名]，创建完，就可以通过username.github.io 访问你的网站了 2.绑定域名[你开心就绑定] 买域名，备案，解析，添加  ip，就是你在自己电脑上">
+  <meta name="description" content="三个月服务器快到期了hh，之前冲动消费买了一年的，啥也没干，一年过去了，这次三个月满满当当，过得可真快啊 搬家搬家 1.创建仓库">
+<meta name="keywords" content="芝士~">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【搬家二】--wordpress搬github+hexo[又：github+hexo建站]">
 <meta property="og:url" content="/2019/09/06/e3-80-90-e6-90-ac-e5-ae-b6-e4-ba-8c-e3-80-91-wordpress-e6-90-acgithubhexo/index.html">
 <meta property="og:site_name" content="yumud">
-<meta property="og:description" content="三个月服务器快到期了hh，之前冲动消费买了一年的，啥也没干，一年过去了，这次三个月满满当当，过得可真快啊 搬家搬家 1.创建仓库 在github里创建一个username.github.io的仓库 [username就是你github的用户名]，创建完，就可以通过username.github.io 访问你的网站了 2.绑定域名[你开心就绑定] 买域名，备案，解析，添加  ip，就是你在自己电脑上">
+<meta property="og:description" content="三个月服务器快到期了hh，之前冲动消费买了一年的，啥也没干，一年过去了，这次三个月满满当当，过得可真快啊 搬家搬家 1.创建仓库">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yumud.com/wp-content/uploads/2019/09/image-10-1024x180.png">
 <meta property="og:image" content="http://yumud.com/wp-content/uploads/2019/09/image-11.png">
 <meta property="og:image" content="http://yumud.com/wp-content/uploads/2019/09/image-12.png">
-<meta property="og:updated_time" content="2019-09-09T12:06:28.234Z">
+<meta property="og:updated_time" content="2019-09-19T08:23:44.414Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【搬家二】--wordpress搬github+hexo[又：github+hexo建站]">
-<meta name="twitter:description" content="三个月服务器快到期了hh，之前冲动消费买了一年的，啥也没干，一年过去了，这次三个月满满当当，过得可真快啊 搬家搬家 1.创建仓库 在github里创建一个username.github.io的仓库 [username就是你github的用户名]，创建完，就可以通过username.github.io 访问你的网站了 2.绑定域名[你开心就绑定] 买域名，备案，解析，添加  ip，就是你在自己电脑上">
+<meta name="twitter:description" content="三个月服务器快到期了hh，之前冲动消费买了一年的，啥也没干，一年过去了，这次三个月满满当当，过得可真快啊 搬家搬家 1.创建仓库">
 <meta name="twitter:image" content="http://yumud.com/wp-content/uploads/2019/09/image-10-1024x180.png">
   
     <link rel="alternative" href="/atom.xml" title="yumud" type="application/atom+xml">
@@ -184,6 +185,7 @@
 		<p>三个月服务器快到期了hh，之前冲动消费买了一年的，啥也没干，一年过去了，这次三个月满满当当，过得可真快啊</p>
 <p>搬家搬家</p>
 <p><strong>1.创建仓库</strong></p>
+<a id="more"></a>
 <p>在github里创建一个<strong>username.github.io</strong>的仓库 [<strong>username</strong>就是你github的用户名]，创建完，就可以通过<strong>username.github.io</strong> 访问你的网站了</p>
 <p><strong>2.绑定域名</strong>[你开心就绑定]</p>
 <p>买域名，备案，解析，添加</p>
@@ -212,9 +214,13 @@
 <p>git bash中直接执行hexo d，</p>
 <p>如果报错，在git bash中执行 <strong>npm install hexo-deployer-git –save</strong>，然后hexo d</p>
 <p>——到此建站结束，要开始写文章了，不过我直接把我wordpress的导出，搞过来的</p>
-<p>迁移</p>
+<p><strong>迁移</strong></p>
 <p>安装插件 <strong>npm install hexo-migrator-wordpress –save</strong></p>
 <p>在wordpress仪表盘中导出数据，<strong>hexo migrate wordpress</strong> source为导出的文件路径———</p>
+<p>在hexo<strong>新建</strong>写文章</p>
+<p>hexo new <title> title为文章标题</title></p>
+<p>新建的文件在/source/_posts路径下。双击打开编辑即可。（文件格式为.md）</p>
+<p>很烦，我刚注意到，我的文件是都导过去了，可是<strong>图片</strong>地址是服务器下的，那我搬的这个家，差点儿落一半…=&gt;wp-content/uploads下的图片打个包拿出来，然后，然后只能在本地一张一张的换了…所以说这个github+hexo搭网站有好有坏吧，不如云+wordpress比较方便，可以随时写两篇文章，但是免费，这一点就很优秀了…</p>
 
 	
 
@@ -222,6 +228,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">芝士~</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
@@ -461,7 +478,43 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+                <a href="javascript:void(0)" class="js-tag color4">es6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Demo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">芝士~</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">-node -js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">egg</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">koa</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">node</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">get一个硬币</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">小程序！小程序！</a>
               </li>
             
             <div class="clearfix"></div>

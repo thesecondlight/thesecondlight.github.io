@@ -9,6 +9,7 @@
   <title>egg-mysql | yumud</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="首先，安装与配置 npm install egg-mysql  config/plugin.js 然后在config/config.default.js里面按照下图添加一下，password是连接mysql的密码（注意数据库的版本，版本过低可能报错==&amp;gt;报这个” Client does not support authentication protocol requested by serv">
+<meta name="keywords" content="egg">
 <meta property="og:type" content="article">
 <meta property="og:title" content="egg-mysql">
 <meta property="og:url" content="/2019/08/30/egg-mysql/index.html">
@@ -17,7 +18,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yumud.com/wp-content/uploads/2019/08/image-60.png">
 <meta property="og:image" content="http://yumud.com/wp-content/uploads/2019/08/image-61.png">
-<meta property="og:updated_time" content="2019-09-09T12:06:28.234Z">
+<meta property="og:updated_time" content="2019-09-19T08:21:44.478Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="egg-mysql">
 <meta name="twitter:description" content="首先，安装与配置 npm install egg-mysql  config/plugin.js 然后在config/config.default.js里面按照下图添加一下，password是连接mysql的密码（注意数据库的版本，版本过低可能报错==&amp;gt;报这个” Client does not support authentication protocol requested by serv">
@@ -191,6 +192,8 @@
 <p>在app/controller下新建一个suibian.js，查询test1表中的所有数据</p>
 <p>‘use strict’;<br>const Controller = require(‘egg’).Controller;<br>class HomeController extends Controller { async index() { const result=<strong>await this.app.mysql.query(“select * from test1”);</strong> this.ctx.body=result; }}<br>module.exports = HomeController;  </p>
 <p>如果你没出错，就完成了，其他的操作语句，去官方文档看一下，报错一般是mysql版本问题</p>
+<p>#注意mysql配置那里是否正确，语句是否出现错误，流程没错，注意router。</p>
+<p>github地址：<a href="https://github.com/thesecondlight/egg_mysql" target="_blank" rel="noopener">https://github.com/thesecondlight/egg_mysql</a> 注册登录</p>
 
 	
 
@@ -198,6 +201,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">egg</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
@@ -437,7 +451,43 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+                <a href="javascript:void(0)" class="js-tag color4">es6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Demo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">芝士~</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">-node -js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">egg</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">koa</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">node</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">get一个硬币</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">小程序！小程序！</a>
               </li>
             
             <div class="clearfix"></div>
