@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="/"/>
-  <updated>2019-09-19T08:21:33.126Z</updated>
+  <updated>2019-09-21T06:42:47.009Z</updated>
   <id>/</id>
   
   <author>
@@ -15,6 +15,21 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>leaver</title>
+    <link href="/2019/09/21/leaver/"/>
+    <id>/2019/09/21/leaver/</id>
+    <published>2019-09-21T06:42:46.000Z</published>
+    <updated>2019-09-21T06:42:47.009Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>egg单元测试</title>
@@ -479,31 +494,6 @@
     
     
       <category term="芝士~" scheme="/tags/%E8%8A%9D%E5%A3%AB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>一些点子</title>
-    <link href="/2019/09/06/e8-b6-85-e5-b0-8f-e7-9a-84demo/"/>
-    <id>/2019/09/06/e8-b6-85-e5-b0-8f-e7-9a-84demo/</id>
-    <published>2019-09-06T07:52:57.000Z</published>
-    <updated>2019-09-19T07:49:20.199Z</updated>
-    
-    <content type="html"><![CDATA[<p><a href="http://yumud.com/2019/09/05/%E6%94%BE%E5%9C%A8demo%E9%87%8C%E9%9D%A2/" target="_blank" rel="noopener">[校内互助小程序]</a></p><p><a href="http://yumud.com/2019/09/07/cc%E5%8D%A1%E8%B7%AF%E9%87%8C-%E8%80%B6/" target="_blank" rel="noopener">[CC卡路里]优化</a></p><p>[外出安全]</p><p>这个还没的雏形，真的只是一个点子，起因是入职的那个周末搬家，半夜打车搬行李过来，自己一个人真的很害怕，尤其是当司机很吓人，有什么奇怪的举动的时候，手机电量低的吓人，充电宝在后备箱的行李箱里，又不敢挂断和朋友的电话，当时觉得，完了，心脏病复发的感觉，心跳好快，一直在电话里重复，“你在门口等我，我快到了”，手都在抖，并没有人在等我。</p><p>然后就在那么害怕的时候，我竟然在想，做一个可以安全互助的软件，你发布紧急求助，然后别人接受，在特定的地方等你(或者直接在打车路途中等你，加入路程)，更为安全的是在你打车的之前，就和你一起，然后陪你一起到达目的地。</p><p>但是女生接受这种任务可能性不大，男生你又害怕不安全，而且酬劳设置很高，不然相对时间来说，这种任务并不值得去做。</p><p>或者直接报警，显然报警并不适合这种情况，你并不能在你主观觉得危险的时候就报警，得到回应的几率很小。</p><p>安全啊，安全真的重要，每个人都很重要，但每个人得到的安全保障不一样，就假如我在杭州出了意外，我在北京的朋友和我对了暗号，即使知道我出事了，她也并不能立即赶过来，而且赶过来真的有用吗，她知道我出事的地点也微乎其微，只是知道，只是在平安的时候放心罢了…</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;a href=&quot;http://yumud.com/2019/09/05/%E6%94%BE%E5%9C%A8demo%E9%87%8C%E9%9D%A2/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;[校内互助小程序]&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a hr
-      
-    
-    </summary>
-    
-    
-      <category term="Demo" scheme="/categories/Demo/"/>
-    
     
   </entry>
   
