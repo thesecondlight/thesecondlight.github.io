@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href>
   <title>wordpress 在首页不显示某些分类下的文章 | Yumuのblog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在主题下的functions.php里面添加这一段代码，好评！ 路径=&amp;gt;xampp/htdocs/wp-content/themes/你使用的主题/function.php function exclude_category_home( $query ) { if ( $query-&amp;gt;is_home ) { $query-&amp;gt;set( ‘cat’, ‘-4,-8‘ ); //你要排">
+  <meta name="description" content="在主题下的functions.php里面添加这一段代码，好评！ 路径=&amp;gt;xampp/htdocs/wp-content/themes/你使用的主题/function.php function exclude_category_home( $query ) {">
 <meta name="keywords" content="芝士~">
 <meta property="og:type" content="article">
 <meta property="og:title" content="wordpress 在首页不显示某些分类下的文章">
 <meta property="og:url" content="/2019/09/11/wordpress-e5-9c-a8-e9-a6-96-e9-a1-b5-e4-b8-8d-e6-98-be-e7-a4-ba-e6-9f-90-e4-ba-9b-e5-88-86-e7-b1-bb-e4-b8-8b-e7-9a-84-e6-96-87-e7-ab-a0/index.html">
 <meta property="og:site_name" content="Yumuのblog">
-<meta property="og:description" content="在主题下的functions.php里面添加这一段代码，好评！ 路径=&amp;gt;xampp/htdocs/wp-content/themes/你使用的主题/function.php function exclude_category_home( $query ) { if ( $query-&amp;gt;is_home ) { $query-&amp;gt;set( ‘cat’, ‘-4,-8‘ ); //你要排">
+<meta property="og:description" content="在主题下的functions.php里面添加这一段代码，好评！ 路径=&amp;gt;xampp/htdocs/wp-content/themes/你使用的主题/function.php function exclude_category_home( $query ) {">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-19T08:26:46.519Z">
+<meta property="og:updated_time" content="2019-09-24T06:37:59.033Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="wordpress 在首页不显示某些分类下的文章">
-<meta name="twitter:description" content="在主题下的functions.php里面添加这一段代码，好评！ 路径=&amp;gt;xampp/htdocs/wp-content/themes/你使用的主题/function.php function exclude_category_home( $query ) { if ( $query-&amp;gt;is_home ) { $query-&amp;gt;set( ‘cat’, ‘-4,-8‘ ); //你要排">
+<meta name="twitter:description" content="在主题下的functions.php里面添加这一段代码，好评！ 路径=&amp;gt;xampp/htdocs/wp-content/themes/你使用的主题/function.php function exclude_category_home( $query ) {">
   
     <link rel="alternative" href="/atom.xml" title="Yumuのblog" type="application/atom+xml">
   
@@ -215,6 +215,7 @@
 		<p>在主题下的functions.php里面添加这一段代码，好评！</p>
 <p><strong>路径=&gt;xampp/htdocs/wp-content/themes/你使用的主题/function.php</strong></p>
 <p>function exclude_category_home( $query ) {</p>
+<a id="more"></a>
 <p>if ( $query-&gt;is_home ) {</p>
 <p>$query-&gt;set( ‘cat’, ‘<strong>-4,-8</strong>‘ ); //你要排除的分类ID,就是带-号</p>
 <p>}</p>

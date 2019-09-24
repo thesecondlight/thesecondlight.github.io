@@ -1160,17 +1160,9 @@
     <div class="article-entry" itemprop="articleBody">
      
 
-	
-		<p>在主题下的functions.php里面添加这一段代码，好评！</p>
+			<p>在主题下的functions.php里面添加这一段代码，好评！</p>
 <p><strong>路径=&gt;xampp/htdocs/wp-content/themes/你使用的主题/function.php</strong></p>
 <p>function exclude_category_home( $query ) {</p>
-<p>if ( $query-&gt;is_home ) {</p>
-<p>$query-&gt;set( ‘cat’, ‘<strong>-4,-8</strong>‘ ); //你要排除的分类ID,就是带-号</p>
-<p>}</p>
-<p>return $query;</p>
-<p>}</p>
-<p>add_filter( ‘pre_get_posts’, ‘exclude_category_home’ );</p>
-
 	
 
     </div>
