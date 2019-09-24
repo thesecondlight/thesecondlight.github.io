@@ -72,7 +72,7 @@
     <link href="/2019/09/16/hexo-e6-b7-bb-e5-8a-a0valine-e8-af-84-e8-ae-ba/"/>
     <id>/2019/09/16/hexo-e6-b7-bb-e5-8a-a0valine-e8-af-84-e8-ae-ba/</id>
     <published>2019-09-16T02:02:00.000Z</published>
-    <updated>2019-09-24T03:24:42.617Z</updated>
+    <updated>2019-09-24T06:24:27.758Z</updated>
     
     <content type="html"><![CDATA[<p>首先在<a href="https://leancloud.cn/dashboard/login.html#/signin" target="_blank" rel="noopener">leancloud</a>中注册，创建一个新应用，在设置=&gt;应用key中查看appid和appkey，</p><p>在设置=&gt;安全中心 把博客地址添加到安全中心，保证数据调用的安全性。</p><a id="more"></a><p>在主题中(eg：我的是yilia主题) \themes\yilia\_config.yml 中添加</p><pre><code>valine:  enable: true appid: gG1wfFA4yGQarTbT4EB44wR2-gzGzoHsz appkey: SvnF4k7cxYtmz1HDwaJe0Lzq verify: false #验证码 notify: true #评论回复提醒 avatar: robohash #一种具有不同颜色、面部等的机器人 placeholder: 小姐姐，讲话呀 pageSize: 10 guest_info: nick,mails </code></pre><p>在 \themes\yilia\layout_partial\post中新建一个valine.ejs</p><pre><code>&lt;div id=&quot;vcomment&quot; class=&quot;comment&quot;&gt;&lt;/div&gt; &lt;script src=&quot;//cdn1.lncld.net/static/js/3.0.4/av-min.js&quot;&gt;&lt;/script&gt;&lt;script src=&quot;//unpkg.com/valine/dist/Valine.min.js&quot;&gt;&lt;/script&gt;&lt;script&gt;   var notify = &apos;&lt;%= theme.valine.notify %&gt;&apos; == true ? true : false;   var verify = &apos;&lt;%= theme.valine.verify %&gt;&apos; == true ? true : false;    window.onload = function() {        new Valine({            el: &apos;.comment&apos;,            notify: notify,            verify: verify,            app_id: &quot;&lt;%= theme.valine.appid %&gt;&quot;,            app_key: &quot;&lt;%= theme.valine.appkey %&gt;&quot;,            placeholder: &quot;&lt;%= theme.valine.placeholder %&gt;&quot;,            avatar:&quot;&lt;%= theme.valine.avatar %&gt;&quot;        });    }&lt;/script&gt;</code></pre><p>添加评论头像：</p><p>非自定义头像默认值</p><p><img src="http://py4ipzxfn.bkt.clouddn.com/image-9-30.png" alt></p><p>想要自定义，就去Gravatar注册登录，上传，使用自己的图片</p>]]></content>
     
@@ -86,6 +86,8 @@
     
       <category term="芝士就是力量！" scheme="/categories/%E8%8A%9D%E5%A3%AB%E5%B0%B1%E6%98%AF%E5%8A%9B%E9%87%8F%EF%BC%81/"/>
     
+    
+      <category term="芝士~" scheme="/tags/%E8%8A%9D%E5%A3%AB/"/>
     
   </entry>
   
@@ -348,7 +350,7 @@
     <link href="/2019/09/07/e5-86-92-e6-b3-a1-e6-8e-92-e5-ba-8f/"/>
     <id>/2019/09/07/e5-86-92-e6-b3-a1-e6-8e-92-e5-ba-8f/</id>
     <published>2019-09-07T10:21:50.000Z</published>
-    <updated>2019-09-24T02:44:58.726Z</updated>
+    <updated>2019-09-24T06:28:06.205Z</updated>
     
     <content type="html"><![CDATA[<p>从最基础的冒泡排序开始。</p><p>[等一下，回家写]–废话.jpg</p><a id="more"></a><p>[然而我回家也没写，我填了一下之前的坑] –废话.jpg</p><p>[然而今天也没有刷题，我躺着敲工作反思，电脑很热。确切的说，不是今天没有刷题，现在已经凌晨了] –废话.jpg</p><p>————————–正经.jpg ————————–</p><p>相邻两个数比较一下，然后小(大)放在前面，例如1852</p><p>18不需要换 1852</p><p>85=&gt;58 1582</p><p>82=&gt;28 1528(最大的已经到了最后)</p><p>152</p><p>15 不需要 152</p><p>52=&gt;25 125</p><p><strong>1258</strong>完成</p><p>就是个嵌套的for循环，然后temp中间变量，把两个值换一下。假设有n个数，就要走n-1步，第i步中需要n-i次比较</p><p>粘代码</p><p>不，我用c还是java写，同学让我学c++，那这样两个就都会了，我感觉有点不对劲，但还是先用C++写吧</p><p><img src="http://py4ipzxfn.bkt.clouddn.com/image-13.png" alt></p>]]></content>
     
@@ -363,6 +365,8 @@
       <category term="算法" scheme="/categories/%E7%AE%97%E6%B3%95/"/>
     
     
+      <category term="算法" scheme="/tags/%E7%AE%97%E6%B3%95/"/>
+    
   </entry>
   
   <entry>
@@ -370,7 +374,7 @@
     <link href="/2019/09/07/cc-e5-8d-a1-e8-b7-af-e9-87-8c-e8-80-b6/"/>
     <id>/2019/09/07/cc-e5-8d-a1-e8-b7-af-e9-87-8c-e8-80-b6/</id>
     <published>2019-09-07T06:42:35.000Z</published>
-    <updated>2019-09-24T02:39:04.130Z</updated>
+    <updated>2019-09-24T06:22:43.673Z</updated>
     
     <content type="html"><![CDATA[<p><img src="http://py4ipzxfn.bkt.clouddn.com/gh_8490c442bd64_258-1-1.jpg" alt></p><a id="more"></a><p>微信扫一扫查看，或搜索”CC卡路里”查看。</p><p>主要功能：查询食物热量，记录每日饮食，BMI身体质量测试。</p><p><strong>优化</strong>：</p><p>△加数据分析，每个月或15天，对用户记录的饮食热量进行分析=&gt;但是，没有达到记录量怎么办，目前用户不多，稳定用户更少，这样做出来的数据分析不为准=&gt;没有达到记录量，弹出“记录过少，无法生成健康账单”</p><p>△ 查询页面，很严重，部分手机左滑出现1/3空白；部分手机虽然进行左滑操作，页面不出现1/3空白，但是下方会出现横向滑动条。</p>]]></content>
     
