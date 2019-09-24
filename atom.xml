@@ -171,15 +171,14 @@
     <link href="/2019/09/11/wordpress-e5-9c-a8-e9-a6-96-e9-a1-b5-e4-b8-8d-e6-98-be-e7-a4-ba-e6-9f-90-e4-ba-9b-e5-88-86-e7-b1-bb-e4-b8-8b-e7-9a-84-e6-96-87-e7-ab-a0/"/>
     <id>/2019/09/11/wordpress-e5-9c-a8-e9-a6-96-e9-a1-b5-e4-b8-8d-e6-98-be-e7-a4-ba-e6-9f-90-e4-ba-9b-e5-88-86-e7-b1-bb-e4-b8-8b-e7-9a-84-e6-96-87-e7-ab-a0/</id>
     <published>2019-09-11T06:44:46.000Z</published>
-    <updated>2019-09-24T06:37:59.033Z</updated>
+    <updated>2019-09-24T06:40:41.697Z</updated>
     
-    <content type="html"><![CDATA[<p>在主题下的functions.php里面添加这一段代码，好评！</p><p><strong>路径=&gt;xampp/htdocs/wp-content/themes/你使用的主题/function.php</strong></p><p>function exclude_category_home( $query ) {</p><a id="more"></a><p>if ( $query-&gt;is_home ) {</p><p>$query-&gt;set( ‘cat’, ‘<strong>-4,-8</strong>‘ ); //你要排除的分类ID,就是带-号</p><p>}</p><p>return $query;</p><p>}</p><p>add_filter( ‘pre_get_posts’, ‘exclude_category_home’ );</p>]]></content>
+    <content type="html"><![CDATA[<p>在主题下的functions.php里面添加这一段代码，好评！</p><p><strong>路径=&gt;xampp/htdocs/wp-content/themes/你使用的主题/function.php</strong></p><a id="more"></a><p>function exclude_category_home( $query ) {</p><p>if ( $query-&gt;is_home ) {</p><p>$query-&gt;set( ‘cat’, ‘<strong>-4,-8</strong>‘ ); //你要排除的分类ID,就是带-号</p><p>}</p><p>return $query;</p><p>}</p><p>add_filter( ‘pre_get_posts’, ‘exclude_category_home’ );</p>]]></content>
     
     <summary type="html">
     
       &lt;p&gt;在主题下的functions.php里面添加这一段代码，好评！&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;路径=&amp;gt;xampp/htdocs/wp-content/themes/你使用的主题/function.php&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;function exclude_category_home( $query ) {&lt;/p&gt;
     
     </summary>
     
