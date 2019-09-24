@@ -510,7 +510,7 @@ sort(arr)</code></pre><p>二分法排序：</p>
 			<p>一、fs api 读取文件，同步读取文件，书写文件，同步书写文件，删除文件，同步删除文件</p>
 <p>readFile readFileSync writeFile writeFileSync unlink unlinkSync</p>
 <p>具体使用（截图）</p>
-<p><img src="http://yumud.com/wp-content/uploads/2019/08/image-36.png" alt></p>
+<p><img src="http://py4ipzxfn.bkt.clouddn.com/image-36.png" alt></p>
 	
 
     </div>
@@ -714,7 +714,7 @@ sort(arr)</code></pre><p>二分法排序：</p>
      
 
 			<p>对async/await的支持从v7.6.0开始，so</p>
-<p><img src="http://yumud.com/wp-content/uploads/2019/08/image-32.png" alt></p>
+<p><img src="http://py4ipzxfn.bkt.clouddn.com/image-32.png" alt></p>
 <p>公司是这个，我没得搞[后来搞egg，我又给升级了hhhh]</p>
 <p>跟着教程意念上来一遍–&gt;</p>
 	
@@ -809,7 +809,7 @@ sort(arr)</code></pre><p>二分法排序：</p>
 
 	
 		<p><strong>·</strong> Promise.prototype.then() *Promise实例在生成后立即执行，而then方法只有在所有同步任务执行完后才会执行</p>
-<p><img src="http://yumud.com/wp-content/uploads/2019/08/image-30.png" alt></p>
+<p><img src="http://py4ipzxfn.bkt.clouddn.com/image-29.png" alt></p>
 <p>截的别人的图 -_-差不多就是这个意思，让等待，就直接往下执行，不用等</p>
 <p><strong>·</strong>链式调用then方法（异步调用变成了很长的then链，新的解决方法Generator=&gt;语法糖async/await）</p>
 <p>关于Promise的具体内容在这里 <a href="https://segmentfault.com/a/1190000015488033" target="_blank" rel="noopener">https://segmentfault.com/a/1190000015488033</a> 的前半部分，后半部分是async/await,很nice~</p>
@@ -819,7 +819,7 @@ sort(arr)</code></pre><p>二分法排序：</p>
 <p>promise只有三种状态，未完成，完成(fulfilled)，失败(rejected)</p>
 <p>.then方法可以接受三个函数作为参数，前两个分别为fulfilled,rejected的回调函数，第三个函数用于处理进度信息（也有说接受两个函数作为参数，分别为resolved状态和rejected状态的回调函数，而这两个回调函数接受的参数分别为Promise实例中resolve函数和reject函数中的参数，+rejected状态的回调函数时可省略的）</p>
 <p>promise.all比单个来要快</p>
-<p><img src="http://yumud.com/wp-content/uploads/2019/08/image-29.png" alt></p>
+<p><img src="http://py4ipzxfn.bkt.clouddn.com/image-30.png" alt></p>
 <p>【结束–开始写Generator语法糖–开一个新的文章嘻嘻】</p>
 <p>附：链接 ***（又要换服务器了，链接又得换来换去，直接在主页搜吧，语法糖）</p>
 
@@ -1026,7 +1026,7 @@ sort(arr)</code></pre><p>二分法排序：</p>
 <p>为什么？</p>
 <p>node.js的主要应用场景为处理高并发（单位时间内加大的访问量），i/o请求密集（i/o操作往往非常耗时）的场景下。异步的关键在于解决i/o耗时问题。详情主页搜索’同步异步’。</p>
 <p>这时候就需要异步解决这个问题，callbacks 回调函数是一种，但是过多的回调会造成callback hell，一层一层一串一串的</p>
-<p><img src="http://yumud.com/wp-content/uploads/2019/08/image-35.png" alt></p>
+<p><img src="http://py4ipzxfn.bkt.clouddn.com/image-8-35.png" alt></p>
 <p>所以权衡之下Generator语法糖async/await是最好的解决方案，但是限制node版本在v7.6.0及以上，退而求其次，promise也ok！ （*去看看 这两篇文章，主页搜索即可<br>Generator-语法糖 async/await</p>
 <p><a href="http://yumud.com/2019/08/20/node%e4%b9%8bpromise/" target="_blank" rel="noopener">node之Promise</a></p>
 <p>*）</p>
@@ -1150,12 +1150,12 @@ sort(arr)</code></pre><p>二分法排序：</p>
 		<p>一、PATH</p>
 <p>1.path.normalize(path)</p>
 <p>规范化给定的path，并解析’..’ ‘.’片段</p>
-<p><img src="http://yumud.com/wp-content/uploads/2019/08/image-22.png" alt></p>
-<p><img src="http://yumud.com/wp-content/uploads/2019/08/image-23.png" alt></p>
+<p><img src="http://py4ipzxfn.bkt.clouddn.com/image-22.png" alt></p>
+<p><img src="http://py4ipzxfn.bkt.clouddn.com/image-23.png" alt></p>
 <p>2.path.join([…paths])</p>
 <p>path.join()方法使用平台特定的分隔符把全部给定的path片段连接起来，并规范化</p>
-<p><img src="http://yumud.com/wp-content/uploads/2019/08/image-24.png" alt></p>
-<p><img src="http://yumud.com/wp-content/uploads/2019/08/image-25.png" alt></p>
+<p><img src="http://py4ipzxfn.bkt.clouddn.com/image-24.png" alt></p>
+<p><img src="http://py4ipzxfn.bkt.clouddn.com/image-25.png" alt></p>
 <p>3.path.resolve([…paths])</p>
 <p>将路径解析为一个绝对路径</p>
 <p>const {resolve}=require(‘path’)</p>
@@ -1169,7 +1169,7 @@ sort(arr)</code></pre><p>二分法排序：</p>
 <p>5.path.parse,path.format</p>
 <p>path.parse()方法返回一个对象，对象的属性表示path的元素，返回的对象有一下属性：root dir base ext name</p>
 <p>path.format()返回一个路径字符串，与path.parse()相反</p>
-<p><img src="http://yumud.com/wp-content/uploads/2019/08/image-26.png" alt></p>
+<p><img src="http://py4ipzxfn.bkt.clouddn.com/image-26.png" alt></p>
 <p>截的别人的图</p>
 <p>6.sep delimiter win32 posix</p>
 <p>delimiter提供平台特定的路径分隔符</p>
@@ -1210,8 +1210,8 @@ sort(arr)</code></pre><p>二分法排序：</p>
 <p><strong>event事件机制</strong></p>
 <p>开放了一个.on函数</p>
 <p>具体使用如图</p>
-<p><img src="http://yumud.com/wp-content/uploads/2019/08/image-27.png" alt></p>
-<p><img src="http://yumud.com/wp-content/uploads/2019/08/image-28.png" alt></p>
+<p><img src="http://py4ipzxfn.bkt.clouddn.com/image-27.png" alt></p>
+<p><img src="http://py4ipzxfn.bkt.clouddn.com/image-28.png" alt></p>
 <p>删除事件ce.removeListener(事件名，具体方法)</p>
 <p>删除事件的所有方法 ce.removeAllLiateners(事件名)</p>
 <p><strong>fs：文件系统</strong></p>
@@ -1335,11 +1335,11 @@ sort(arr)</code></pre><p>二分法排序：</p>
      
 
 	
-		<p><img src="http://yumud.com/wp-content/uploads/2019/08/image-20.png" alt></p>
+		<p><img src="http://py4ipzxfn.bkt.clouddn.com/image-8-20.png" alt></p>
 <p>this的值是全局对象，在浏览器中就是windows对象</p>
 <p><strong>.call .apply方法可以改变this的值</strong></p>
 <p>.call接受参数列表，.apply接受一个参数数组</p>
-<p><img src="http://yumud.com/wp-content/uploads/2019/08/image-21.png" alt></p>
+<p><img src="http://py4ipzxfn.bkt.clouddn.com/image-8-21.png" alt></p>
 <p>prototype为子类定义属性和方法，重写和调用父类函数</p>
 
 	

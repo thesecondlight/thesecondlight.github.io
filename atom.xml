@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="/"/>
-  <updated>2019-09-19T08:21:33.126Z</updated>
+  <updated>2019-09-24T03:23:45.424Z</updated>
   <id>/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="/2019/09/19/egg-e5-8d-95-e5-85-83-e6-b5-8b-e8-af-95/"/>
     <id>/2019/09/19/egg-e5-8d-95-e5-85-83-e6-b5-8b-e8-af-95/</id>
     <published>2019-09-19T06:34:38.000Z</published>
-    <updated>2019-09-19T08:21:33.126Z</updated>
+    <updated>2019-09-24T03:23:45.424Z</updated>
     
-    <content type="html"><![CDATA[<p>github地址： <a href="https://github.com/thesecondlight/egg_mysql" target="_blank" rel="noopener">https://github.com/thesecondlight/egg_mysql</a> egg连接数据库，其中index.js是一个简单的单元测试文件。<a id="more"></a></p><p>首先在controller中新建文件index.js</p><pre><code>&apos;use strict&apos;;const Controller = require(&apos;egg&apos;).Controller;class indexController extends Controller {  async index() {    this.ctx.body = &apos;hi,egg&apos;;  }}module.exports = indexController;</code></pre><p>service中新建index.js</p><pre><code>&apos;use strict&apos;;const Service = require(&apos;egg&apos;).Service;class UserService extends Service {  async get(name) {    return name;  }}module.exports = UserService;</code></pre><p>测试文件目录test,与app文件夹同一级</p><p>test/app/controller/index.test.js （命名规则：测试文件名.test.js） 对controller层以及router层的测试</p><pre><code>&apos;use strict&apos;;const { app, assert } = require(&apos;egg-mock/bootstrap&apos;);describe(&apos;test/app/controller/index.test.js&apos;, () =&gt; {  it(&apos;should GET /&apos;, () =&gt; {    return app.httpRequest()      .get(&apos;/index&apos;)  //router访问路径      .expect(&apos;hi,egg&apos;)   //希望返回的结果      .expect(200);       //希望返回的状态  });  it(&apos;should send multi requests&apos;, async () =&gt; {    await app.httpRequest()      .get(&apos;/index&apos;)      .expect(&apos;hi,egg&apos;)      .expect(200);    const result = await app.httpRequest()      .get(&apos;/index&apos;)      .expect(200)      .expect(&apos;hi,egg&apos;);    assert(result.status === 200);  });});</code></pre><p>运行npm test</p><p><img src="http://yumud.com/wp-content/uploads/2019/09/image-31.png" alt></p><p>可能会报错，因为你router路径的不规范，访问了<strong>不存在的路径</strong>，或者<strong>无效变量</strong>的存在，看错误提示，进行相应的修改即可。</p><p>test/app/service/index.test.js</p><pre><code>&apos;use strict&apos;;const { app, assert } = require(&apos;egg-mock/bootstrap&apos;);describe(&apos;get()&apos;, () =&gt; {  it(&apos;should get exists user&apos;, async () =&gt; {    const ctx = app.mockContext();  //创建ctx    const user = await ctx.service.index.get(&apos;yumu&apos;);   //通过ctx访问到service.user    assert(user === &apos;yumu&apos;);  });});</code></pre><p>运行npm test</p><p><img src="http://yumud.com/wp-content/uploads/2019/09/image-32.png" alt></p>]]></content>
+    <content type="html"><![CDATA[<p>github地址： <a href="https://github.com/thesecondlight/egg_mysql" target="_blank" rel="noopener">https://github.com/thesecondlight/egg_mysql</a> egg连接数据库，其中index.js是一个简单的单元测试文件。<a id="more"></a></p><p>首先在controller中新建文件index.js</p><pre><code>&apos;use strict&apos;;const Controller = require(&apos;egg&apos;).Controller;class indexController extends Controller {  async index() {    this.ctx.body = &apos;hi,egg&apos;;  }}module.exports = indexController;</code></pre><p>service中新建index.js</p><pre><code>&apos;use strict&apos;;const Service = require(&apos;egg&apos;).Service;class UserService extends Service {  async get(name) {    return name;  }}module.exports = UserService;</code></pre><p>测试文件目录test,与app文件夹同一级</p><p>test/app/controller/index.test.js （命名规则：测试文件名.test.js） 对controller层以及router层的测试</p><pre><code>&apos;use strict&apos;;const { app, assert } = require(&apos;egg-mock/bootstrap&apos;);describe(&apos;test/app/controller/index.test.js&apos;, () =&gt; {  it(&apos;should GET /&apos;, () =&gt; {    return app.httpRequest()      .get(&apos;/index&apos;)  //router访问路径      .expect(&apos;hi,egg&apos;)   //希望返回的结果      .expect(200);       //希望返回的状态  });  it(&apos;should send multi requests&apos;, async () =&gt; {    await app.httpRequest()      .get(&apos;/index&apos;)      .expect(&apos;hi,egg&apos;)      .expect(200);    const result = await app.httpRequest()      .get(&apos;/index&apos;)      .expect(200)      .expect(&apos;hi,egg&apos;);    assert(result.status === 200);  });});</code></pre><p>运行npm test</p><p><img src="http://py4ipzxfn.bkt.clouddn.com/image-9-31.png" alt></p><p>可能会报错，因为你router路径的不规范，访问了<strong>不存在的路径</strong>，或者<strong>无效变量</strong>的存在，看错误提示，进行相应的修改即可。</p><p>test/app/service/index.test.js</p><pre><code>&apos;use strict&apos;;const { app, assert } = require(&apos;egg-mock/bootstrap&apos;);describe(&apos;get()&apos;, () =&gt; {  it(&apos;should get exists user&apos;, async () =&gt; {    const ctx = app.mockContext();  //创建ctx    const user = await ctx.service.index.get(&apos;yumu&apos;);   //通过ctx访问到service.user    assert(user === &apos;yumu&apos;);  });});</code></pre><p>运行npm test</p><p><img src="http://py4ipzxfn.bkt.clouddn.com/image-9-32.png" alt></p>]]></content>
     
     <summary type="html">
     
@@ -44,9 +44,9 @@
     <link href="/2019/09/16/hexo-e6-b7-bb-e5-8a-a0valine-e8-af-84-e8-ae-ba/"/>
     <id>/2019/09/16/hexo-e6-b7-bb-e5-8a-a0valine-e8-af-84-e8-ae-ba/</id>
     <published>2019-09-16T02:02:00.000Z</published>
-    <updated>2019-09-19T07:54:19.888Z</updated>
+    <updated>2019-09-24T03:24:42.617Z</updated>
     
-    <content type="html"><![CDATA[<p>首先在<a href="https://leancloud.cn/dashboard/login.html#/signin" target="_blank" rel="noopener">leancloud</a>中注册，创建一个新应用，在设置=&gt;应用key中查看appid和appkey，</p><p>在设置=&gt;安全中心 把博客地址添加到安全中心，保证数据调用的安全性。</p><a id="more"></a><p>在主题中(eg：我的是yilia主题) \themes\yilia\_config.yml 中添加</p><pre><code>valine:  enable: true appid: gG1wfFA4yGQarTbT4EB44wR2-gzGzoHsz appkey: SvnF4k7cxYtmz1HDwaJe0Lzq verify: false #验证码 notify: true #评论回复提醒 avatar: robohash #一种具有不同颜色、面部等的机器人 placeholder: 小姐姐，讲话呀 pageSize: 10 guest_info: nick,mails </code></pre><p>在 \themes\yilia\layout_partial\post中新建一个valine.ejs</p><pre><code>&lt;div id=&quot;vcomment&quot; class=&quot;comment&quot;&gt;&lt;/div&gt; &lt;script src=&quot;//cdn1.lncld.net/static/js/3.0.4/av-min.js&quot;&gt;&lt;/script&gt;&lt;script src=&quot;//unpkg.com/valine/dist/Valine.min.js&quot;&gt;&lt;/script&gt;&lt;script&gt;   var notify = &apos;&lt;%= theme.valine.notify %&gt;&apos; == true ? true : false;   var verify = &apos;&lt;%= theme.valine.verify %&gt;&apos; == true ? true : false;    window.onload = function() {        new Valine({            el: &apos;.comment&apos;,            notify: notify,            verify: verify,            app_id: &quot;&lt;%= theme.valine.appid %&gt;&quot;,            app_key: &quot;&lt;%= theme.valine.appkey %&gt;&quot;,            placeholder: &quot;&lt;%= theme.valine.placeholder %&gt;&quot;,            avatar:&quot;&lt;%= theme.valine.avatar %&gt;&quot;        });    }&lt;/script&gt;</code></pre><p>添加评论头像：</p><p>非自定义头像默认值</p><p><img src="http://yumud.com/wp-content/uploads/2019/09/image-30.png" alt></p><p>想要自定义，就去Gravatar注册登录，上传，使用自己的图片</p>]]></content>
+    <content type="html"><![CDATA[<p>首先在<a href="https://leancloud.cn/dashboard/login.html#/signin" target="_blank" rel="noopener">leancloud</a>中注册，创建一个新应用，在设置=&gt;应用key中查看appid和appkey，</p><p>在设置=&gt;安全中心 把博客地址添加到安全中心，保证数据调用的安全性。</p><a id="more"></a><p>在主题中(eg：我的是yilia主题) \themes\yilia\_config.yml 中添加</p><pre><code>valine:  enable: true appid: gG1wfFA4yGQarTbT4EB44wR2-gzGzoHsz appkey: SvnF4k7cxYtmz1HDwaJe0Lzq verify: false #验证码 notify: true #评论回复提醒 avatar: robohash #一种具有不同颜色、面部等的机器人 placeholder: 小姐姐，讲话呀 pageSize: 10 guest_info: nick,mails </code></pre><p>在 \themes\yilia\layout_partial\post中新建一个valine.ejs</p><pre><code>&lt;div id=&quot;vcomment&quot; class=&quot;comment&quot;&gt;&lt;/div&gt; &lt;script src=&quot;//cdn1.lncld.net/static/js/3.0.4/av-min.js&quot;&gt;&lt;/script&gt;&lt;script src=&quot;//unpkg.com/valine/dist/Valine.min.js&quot;&gt;&lt;/script&gt;&lt;script&gt;   var notify = &apos;&lt;%= theme.valine.notify %&gt;&apos; == true ? true : false;   var verify = &apos;&lt;%= theme.valine.verify %&gt;&apos; == true ? true : false;    window.onload = function() {        new Valine({            el: &apos;.comment&apos;,            notify: notify,            verify: verify,            app_id: &quot;&lt;%= theme.valine.appid %&gt;&quot;,            app_key: &quot;&lt;%= theme.valine.appkey %&gt;&quot;,            placeholder: &quot;&lt;%= theme.valine.placeholder %&gt;&quot;,            avatar:&quot;&lt;%= theme.valine.avatar %&gt;&quot;        });    }&lt;/script&gt;</code></pre><p>添加评论头像：</p><p>非自定义头像默认值</p><p><img src="http://py4ipzxfn.bkt.clouddn.com/image-9-30.png" alt></p><p>想要自定义，就去Gravatar注册登录，上传，使用自己的图片</p>]]></content>
     
     <summary type="html">
     
@@ -66,9 +66,9 @@
     <link href="/2019/09/12/pta-1039-e5-88-b0-e5-ba-95-e4-b9-b0-e4-b8-8d-e4-b9-b0/"/>
     <id>/2019/09/12/pta-1039-e5-88-b0-e5-ba-95-e4-b9-b0-e4-b8-8d-e4-b9-b0/</id>
     <published>2019-09-12T01:48:59.000Z</published>
-    <updated>2019-09-19T08:29:05.261Z</updated>
+    <updated>2019-09-24T03:31:42.368Z</updated>
     
-    <content type="html"><![CDATA[<p>题目：小红买珠子，店家给出一串珠子，小红给出一串自己想要颜色的珠子；判断店家的珠子是否满足小红的要求，如果颜色不够，输出“No *” *为缺几颗；如果颜色足够，输出“Yes *” *为多余的珠子颗数。</p><a id="more"></a><p>我的想法是，搞两个数组A,B存这两串珠子，然后判断B中的数据是否在A中都能找到，找不到cout++,全找到了（还要考虑颜色都有，但是个数是否匹配，就得再用一个数组，存匹配珠子的个数），A数组长度-B数组长度，得出多余的珠子。</p><p>百度看到网友转的网友的思路：</p><p><img src="http://yumud.com/wp-content/uploads/2019/09/image-28.png" alt></p><p><img src="http://yumud.com/wp-content/uploads/2019/09/image-29.png" alt></p><p>这种思路，解法过分优秀了….</p>]]></content>
+    <content type="html"><![CDATA[<p>题目：小红买珠子，店家给出一串珠子，小红给出一串自己想要颜色的珠子；判断店家的珠子是否满足小红的要求，如果颜色不够，输出“No *” *为缺几颗；如果颜色足够，输出“Yes *” *为多余的珠子颗数。</p><a id="more"></a><p>我的想法是，搞两个数组A,B存这两串珠子，然后判断B中的数据是否在A中都能找到，找不到cout++,全找到了（还要考虑颜色都有，但是个数是否匹配，就得再用一个数组，存匹配珠子的个数），A数组长度-B数组长度，得出多余的珠子。</p><p>百度看到网友转的网友的思路：</p><p><img src="http://py4ipzxfn.bkt.clouddn.com/image-9-28.png" alt></p><p><img src="http://py4ipzxfn.bkt.clouddn.com/image-9-29.png" alt></p><p>这种思路，解法过分优秀了….</p>]]></content>
     
     <summary type="html">
     
@@ -89,9 +89,9 @@
     <link href="/2019/09/11/pta-1009-e8-af-b4-e5-8f-8d-e8-af-9d/"/>
     <id>/2019/09/11/pta-1009-e8-af-b4-e5-8f-8d-e8-af-9d/</id>
     <published>2019-09-11T07:45:16.000Z</published>
-    <updated>2019-09-19T08:29:06.617Z</updated>
+    <updated>2019-09-24T03:30:38.096Z</updated>
     
-    <content type="html"><![CDATA[<p><strong>1009</strong>说反话题目：hello peach=&gt;peach hello</p><p>用do while而不是while是因为会把“h”吃掉 hello peach=&gt;peach ello</p><a id="more"></a><p><img src="http://yumud.com/wp-content/uploads/2019/09/image-26.png" alt></p><p><strong>1021</strong>个位数统计题目：统计一个整数中，每种不同的数字出现的次数。（按次数的升序输出）</p><p>输入：10021</p><p>输出：</p><p>0:2</p><p>1:2</p><p>2:1</p><p><img src="http://yumud.com/wp-content/uploads/2019/09/image-27.png" alt></p>]]></content>
+    <content type="html"><![CDATA[<p><strong>1009</strong>说反话题目：hello peach=&gt;peach hello</p><p>用do while而不是while是因为会把“h”吃掉 hello peach=&gt;peach ello</p><a id="more"></a><p><img src="http://py4ipzxfn.bkt.clouddn.com/image-9-26.png" alt></p><p><strong>1021</strong>个位数统计题目：统计一个整数中，每种不同的数字出现的次数。（按次数的升序输出）</p><p>输入：10021</p><p>输出：</p><p>0:2</p><p>1:2</p><p>2:1</p><p><img src="http://py4ipzxfn.bkt.clouddn.com/image-9-27.png" alt></p>]]></content>
     
     <summary type="html">
     
@@ -113,9 +113,9 @@
     <link href="/2019/09/11/js-e5-ad-97-e7-ac-a6-e4-b8-b2-e5-80-92-e5-ba-8f-e4-b8-a4-e7-a7-8d-e5-8f-8d-e8-bd-ac/"/>
     <id>/2019/09/11/js-e5-ad-97-e7-ac-a6-e4-b8-b2-e5-80-92-e5-ba-8f-e4-b8-a4-e7-a7-8d-e5-8f-8d-e8-bd-ac/</id>
     <published>2019-09-11T07:06:20.000Z</published>
-    <updated>2019-09-19T07:49:20.199Z</updated>
+    <updated>2019-09-24T03:25:28.877Z</updated>
     
-    <content type="html"><![CDATA[<p>var str=”hello peach”</p><p>全部(字母)反转 str.split(‘’).reverse().join(‘’) *引号内无空格，每一个字符都会被分割</p><p>单词反转 str.split(‘ ‘).reverse().join(‘ ‘) <em>引号里面有空格</em></p><p><img src="http://yumud.com/wp-content/uploads/2019/09/image-25.png" alt></p><p>注意：split的用法，split()用于将一个字符串分割成字符串数组。</p><p>reverse()数组反转，然后，Array.join转换为字符串（与String.split()方法正相反）。</p>]]></content>
+    <content type="html"><![CDATA[<p>var str=”hello peach”</p><p>全部(字母)反转 str.split(‘’).reverse().join(‘’) *引号内无空格，每一个字符都会被分割</p><p>单词反转 str.split(‘ ‘).reverse().join(‘ ‘) <em>引号里面有空格</em></p><p><img src="http://py4ipzxfn.bkt.clouddn.com/image-9-25.png" alt></p><p>注意：split的用法，split()用于将一个字符串分割成字符串数组。</p><p>reverse()数组反转，然后，Array.join转换为字符串（与String.split()方法正相反）。</p>]]></content>
     
     <summary type="html">
     
@@ -167,9 +167,9 @@
     <link href="/2019/09/11/pta-1093-e5-ad-97-e7-ac-a6-e4-b8-b2ab/"/>
     <id>/2019/09/11/pta-1093-e5-ad-97-e7-ac-a6-e4-b8-b2ab/</id>
     <published>2019-09-11T03:11:18.000Z</published>
-    <updated>2019-09-19T08:29:03.390Z</updated>
+    <updated>2019-09-24T03:31:31.471Z</updated>
     
-    <content type="html"><![CDATA[<p>题目：给定两个字符串A,B，输出A+B的并集（要求：先输出A，再输出B，但是重复的元素必须剔除）</p><p>思路：A中重复的字符去掉，B中重复的字符去掉，B中存在A的字符去掉。for循环把B中和A重复的字符置为0，然后输出时不输出为0的字符，实施发现麻烦，根本不是个事儿，百度发现自己解决这个问题的想法有很大的问题。</p><a id="more"></a><p>百度：两个字符串(A,B)连接放在C中，初始化一个全为0的数组，把C中的字符放进去过得字符都+1或置1，判断是否为0，加入加入。</p><p><img src="http://yumud.com/wp-content/uploads/2019/09/image-23.png" alt></p><p>把公司电脑vscode c的环境配置好了，所以不用dev写了，dev晚上写代码闪瞎眼。</p>]]></content>
+    <content type="html"><![CDATA[<p>题目：给定两个字符串A,B，输出A+B的并集（要求：先输出A，再输出B，但是重复的元素必须剔除）</p><p>思路：A中重复的字符去掉，B中重复的字符去掉，B中存在A的字符去掉。for循环把B中和A重复的字符置为0，然后输出时不输出为0的字符，实施发现麻烦，根本不是个事儿，百度发现自己解决这个问题的想法有很大的问题。</p><a id="more"></a><p>百度：两个字符串(A,B)连接放在C中，初始化一个全为0的数组，把C中的字符放进去过得字符都+1或置1，判断是否为0，加入加入。</p><p><img src="http://py4ipzxfn.bkt.clouddn.com/image-9-23.png" alt></p><p>把公司电脑vscode c的环境配置好了，所以不用dev写了，dev晚上写代码闪瞎眼。</p>]]></content>
     
     <summary type="html">
     
@@ -219,9 +219,9 @@
     <link href="/2019/09/10/pta-1007-e7-b4-a0-e6-95-b0-e5-af-b9-e7-8c-9c-e6-83-b3/"/>
     <id>/2019/09/10/pta-1007-e7-b4-a0-e6-95-b0-e5-af-b9-e7-8c-9c-e6-83-b3/</id>
     <published>2019-09-10T06:42:05.000Z</published>
-    <updated>2019-09-19T08:29:07.722Z</updated>
+    <updated>2019-09-24T03:29:56.145Z</updated>
     
-    <content type="html"><![CDATA[<p>dev运行cpp文件报错，什么请求被拒绝，然后百度说杀毒软件的问题，打开任务管理器，没发现杀毒软件，但是把一个<strong>隐藏</strong>的已经运行的这个项目的<strong>exe文件结束</strong>了，问题解决。</p><p>题目：两个相邻素数差2即是一个素数对。</p><a id="more"></a><p>思路：先求出n之内的素数，然后，判断一下相邻素数之间差值为2的，count++;</p><p><img src="http://yumud.com/wp-content/uploads/2019/09/image-20.png" alt></p><p><strong>这是最后的结果</strong></p><p>但是我开始不是这样写的，我的是这样，这个判定为最后一个测试点运行超时，百度说，在循环判断那里，sqrt(n)减少判断的数量就好了，可是我加了之后，素数少了一半….懵…</p><p><img src="http://yumud.com/wp-content/uploads/2019/09/image-21.png" alt></p>]]></content>
+    <content type="html"><![CDATA[<p>dev运行cpp文件报错，什么请求被拒绝，然后百度说杀毒软件的问题，打开任务管理器，没发现杀毒软件，但是把一个<strong>隐藏</strong>的已经运行的这个项目的<strong>exe文件结束</strong>了，问题解决。</p><p>题目：两个相邻素数差2即是一个素数对。</p><a id="more"></a><p>思路：先求出n之内的素数，然后，判断一下相邻素数之间差值为2的，count++;</p><p><img src="http://py4ipzxfn.bkt.clouddn.com/image-20.png" alt></p><p><strong>这是最后的结果</strong></p><p>但是我开始不是这样写的，我的是这样，这个判定为最后一个测试点运行超时，百度说，在循环判断那里，sqrt(n)减少判断的数量就好了，可是我加了之后，素数少了一半….懵…</p><p><img src="http://py4ipzxfn.bkt.clouddn.com/image-9-21.png" alt></p>]]></content>
     
     <summary type="html">
     
@@ -243,9 +243,9 @@
     <link href="/2019/09/10/pta-1001-e6-88-90-e7-bb-a9-e6-8e-92-e5-90-8d/"/>
     <id>/2019/09/10/pta-1001-e6-88-90-e7-bb-a9-e6-8e-92-e5-90-8d/</id>
     <published>2019-09-10T02:39:09.000Z</published>
-    <updated>2019-09-19T08:29:01.165Z</updated>
+    <updated>2019-09-24T03:28:17.943Z</updated>
     
-    <content type="html"><![CDATA[<p>题目： 读入 <em>n</em>（&gt;0）名学生的<strong>姓名、学号、成绩</strong>，分别输出<strong>成绩最高</strong>和<strong>成绩最低</strong>学生的姓名和学号。</p><a id="more"></a><p>挺好写的，可是我写的很幼稚，写了三个数组…</p><p><img src="http://yumud.com/wp-content/uploads/2019/09/image-18.png" alt></p><p>然后百度别人写的：</p><p>用结构体数组….一下子简洁了…又写了一下</p><p><img src="http://yumud.com/wp-content/uploads/2019/09/image-19.png" alt></p><p>好看~</p>]]></content>
+    <content type="html"><![CDATA[<p>题目： 读入 <em>n</em>（&gt;0）名学生的<strong>姓名、学号、成绩</strong>，分别输出<strong>成绩最高</strong>和<strong>成绩最低</strong>学生的姓名和学号。</p><a id="more"></a><p>挺好写的，可是我写的很幼稚，写了三个数组…</p><p><img src="http://py4ipzxfn.bkt.clouddn.com/image-9-18.png" alt></p><p>然后百度别人写的：</p><p>用结构体数组….一下子简洁了…又写了一下</p><p><img src="http://py4ipzxfn.bkt.clouddn.com/image-9-19.png" alt></p><p>好看~</p>]]></content>
     
     <summary type="html">
     
@@ -266,9 +266,9 @@
     <link href="/2019/09/09/weui-e7-9a-84-e4-bd-bf-e7-94-a8/"/>
     <id>/2019/09/09/weui-e7-9a-84-e4-bd-bf-e7-94-a8/</id>
     <published>2019-09-09T08:27:35.000Z</published>
-    <updated>2019-09-19T08:27:03.511Z</updated>
+    <updated>2019-09-24T03:32:11.306Z</updated>
     
-    <content type="html"><![CDATA[<p>安装：打开<a href="https://github.com/weui/weui-wxss/" target="_blank" rel="noopener">https://github.com/weui/weui-wxss/</a> git clone文件</p><p><img src="http://yumud.com/wp-content/uploads/2019/09/image-15.png" alt></p><p>如上图，把这个文件复制一份到你根目录下，在全局app.wxss中引用weui.wxss <strong>@import ‘weui.wxss’;</strong></p>]]></content>
+    <content type="html"><![CDATA[<p>安装：打开<a href="https://github.com/weui/weui-wxss/" target="_blank" rel="noopener">https://github.com/weui/weui-wxss/</a> git clone文件</p><p><img src="http://py4ipzxfn.bkt.clouddn.com/image-9-15.png" alt></p><p>如上图，把这个文件复制一份到你根目录下，在全局app.wxss中引用weui.wxss <strong>@import ‘weui.wxss’;</strong></p>]]></content>
     
     <summary type="html">
     
@@ -293,14 +293,14 @@
     <link href="/2019/09/09/pta-1003-e6-88-91-e8-a6-81-e9-80-9a-e8-bf-87-ef-bc-81/"/>
     <id>/2019/09/09/pta-1003-e6-88-91-e8-a6-81-e9-80-9a-e8-bf-87-ef-bc-81/</id>
     <published>2019-09-09T08:06:16.000Z</published>
-    <updated>2019-09-19T08:29:10.125Z</updated>
+    <updated>2019-09-24T03:29:38.695Z</updated>
     
-    <content type="html"><![CDATA[<p>读了一遍，题目我竟然没看懂…</p><p><img src="http://yumud.com/wp-content/uploads/2019/09/image-14.png" alt></p><p><strong>题目</strong></p><a id="more"></a><p>我的理解：只能存在 P A T，如果存在其他字母必须为空字符或者A进行填充。</p><p>思路：判断这个字符串中是否含有其他字母，有就否决；必须由A或空字符填充。</p><p>可是怎么写，又进行不动了</p>]]></content>
+    <content type="html"><![CDATA[<p>读了一遍，题目我竟然没看懂…</p><p><img src="http://py4ipzxfn.bkt.clouddn.com/image-9-14.png" alt></p><p><strong>题目</strong></p><a id="more"></a><p>我的理解：只能存在 P A T，如果存在其他字母必须为空字符或者A进行填充。</p><p>思路：判断这个字符串中是否含有其他字母，有就否决；必须由A或空字符填充。</p><p>可是怎么写，又进行不动了</p>]]></content>
     
     <summary type="html">
     
       &lt;p&gt;读了一遍，题目我竟然没看懂…&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://yumud.com/wp-content/uploads/2019/09/image-14.png&quot; alt&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://py4ipzxfn.bkt.clouddn.com/image-9-14.png&quot; alt&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;题目&lt;/strong&gt;&lt;/p&gt;
     
     </summary>
@@ -318,9 +318,9 @@
     <link href="/2019/09/07/e5-86-92-e6-b3-a1-e6-8e-92-e5-ba-8f/"/>
     <id>/2019/09/07/e5-86-92-e6-b3-a1-e6-8e-92-e5-ba-8f/</id>
     <published>2019-09-07T10:21:50.000Z</published>
-    <updated>2019-09-19T08:09:44.495Z</updated>
+    <updated>2019-09-24T02:44:58.726Z</updated>
     
-    <content type="html"><![CDATA[<p>从最基础的冒泡排序开始。</p><p>[等一下，回家写]–废话.jpg</p><a id="more"></a><p>[然而我回家也没写，我填了一下之前的坑] –废话.jpg</p><p>[然而今天也没有刷题，我躺着敲工作反思，电脑很热。确切的说，不是今天没有刷题，现在已经凌晨了] –废话.jpg</p><p>————————–正经.jpg ————————–</p><p>相邻两个数比较一下，然后小(大)放在前面，例如1852</p><p>18不需要换 1852</p><p>85=&gt;58 1582</p><p>82=&gt;28 1528(最大的已经到了最后)</p><p>152</p><p>15 不需要 152</p><p>52=&gt;25 125</p><p><strong>1258</strong>完成</p><p>就是个嵌套的for循环，然后temp中间变量，把两个值换一下。假设有n个数，就要走n-1步，第i步中需要n-i次比较</p><p>粘代码</p><p>不，我用c还是java写，同学让我学c++，那这样两个就都会了，我感觉有点不对劲，但还是先用C++写吧</p><p><img src="http://yumud.com/wp-content/uploads/2019/09/image-13.png" alt></p>]]></content>
+    <content type="html"><![CDATA[<p>从最基础的冒泡排序开始。</p><p>[等一下，回家写]–废话.jpg</p><a id="more"></a><p>[然而我回家也没写，我填了一下之前的坑] –废话.jpg</p><p>[然而今天也没有刷题，我躺着敲工作反思，电脑很热。确切的说，不是今天没有刷题，现在已经凌晨了] –废话.jpg</p><p>————————–正经.jpg ————————–</p><p>相邻两个数比较一下，然后小(大)放在前面，例如1852</p><p>18不需要换 1852</p><p>85=&gt;58 1582</p><p>82=&gt;28 1528(最大的已经到了最后)</p><p>152</p><p>15 不需要 152</p><p>52=&gt;25 125</p><p><strong>1258</strong>完成</p><p>就是个嵌套的for循环，然后temp中间变量，把两个值换一下。假设有n个数，就要走n-1步，第i步中需要n-i次比较</p><p>粘代码</p><p>不，我用c还是java写，同学让我学c++，那这样两个就都会了，我感觉有点不对劲，但还是先用C++写吧</p><p><img src="http://py4ipzxfn.bkt.clouddn.com/image-13.png" alt></p>]]></content>
     
     <summary type="html">
     
@@ -340,13 +340,13 @@
     <link href="/2019/09/07/cc-e5-8d-a1-e8-b7-af-e9-87-8c-e8-80-b6/"/>
     <id>/2019/09/07/cc-e5-8d-a1-e8-b7-af-e9-87-8c-e8-80-b6/</id>
     <published>2019-09-07T06:42:35.000Z</published>
-    <updated>2019-09-19T09:26:41.845Z</updated>
+    <updated>2019-09-24T02:39:04.130Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="http://yumud.com/wp-content/uploads/2019/06/gh_8490c442bd64_258-1-1.jpg" alt></p><a id="more"></a><p>微信扫一扫查看，或搜索”CC卡路里”查看。</p><p>主要功能：查询食物热量，记录每日饮食，BMI身体质量测试。</p><p><strong>优化</strong>：</p><p>△加数据分析，每个月或15天，对用户记录的饮食热量进行分析=&gt;但是，没有达到记录量怎么办，目前用户不多，稳定用户更少，这样做出来的数据分析不为准=&gt;没有达到记录量，弹出“记录过少，无法生成健康账单”</p><p>△ 查询页面，很严重，部分手机左滑出现1/3空白；部分手机虽然进行左滑操作，页面不出现1/3空白，但是下方会出现横向滑动条。</p>]]></content>
+    <content type="html"><![CDATA[<p><img src="http://py4ipzxfn.bkt.clouddn.com/gh_8490c442bd64_258-1-1.jpg" alt></p><a id="more"></a><p>微信扫一扫查看，或搜索”CC卡路里”查看。</p><p>主要功能：查询食物热量，记录每日饮食，BMI身体质量测试。</p><p><strong>优化</strong>：</p><p>△加数据分析，每个月或15天，对用户记录的饮食热量进行分析=&gt;但是，没有达到记录量怎么办，目前用户不多，稳定用户更少，这样做出来的数据分析不为准=&gt;没有达到记录量，弹出“记录过少，无法生成健康账单”</p><p>△ 查询页面，很严重，部分手机左滑出现1/3空白；部分手机虽然进行左滑操作，页面不出现1/3空白，但是下方会出现横向滑动条。</p>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;http://yumud.com/wp-content/uploads/2019/06/gh_8490c442bd64_258-1-1.jpg&quot; alt&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;img src=&quot;http://py4ipzxfn.bkt.clouddn.com/gh_8490c442bd64_258-1-1.jpg&quot; alt&gt;&lt;/p&gt;
     
     </summary>
     
@@ -365,9 +365,9 @@
     <link href="/2019/09/07/pta-1002-e5-86-99-e5-87-ba-e8-bf-99-e4-b8-aa-e6-95-b0/"/>
     <id>/2019/09/07/pta-1002-e5-86-99-e5-87-ba-e8-bf-99-e4-b8-aa-e6-95-b0/</id>
     <published>2019-09-07T01:56:59.000Z</published>
-    <updated>2019-09-19T08:27:56.313Z</updated>
+    <updated>2019-09-24T03:28:26.512Z</updated>
     
-    <content type="html"><![CDATA[<p>题目： <strong>读入一个正整数 **_</strong>n<strong>_</strong>，计算其各位数字之和，用汉语拼音写出和的每一位数字。**</p><a id="more"></a><p>思路=&gt;%10 /10把每一位数字存起来，写个switch case包函数里面用来判断每一位数字是什么字母</p><p>我实施了一半，写不出来</p><p>百度：把对应的字母存在一个二维数组中，%10 /10操作</p><p><img src="http://yumud.com/wp-content/uploads/2019/09/image-9.png" alt></p>]]></content>
+    <content type="html"><![CDATA[<p>题目： <strong>读入一个正整数 **_</strong>n<strong>_</strong>，计算其各位数字之和，用汉语拼音写出和的每一位数字。**</p><a id="more"></a><p>思路=&gt;%10 /10把每一位数字存起来，写个switch case包函数里面用来判断每一位数字是什么字母</p><p>我实施了一半，写不出来</p><p>百度：把对应的字母存在一个二维数组中，%10 /10操作</p><p><img src="http://py4ipzxfn.bkt.clouddn.com/image-9-9.png" alt></p>]]></content>
     
     <summary type="html">
     
@@ -388,9 +388,9 @@
     <link href="/2019/09/07/pta-1001-e5-ae-b3-e6-ad-bb-e4-ba-ba-e4-b8-8d-e5-81-bf-e5-91-bd-e7-9a-843n1-e7-8c-9c-e6-83-b3/"/>
     <id>/2019/09/07/pta-1001-e5-ae-b3-e6-ad-bb-e4-ba-ba-e4-b8-8d-e5-81-bf-e5-91-bd-e7-9a-843n1-e7-8c-9c-e6-83-b3/</id>
     <published>2019-09-07T01:53:10.000Z</published>
-    <updated>2019-09-19T08:28:37.390Z</updated>
+    <updated>2019-09-24T03:09:04.601Z</updated>
     
-    <content type="html"><![CDATA[<p>题目： <strong>对给定的任一不超过 1000 的正整数 **_</strong>n<strong>_</strong>，简单地数一下，需要多少步（砍几下）才能得到 <strong>_</strong>n<strong>_</strong>=1？** [对3(n+1)猜想感兴趣的自行百度哦]</p><a id="more"></a><p>超简单，但是我在scanf那里加了<strong>\n</strong>，然后编译执行，输入数据，就卡住了</p><p>百度：scanf中的\n不是指换行，而是忽略一切空白符，直到下一个空白符出现</p><p><img src="http://yumud.com/wp-content/uploads/2019/09/image-8.png" alt></p><p>真的是敲代码就是个白痴–</p>]]></content>
+    <content type="html"><![CDATA[<p>题目： <strong>对给定的任一不超过 1000 的正整数 **_</strong>n<strong>_</strong>，简单地数一下，需要多少步（砍几下）才能得到 <strong>_</strong>n<strong>_</strong>=1？** [对3(n+1)猜想感兴趣的自行百度哦]</p><a id="more"></a><p>超简单，但是我在scanf那里加了<strong>\n</strong>，然后编译执行，输入数据，就卡住了</p><p>百度：scanf中的\n不是指换行，而是忽略一切空白符，直到下一个空白符出现</p><p><img src="http://py4ipzxfn.bkt.clouddn.com/image-8.png" alt></p><p>真的是敲代码就是个白痴–</p>]]></content>
     
     <summary type="html">
     
@@ -462,9 +462,9 @@
     <link href="/2019/09/06/e3-80-90-e6-90-ac-e5-ae-b6-e4-ba-8c-e3-80-91-wordpress-e6-90-acgithubhexo/"/>
     <id>/2019/09/06/e3-80-90-e6-90-ac-e5-ae-b6-e4-ba-8c-e3-80-91-wordpress-e6-90-acgithubhexo/</id>
     <published>2019-09-06T08:09:03.000Z</published>
-    <updated>2019-09-19T08:23:44.414Z</updated>
+    <updated>2019-09-24T02:41:35.572Z</updated>
     
-    <content type="html"><![CDATA[<p>三个月服务器快到期了hh，之前冲动消费买了一年的，啥也没干，一年过去了，这次三个月满满当当，过得可真快啊</p><p>搬家搬家</p><p><strong>1.创建仓库</strong></p><a id="more"></a><p>在github里创建一个<strong>username.github.io</strong>的仓库 [<strong>username</strong>就是你github的用户名]，创建完，就可以通过<strong>username.github.io</strong> 访问你的网站了</p><p><strong>2.绑定域名</strong>[你开心就绑定]</p><p>买域名，备案，解析，添加</p><p><img src="http://yumud.com/wp-content/uploads/2019/09/image-10-1024x180.png" alt></p><p>ip，就是你在自己电脑上ping一下username.github.io，get!</p><p>然后在github中那个项目下新建一个CNAME的文件(无后缀),里面写你的域名。</p><p><strong>3.配置SSH key</strong>[差不多就这样，看不懂百度]</p><pre><code>ssh-keygen -t rsa -C &quot;邮件地址&quot;在本机生成一个.ssh\id_rsa.pub文件，把里面的东西复制到github设置中,SSH and GPG keys 添加即可。</code></pre><p><strong>4.测试是否成功</strong></p><p>ssh -T <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a></p><p>就是输入这个，一个字母也别改=&gt;</p><p><img src="http://yumud.com/wp-content/uploads/2019/09/image-11.png" alt></p><p>成功</p><p>-------------------------------------- 开始搞hexo ————————————–</p><p>安装 <strong>npm install -g hexo</strong></p><p>认真新建一个文件夹，初始化 <strong>hexo init</strong></p><p><strong>hexo g</strong> //生成</p><p><strong>hexo s</strong> //启动服务</p><p>原始主题不好看，可以去官网看一下 <a href="https://hexo.io/themes/" target="_blank" rel="noopener">https://hexo.io/themes/</a></p><p>改成你新下载的主题:</p><p>修改<code>_config.yml</code>中的<code>theme: landscape</code>改为<code>theme: 新主题名</code>，然后重新执行<code>hexo g</code>来重新生成。</p><p>-------------------------------------- 上传到github————————————–</p><p>修改_config.xml</p><p><img src="http://yumud.com/wp-content/uploads/2019/09/image-12.png" alt></p><p>deploy这部分，记得改成你自己的名字</p><p>git bash中直接执行hexo d，</p><p>如果报错，在git bash中执行 <strong>npm install hexo-deployer-git –save</strong>，然后hexo d</p><p>——到此建站结束，要开始写文章了，不过我直接把我wordpress的导出，搞过来的</p><p><strong>迁移</strong></p><p>安装插件 <strong>npm install hexo-migrator-wordpress –save</strong></p><p>在wordpress仪表盘中导出数据，<strong>hexo migrate wordpress</strong> source为导出的文件路径———</p><p>在hexo<strong>新建</strong>写文章</p><p>hexo new <title> title为文章标题</title></p><p>新建的文件在/source/_posts路径下。双击打开编辑即可。（文件格式为.md）</p><p>很烦，我刚注意到，我的文件是都导过去了，可是<strong>图片</strong>地址是服务器下的，那我搬的这个家，差点儿落一半…=&gt;wp-content/uploads下的图片打个包拿出来，然后，然后只能在本地一张一张的换了…所以说这个github+hexo搭网站有好有坏吧，不如云+wordpress比较方便，可以随时写两篇文章，但是免费，这一点就很优秀了…</p>]]></content>
+    <content type="html"><![CDATA[<p>三个月服务器快到期了hh，之前冲动消费买了一年的，啥也没干，一年过去了，这次三个月满满当当，过得可真快啊</p><p>搬家搬家</p><p><strong>1.创建仓库</strong></p><a id="more"></a><p>在github里创建一个<strong>username.github.io</strong>的仓库 [<strong>username</strong>就是你github的用户名]，创建完，就可以通过<strong>username.github.io</strong> 访问你的网站了</p><p><strong>2.绑定域名</strong>[你开心就绑定]</p><p>买域名，备案，解析，添加</p><p><img src="http://py4ipzxfn.bkt.clouddn.com/image-10-1024x180.png" alt></p><p>ip，就是你在自己电脑上ping一下username.github.io，get!</p><p>然后在github中那个项目下新建一个CNAME的文件(无后缀),里面写你的域名。</p><p><strong>3.配置SSH key</strong>[差不多就这样，看不懂百度]</p><pre><code>ssh-keygen -t rsa -C &quot;邮件地址&quot;在本机生成一个.ssh\id_rsa.pub文件，把里面的东西复制到github设置中,SSH and GPG keys 添加即可。</code></pre><p><strong>4.测试是否成功</strong></p><p>ssh -T <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a></p><p>就是输入这个，一个字母也别改=&gt;</p><p><img src="http://py4ipzxfn.bkt.clouddn.com/image-11.png" alt></p><p>成功</p><p>-------------------------------------- 开始搞hexo ————————————–</p><p>安装 <strong>npm install -g hexo</strong></p><p>认真新建一个文件夹，初始化 <strong>hexo init</strong></p><p><strong>hexo g</strong> //生成</p><p><strong>hexo s</strong> //启动服务</p><p>原始主题不好看，可以去官网看一下 <a href="https://hexo.io/themes/" target="_blank" rel="noopener">https://hexo.io/themes/</a></p><p>改成你新下载的主题:</p><p>修改<code>_config.yml</code>中的<code>theme: landscape</code>改为<code>theme: 新主题名</code>，然后重新执行<code>hexo g</code>来重新生成。</p><p>-------------------------------------- 上传到github————————————–</p><p>修改_config.xml</p><p><img src="http://py4ipzxfn.bkt.clouddn.com/image-12.png" alt></p><p>deploy这部分，记得改成你自己的名字</p><p>git bash中直接执行hexo d，</p><p>如果报错，在git bash中执行 <strong>npm install hexo-deployer-git –save</strong>，然后hexo d</p><p>——到此建站结束，要开始写文章了，不过我直接把我wordpress的导出，搞过来的</p><p><strong>迁移</strong></p><p>安装插件 <strong>npm install hexo-migrator-wordpress –save</strong></p><p>在wordpress仪表盘中导出数据，<strong>hexo migrate wordpress</strong> source为导出的文件路径———</p><p>在hexo<strong>新建</strong>写文章</p><p>hexo new <title> title为文章标题</title></p><p>新建的文件在/source/_posts路径下。双击打开编辑即可。（文件格式为.md）</p><p>很烦，我刚注意到，我的文件是都导过去了，可是<strong>图片</strong>地址是服务器下的，那我搬的这个家，差点儿落一半…=&gt;wp-content/uploads下的图片打个包拿出来，然后，然后只能在本地一张一张的换了…所以说这个github+hexo搭网站有好有坏吧，不如云+wordpress比较方便，可以随时写两篇文章，但是免费，这一点就很优秀了…</p>]]></content>
     
     <summary type="html">
     
