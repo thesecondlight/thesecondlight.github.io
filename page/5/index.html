@@ -68,7 +68,7 @@
 			</ul>
 		</nav>
 		<!-- <nav>
-			总文章数 58
+			总文章数 59
 		</nav> -->
 		<nav class="header-smart-menu">
     		
@@ -96,7 +96,7 @@
 		        
 			</div>
 		</nav>
-		<!-- <span class="post-count">12k</span> -->
+		<!-- <span class="post-count">12.2k</span> -->
 		
 	</header>		
 </div>
@@ -168,6 +168,315 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-node-e5-9f-ba-e7-a1-80api" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <div class="article-inner">
+    
+      <header class="article-header">
+        <!--统计字数--> 
+        <div style="display: flex;" id="font-count">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/20/node-e5-9f-ba-e7-a1-80api/">node基础API</a>
+    </h1>
+  
+
+
+            <div align="center" class="post-count" style="font-size: 7px;color:grey;padding-top:15px;padding-left:25px">
+                <text>字数:453字 | 预计阅读时长 :2分钟</text>
+          
+              </div>
+               <!-- 统计阅读量 首页不显示阅读量 -->
+              
+                  
+                <!--  截止统计阅读量-->
+              
+        </div>
+        <!--统计字数--> 
+        
+          <a href="/2019/08/20/node-e5-9f-ba-e7-a1-80api/" class="archive-article-date">
+  	<time datetime="2019-08-20T07:34:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-20</time>
+</a>
+          
+            
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+     
+
+	
+		<p>一、PATH</p>
+<p>1.path.normalize(path)</p>
+<p>规范化给定的path，并解析’..’ ‘.’片段</p>
+<p><img src="http://py4ipzxfn.bkt.clouddn.com/image-22.png" alt></p>
+<p><img src="http://py4ipzxfn.bkt.clouddn.com/image-23.png" alt></p>
+<p>2.path.join([…paths])</p>
+<p>path.join()方法使用平台特定的分隔符把全部给定的path片段连接起来，并规范化</p>
+<p><img src="http://py4ipzxfn.bkt.clouddn.com/image-24.png" alt></p>
+<p><img src="http://py4ipzxfn.bkt.clouddn.com/image-25.png" alt></p>
+<p>3.path.resolve([…paths])</p>
+<p>将路径解析为一个绝对路径</p>
+<p>const {resolve}=require(‘path’)</p>
+<p>console.log(resolve(‘./‘))</p>
+<p>4.basename文件名 extname文件扩展名 dirname目录名文件所在的路径</p>
+<p>const {dirname,extname,basename}=require(‘path’);</p>
+<p>const filePath=’/user/local/bin/yumu.txt’</p>
+<p>console.log(dirname(filePath)); //‘/user/local/bin’</p>
+<p>extname(filePath) //‘.txt’</p>
+<p>basename(filePath) //‘yumu.txt’</p>
+<p>5.path.parse,path.format</p>
+<p>path.parse()方法返回一个对象，对象的属性表示path的元素，返回的对象有一下属性：root dir base ext name</p>
+<p>path.format()返回一个路径字符串，与path.parse()相反</p>
+<p><img src="http://py4ipzxfn.bkt.clouddn.com/image-26.png" alt></p>
+<p>截的别人的图</p>
+<p>6.sep delimiter win32 posix</p>
+<p>delimiter提供平台特定的路径分隔符</p>
+<p>win: <strong>;</strong></p>
+<p>posix: <strong>:</strong></p>
+<p>sep路径片段分隔符</p>
+<p>win \</p>
+<p>posiz /</p>
+<p><code>path.win32</code> 属性提供了 <code>path</code> 方法针对 Windows 的实现;</p>
+<p><code>path.posix</code> 属性提供了 <code>path</code> 方法针对 POSIX 的实现。</p>
+<p>不想写了，贴个别人的网址</p>
+<p><a href="https://www.jianshu.com/p/08e014f786a4" target="_blank" rel="noopener">https://www.jianshu.com/p/08e014f786a4</a></p>
+<p>看完了，简略的写一下</p>
+<p><strong>path buffer event fs</strong></p>
+<p><strong>PATH</strong></p>
+<p>[[</p>
+<p>path.normalize()</p>
+<p>path.join()</p>
+<p>path.resolve()</p>
+<p>basename extname dirname</p>
+<p>path.parse,path.format</p>
+<p>sep,delimiter,win32,posix</p>
+<p>]]</p>
+<p><strong>buffer</strong></p>
+<p>[[</p>
+<p>buffer.alloc()</p>
+<p>buffer.allocUnsafe()</p>
+<p>buffer.from()</p>
+<p>buffer.byteLength()</p>
+<p>buffer.isBuffer()</p>
+<p>buffer.concat()</p>
+<p><strong>buffer的实例方法</strong></p>
+<p>buf.length buf.toString()</p>
+<p>buf.fill()</p>
+<p>buf.equals()</p>
+<p>buf.indexOf()</p>
+<p>]]</p>
+<p><strong>event事件机制</strong></p>
+<p>开放了一个.on函数</p>
+<p>具体使用如图</p>
+<p><img src="http://py4ipzxfn.bkt.clouddn.com/image-27.png" alt></p>
+<p><img src="http://py4ipzxfn.bkt.clouddn.com/image-28.png" alt></p>
+<p>删除事件ce.removeListener(事件名，具体方法)</p>
+<p>删除事件的所有方法 ce.removeAllLiateners(事件名)</p>
+<p><strong>fs：文件系统</strong></p>
+<p>fs.readFile读文件</p>
+<p>fs.writerFile写文件</p>
+<p>fs.stat 返回的stats判断是否为文件或文件夹 stats.isFile() stats.isDirectory() stats详细信息</p>
+<p>fs.rename重命名</p>
+<p>fs.unlink删除</p>
+<p>fs.readdir查找文件夹</p>
+<p>fs.mkdir创建文件夹</p>
+<p>fs.rmdir删除文件夹</p>
+<p>fs.watch坚实文件的变化</p>
+
+	
+
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">node</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/node//" class="article-tag-list-link color5">node</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/node/芝士就是力量！//" class="article-tag-list-link color3">芝士就是力量！</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/node/芝士就是力量！/面试//" class="article-tag-list-link color3">面试</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/08/20/node-e5-9f-ba-e7-a1-80api/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+    
+</aside>
+
+
+
+
+  
+    <article id="post-node-e6-9d-82-e4-b8-83-e6-9d-82-e5-85-ab" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <div class="article-inner">
+    
+      <header class="article-header">
+        <!--统计字数--> 
+        <div style="display: flex;" id="font-count">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/20/node-e6-9d-82-e4-b8-83-e6-9d-82-e5-85-ab/">node 杂七杂八</a>
+    </h1>
+  
+
+
+            <div align="center" class="post-count" style="font-size: 7px;color:grey;padding-top:15px;padding-left:25px">
+                <text>字数:64字 | 预计阅读时长 :1分钟</text>
+          
+              </div>
+               <!-- 统计阅读量 首页不显示阅读量 -->
+              
+                  
+                <!--  截止统计阅读量-->
+              
+        </div>
+        <!--统计字数--> 
+        
+          <a href="/2019/08/20/node-e6-9d-82-e4-b8-83-e6-9d-82-e5-85-ab/" class="archive-article-date">
+  	<time datetime="2019-08-20T02:45:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-20</time>
+</a>
+          
+            
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+     
+
+	
+		<p><img src="http://py4ipzxfn.bkt.clouddn.com/image-8-20.png" alt></p>
+<p>this的值是全局对象，在浏览器中就是windows对象</p>
+<p><strong>.call .apply方法可以改变this的值</strong></p>
+<p>.call接受参数列表，.apply接受一个参数数组</p>
+<p><img src="http://py4ipzxfn.bkt.clouddn.com/image-8-21.png" alt></p>
+<p>prototype为子类定义属性和方法，重写和调用父类函数</p>
+
+	
+
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">node</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/node//" class="article-tag-list-link color5">node</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/node/芝士就是力量！//" class="article-tag-list-link color3">芝士就是力量！</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/node/芝士就是力量！/面试//" class="article-tag-list-link color3">面试</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/08/20/node-e6-9d-82-e4-b8-83-e6-9d-82-e5-85-ab/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+    
+</aside>
+
+
+
+
   
     <article id="post-async-await" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
@@ -570,6 +879,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
@@ -671,6 +991,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
@@ -775,6 +1106,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
@@ -1029,208 +1371,6 @@
 
 
   
-    <article id="post-e8-ae-b0-e7-94-b5-e9-9d-a2-e9-a2-98-e7-9b-ae" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-  <div class="article-inner">
-    
-      <header class="article-header">
-        <!--统计字数--> 
-        <div style="display: flex;" id="font-count">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/20/e8-ae-b0-e7-94-b5-e9-9d-a2-e9-a2-98-e7-9b-ae/">记——电面题目</a>
-    </h1>
-  
-
-
-            <div align="center" class="post-count" style="font-size: 7px;color:grey;padding-top:15px;padding-left:25px">
-                <text>字数:246字 | 预计阅读时长 :1分钟</text>
-          
-              </div>
-               <!-- 统计阅读量 首页不显示阅读量 -->
-              
-                  
-                <!--  截止统计阅读量-->
-              
-        </div>
-        <!--统计字数--> 
-        
-          <a href="/2019/07/20/e8-ae-b0-e7-94-b5-e9-9d-a2-e9-a2-98-e7-9b-ae/" class="archive-article-date">
-  	<time datetime="2019-07-20T02:14:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-20</time>
-</a>
-          
-            
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-     
-
-			<p><strong>1.</strong> vue为什么是一个单页面应用</p>
-<p><strong>资源加载一次，数据操作交互由router和ajax完成</strong></p>
-<p><strong>2.</strong>vuex，为什么选择vuex（和window.global.a相比）</p>
-	
-
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/芝士就是力量！//" class="article-tag-list-link color3">芝士就是力量！</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/芝士就是力量！/面试//" class="article-tag-list-link color3">面试</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/20/e8-ae-b0-e7-94-b5-e9-9d-a2-e9-a2-98-e7-9b-ae/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-    
-</aside>
-
-
-
-
-  
-    <article id="post-e4-ba-91-e6-9c-8d-e5-8a-a1-e5-99-a8-e7-9a-84-e9-85-8d-e7-bd-ae-e9-97-ae-e9-a2-98-ef-bc-88windows-ef-bc-89" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-  <div class="article-inner">
-    
-      <header class="article-header">
-        <!--统计字数--> 
-        <div style="display: flex;" id="font-count">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/07/e4-ba-91-e6-9c-8d-e5-8a-a1-e5-99-a8-e7-9a-84-e9-85-8d-e7-bd-ae-e9-97-ae-e9-a2-98-ef-bc-88windows-ef-bc-89/">云服务器的配置问题（windows）【从零开始建站】</a>
-    </h1>
-  
-
-
-            <div align="center" class="post-count" style="font-size: 7px;color:grey;padding-top:15px;padding-left:25px">
-                <text>字数:472字 | 预计阅读时长 :1分钟</text>
-          
-              </div>
-               <!-- 统计阅读量 首页不显示阅读量 -->
-              
-                  
-                <!--  截止统计阅读量-->
-              
-        </div>
-        <!--统计字数--> 
-        
-          <a href="/2019/07/07/e4-ba-91-e6-9c-8d-e5-8a-a1-e5-99-a8-e7-9a-84-e9-85-8d-e7-bd-ae-e9-97-ae-e9-a2-98-ef-bc-88windows-ef-bc-89/" class="archive-article-date">
-  	<time datetime="2019-07-07T07:31:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-07</time>
-</a>
-          
-            
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-     
-
-			<p>建议先搞一个免费试用的玩一下，直接买个一年的可能兴趣扁扁-_-</p>
-<p>华为云最近有一个七天免费试用，阿里云之前好像有搞过三个月几块钱，反正短期都挺便宜的。</p>
-<ol>
-<li>搞来云服务器</li></ol>
-	
-
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">芝士~</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/芝士就是力量！//" class="article-tag-list-link color3">芝士就是力量！</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/07/e4-ba-91-e6-9c-8d-e5-8a-a1-e5-99-a8-e7-9a-84-e9-85-8d-e7-bd-ae-e9-97-ae-e9-a2-98-ef-bc-88windows-ef-bc-89/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-    
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
@@ -1349,6 +1489,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">芝士~</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Demo</a>
               </li>
              
@@ -1357,11 +1501,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">芝士~</a>
+                <a href="javascript:void(0)" class="js-tag color5">node</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">-node -js</a>
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1377,11 +1525,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">node</a>
+                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
+                <a href="javascript:void(0)" class="js-tag color3">闭包</a>
               </li>
              
               <li class="article-tag-list-item">
