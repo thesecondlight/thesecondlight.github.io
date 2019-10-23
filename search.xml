@@ -1,0 +1,1726 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>学习记录</title>
+    <url>/2019/10/21/record/</url>
+    <content><![CDATA[<p>[TOC]<br>目录看右下角…</p>
+<h4 id="1-文件权限"><a href="#1-文件权限" class="headerlink" title="1.文件权限"></a>1.文件权限</h4><p>rwx 1 2 4</p>
+<p>d rwx r_x r_x</p>
+<p>d文件目录</p>
+<a id="more"></a>
+
+<p>rwx文件所有者</p>
+<p>r_x文件所属组</p>
+<p>r_x其他人</p>
+<p>chmod更改权限 chomd 755 idnex.txt</p>
+<h4 id="2-sql变量"><a href="#2-sql变量" class="headerlink" title="2.sql变量"></a>2.sql变量</h4><h5 id="系统变量-全局变量-global-会话变量-session"><a href="#系统变量-全局变量-global-会话变量-session" class="headerlink" title="系统变量{全局变量(global) 会话变量(session)}"></a>系统变量{全局变量(global) 会话变量(session)}</h5><h5 id="自定义变量-局部变量-用户-赋值-变量"><a href="#自定义变量-局部变量-用户-赋值-变量" class="headerlink" title="自定义变量{局部变量 用户(赋值)变量}"></a>自定义变量{局部变量 用户(赋值)变量}</h5><p><u><em>全局级别加global，会话界别加session，不加默认session</em></u></p>
+<p>show variables;优先显示会话级变量的值，如果不存在，则显示全局级变量的值</p>
+<p>查看所有的系统变量 :show global variables;</p>
+<p>查看满足条件的部分系统变量：show  variables like ‘%char%’</p>
+<p>查看指定的某个系统变量值：select 系统变量名</p>
+<p>为系统变量赋值 eg: set autocommit=0;</p>
+<p>用户变量 赋值 set @sum=10; set @sum:=10;</p>
+<p>局部变量 声明 declare sum int(20); declare sum int default 10;</p>
+<p>​                 赋值 set sum=10; select @sum:=10;</p>
+<h4 id="3-sql函数"><a href="#3-sql函数" class="headerlink" title="3.sql函数"></a>3.sql函数</h4><p>avg()平均值</p>
+<p>count()返回行数</p>
+<p>MAX()</p>
+<p>MIN()</p>
+<p>SUM()</p>
+<!--first()返回第一个记录的值--> select site from t2019  order by site asc limit 1;
+
+<!--last()返回最后一个记录的值-->select site from t2019  order by site desc limit 1;
+
+<p>HAVING 字句  having sum(money)&gt;1000;</p>
+<p>UPPER()字段值转大写显示</p>
+<p>LOWER()字段值转小写显示</p>
+<p>MID()  select MID(remarks,1,3) from t2019; remarks字段的第一位到第三位</p>
+<p>LEN() 字段值长度</p>
+<p>ROUND() 字段值舍入为指定的小数位数  select ROUND(1.255); =&gt;1</p>
+<p>​                                                                      select ROUND(money,3) from t2019;=&gt;500.12  500.120</p>
+<p>NOW()当前系统日期和时间</p>
+<p>FORMAT()格式化字段显示 eg：select data_format(now(),’%Y-%m’) from t2019;</p>
+<p> sql快速参考xi：<a href="https://www.runoob.com/sql/sql-quickref.html" target="_blank" rel="noopener">https://www.runoob.com/sql/sql-quickref.html</a> </p>
+<h4 id="4-正则-正向预查-反向预查"><a href="#4-正则-正向预查-反向预查" class="headerlink" title="4.正则 正向预查 反向预查"></a>4.正则 正向预查 反向预查</h4><p>正向预查(?=)满足前面的表达式  eg: /\b[/w]+(?=ing\b)/g/匹配全局带ing的单词，但是不要ing</p>
+<p>反向预查(?&lt;=)满足后面的表达式 eg:/(?&lt;=index\.ts)/ 匹配以.ts结尾 ,左边是index</p>
+<p>/g 全局匹配</p>
+<p>/w匹配字母，数字，下划线</p>
+<p>/d匹配数字</p>
+<p>/b匹配单词的边界</p>
+<p>^匹配字符串的开始</p>
+<p>$ 匹配字符串的结束</p>
+<h4 id="5-尾调用优化"><a href="#5-尾调用优化" class="headerlink" title="5.尾调用优化"></a>5.尾调用优化</h4><p>尾调用：在函数的最后一步是直接返回调用另一个函数</p>
+<p>优化：在函数A的内部调用函数B  在A的调用记录上方，会形成一个B的调用记录，等到B的运行结束，将结果返回A，B的调用记录消失。(确保函数的最后一步只调用自身)</p>
+<p>所有的调用记录形调用栈</p>
+<p>eg:</p>
+<p>复杂度O(n)</p>
+<p>function f(){</p>
+<p>​    if(n===1) return 1;</p>
+<p>​    return n*f(n-1);</p>
+<p>}</p>
+<p>复杂度O(1)</p>
+<p>function f(n,total=1){</p>
+<p>​    if(n==1) return total; </p>
+<p>​    return f(n-1,n*total)</p>
+<p>}</p>
+<h4 id="6-mocha覆盖率"><a href="#6-mocha覆盖率" class="headerlink" title="6.mocha覆盖率"></a>6.mocha覆盖率</h4><p>%stmts %Branch % Funcs %Lines</p>
+<p>语句覆盖率 分之覆盖率 函数覆盖率 行覆盖率</p>
+<p>（最弱覆盖）                                      （最全）</p>
+<h4 id="7-递归和迭代的转化-区别"><a href="#7-递归和迭代的转化-区别" class="headerlink" title="7.递归和迭代的转化 区别"></a>7.递归和迭代的转化 区别</h4><p><img src="http://l.yumud.com/1571377276911.png" alt="1571377276911"></p>
+<!--(借用了别人借用的图)-->
+
+<h4 id="8-版本号"><a href="#8-版本号" class="headerlink" title="8.版本号"></a>8.版本号</h4><p>主版本号  次版本号  修订号  先行版本号  版本编译元数据(不在优先级比较的列表中)</p>
+<p>​      X               Y               Z</p>
+<p>X 当API的兼容性变化时，递增</p>
+<p>Y 增加功能，不影响API的兼容性，递增</p>
+<p>Z Bug修复，不影响API兼容性，递增</p>
+<p>^主版本号不变  ^1.2.3==&gt;1.2.3&lt;=版本号&lt;2.0.0     1.x.x</p>
+<p>~主次不变         ~1.2.3==&gt;1.2.3&lt;=版本号&lt;1.3.0      1.2.x</p>
+<h4 id="9-SQL自定义函数"><a href="#9-SQL自定义函数" class="headerlink" title="9.SQL自定义函数"></a>9.SQL自定义函数</h4><p>delimiter //</p>
+<p>create function countSum(id int) return int(11)</p>
+<p>​    DETERMINISTIC</p>
+<p>begin</p>
+<p>​    declare temp int;</p>
+<p>​    select count(*) into temp from t2019 where site=id;</p>
+<p>​    return temp; </p>
+<p>end</p>
+<p>//</p>
+<p>**deterministic</p>
+<h4 id="10-临时表-派生表"><a href="#10-临时表-派生表" class="headerlink" title="10.临时表 派生表"></a>10.临时表 派生表</h4><h5 id="临时表"><a href="#临时表" class="headerlink" title="临时表"></a>临时表</h5><p>内部临时表（MySQL自动创建） 外部临时表（create temporary table）</p>
+<h5 id="派生表"><a href="#派生表" class="headerlink" title="派生表"></a>派生表</h5><p>查询结果生成的表 ，类似于临时表</p>
+<p>select * from (select * from others) temp;   temp即派生表</p>
+<h4 id="11-事件循环"><a href="#11-事件循环" class="headerlink" title="11.事件循环"></a>11.事件循环</h4><h4 id="12-事务-乐观锁-悲观锁"><a href="#12-事务-乐观锁-悲观锁" class="headerlink" title="12.事务 乐观锁 悲观锁"></a>12.事务 乐观锁 悲观锁</h4><h5 id="①事务"><a href="#①事务" class="headerlink" title="①事务"></a>①事务</h5><p>START TRANSACTION;</p>
+<p>COMMIT;/ROLLBACK;</p>
+<h5 id="②悲观锁-乐观锁"><a href="#②悲观锁-乐观锁" class="headerlink" title="②悲观锁 乐观锁"></a>②悲观锁 乐观锁</h5><p>乐观锁 update tb set version=version+1 where version=version</p>
+<p>悲观锁 set autocommit=0 (不允许自动提交)</p>
+<p>​    用for update给每行数据加排他锁 (使用条件:InnoDB，<strong>BEGIN/COMMIT</strong>)</p>
+<p>​    1)根据主键进行查询，查询到数据，主键字段产生行锁 (只是查询的那个字段的数据产生锁，查询这个字段的其他数据不会产生锁)</p>
+<p>​    2)没有查询到数据，不产生锁</p>
+<p>​    3)根据主键，非主键含索引进行查询，查询到数据，主键字段产生行锁，非主键字段产生表锁（非主键字段的所有数据都会有锁）</p>
+<p>​    4)….</p>
+<h4 id="13-tcp-ip"><a href="#13-tcp-ip" class="headerlink" title="13.tcp/ip"></a>13.tcp/ip</h4><p> <a href="https://blog.csdn.net/u012371712/article/details/80795297" target="_blank" rel="noopener">https://blog.csdn.net/u012371712/article/details/80795297</a> </p>
+<p><img src="http://l.yumud.com/1571379820232.png" alt="1571379820232"></p>
+<p>五层：应用层  传输层 网络层  连接层 物理层</p>
+<h4 id="14-请求方式"><a href="#14-请求方式" class="headerlink" title="14.请求方式"></a>14.请求方式</h4><p>get put post delete</p>
+<p>post时，填写参数  ，返回参数ctx.request.query</p>
+<h4 id="15-content-type"><a href="#15-content-type" class="headerlink" title="15.content-type"></a>15.content-type</h4><p>application/json  消息主体是 序列化后的JSON字符串</p>
+<p>application/x-www-form-urlencoded  数据被编码为名称/值对。这是标准的编码格式</p>
+<p>multipart/form-data   需要在表单中进行文件上传时，使用。</p>
+<p>text/plain  数据以纯文本形式(text/json/xml/html)进行编码，不含任何控件或格式字符</p>
+<h4 id="16-string-split-arr-join"><a href="#16-string-split-arr-join" class="headerlink" title="16.string.split arr.join"></a>16.string.split arr.join</h4><p>string.split(“*”) 字符串转数组 以星号作分割依据</p>
+<p>arr.join(“*”) 数组转字符串  用星号作连接</p>
+<h4 id="17-索引"><a href="#17-索引" class="headerlink" title="17.索引"></a>17.索引</h4><p>索引</p>
+<p>唯一索引：查到符合条件的继续查找下一项，如果下一项不符合再返回</p>
+<p>普通索引：查到符合条件的项后直接返回</p>
+<p>创建索引</p>
+<p>create index sy1 on t2019(site);</p>
+<p>添加索引</p>
+<p>alter table t2019 add index sy2(money);</p>
+<p>创建表时直接指定</p>
+<p>create table t2019(</p>
+<p>​    site int not null,</p>
+<p>​    INDEX [sy3] (site]</p>
+<p>)</p>
+<p>删除索引</p>
+<p>drop index [sy1] on t2019;</p>
+<p>唯一索引</p>
+<p>create unique index sy4 on t2019 (site)</p>
+<h4 id="18"><a href="#18" class="headerlink" title="18."></a>18.</h4>]]></content>
+      <categories>
+        <category>A coin a day</category>
+      </categories>
+      <tags>
+        <tag>get一个硬币</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>用户访问浏览器全过程</title>
+    <url>/2019/09/24/%E7%94%A8%E6%88%B7%E8%AE%BF%E9%97%AE%E6%B5%8F%E8%A7%88%E5%99%A8%E5%85%A8%E8%BF%87%E7%A8%8B/</url>
+    <content><![CDATA[<p>详细过程： <a href="https://www.cnblogs.com/yihr/p/9720715.html" target="_blank" rel="noopener">https://www.cnblogs.com/yihr/p/9720715.html</a><br>1.用户输入要访问的域名  <a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a><br>2.浏览器请求解析DNS服务器。把域名<a href="http://www.baidu.com转换成web服务器的ip地址" target="_blank" rel="noopener">www.baidu.com转换成web服务器的ip地址</a><br>3.浏览器从访问的ip地址中解析出默认的端口号 80<br>4.浏览器通过解析后得到的ip地址和端口号与web服务器建立一条TCP连接通道<br>  三次握手<br>5.建立TCP连接之后，浏览器向web服务器发送一条HTTP请求报文<br>6.web服务器响应并读取浏览器的请求信息，然后返回一条HTTP响应报文<br>7.web服务器关闭HTTP连接，关闭TCP连接，web服务器显示访问的网站内容到屏幕上<br>  四次挥手</p>
+]]></content>
+      <categories>
+        <category>面试</category>
+        <category>芝士就是力量！</category>
+      </categories>
+      <tags>
+        <tag>面试</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>egg单元测试</title>
+    <url>/2019/09/19/egg-e5-8d-95-e5-85-83-e6-b5-8b-e8-af-95/</url>
+    <content><![CDATA[<p>github地址： <a href="https://github.com/thesecondlight/egg_mysql" target="_blank" rel="noopener">https://github.com/thesecondlight/egg_mysql</a> egg连接数据库，其中index.js是一个简单的单元测试文件。<a id="more"></a></p>
+<p>首先在controller中新建文件index.js</p>
+<pre><code>&apos;use strict&apos;;
+const Controller = require(&apos;egg&apos;).Controller;
+class indexController extends Controller {
+  async index() {
+    this.ctx.body = &apos;hi,egg&apos;;
+  }
+}
+module.exports = indexController;</code></pre><p>service中新建index.js</p>
+<pre><code>&apos;use strict&apos;;
+
+const Service = require(&apos;egg&apos;).Service;
+
+class UserService extends Service {
+  async get(name) {
+    return name;
+  }
+}
+module.exports = UserService;</code></pre><p>测试文件目录test,与app文件夹同一级</p>
+<p>test/app/controller/index.test.js （命名规则：测试文件名.test.js） 对controller层以及router层的测试</p>
+<pre><code>&apos;use strict&apos;;
+
+const { app, assert } = require(&apos;egg-mock/bootstrap&apos;);
+
+describe(&apos;test/app/controller/index.test.js&apos;, () =&gt; {
+  it(&apos;should GET /&apos;, () =&gt; {
+    return app.httpRequest()
+      .get(&apos;/index&apos;)  //router访问路径
+      .expect(&apos;hi,egg&apos;)   //希望返回的结果
+      .expect(200);       //希望返回的状态
+  });
+  it(&apos;should send multi requests&apos;, async () =&gt; {
+    await app.httpRequest()
+      .get(&apos;/index&apos;)
+      .expect(&apos;hi,egg&apos;)
+      .expect(200);
+    const result = await app.httpRequest()
+      .get(&apos;/index&apos;)
+      .expect(200)
+      .expect(&apos;hi,egg&apos;);
+    assert(result.status === 200);
+  });
+});</code></pre><p>运行npm test</p>
+<p><img src="http://l.yumud.com/image-9-31.png" alt></p>
+<p>可能会报错，因为你router路径的不规范，访问了<strong>不存在的路径</strong>，或者<strong>无效变量</strong>的存在，看错误提示，进行相应的修改即可。</p>
+<p>test/app/service/index.test.js</p>
+<pre><code>&apos;use strict&apos;;
+
+const { app, assert } = require(&apos;egg-mock/bootstrap&apos;);
+
+describe(&apos;get()&apos;, () =&gt; {
+  it(&apos;should get exists user&apos;, async () =&gt; {
+    const ctx = app.mockContext();  //创建ctx
+    const user = await ctx.service.index.get(&apos;yumu&apos;);   //通过ctx访问到service.user
+    assert(user === &apos;yumu&apos;);
+  });
+});</code></pre><p>运行npm test</p>
+<p><img src="http://l.yumud.com/image-9-32.png" alt></p>
+]]></content>
+      <categories>
+        <category>嗨~egg</category>
+      </categories>
+      <tags>
+        <tag>egg</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo添加valine评论</title>
+    <url>/2019/09/16/hexo-e6-b7-bb-e5-8a-a0valine-e8-af-84-e8-ae-ba/</url>
+    <content><![CDATA[<p>首先在<a href="https://leancloud.cn/dashboard/login.html#/signin" target="_blank" rel="noopener">leancloud</a>中注册，创建一个新应用，在设置=&gt;应用key中查看appid和appkey，</p>
+<p>在设置=&gt;安全中心 把博客地址添加到安全中心，保证数据调用的安全性。</p>
+<a id="more"></a>
+<p>在主题中(eg：我的是yilia主题) \themes\yilia\_config.yml 中添加</p>
+<pre><code>valine: 
+ enable: true
+ appid: gG1wfFA4yGQarTbT4EB44wR2-gzGzoHsz
+ appkey: SvnF4k7cxYtmz1HDwaJe0Lzq
+ verify: false #验证码
+ notify: true #评论回复提醒
+ avatar: robohash #一种具有不同颜色、面部等的机器人
+ placeholder: 小姐姐，讲话呀
+ pageSize: 10
+ guest_info: nick,mails </code></pre><p>在 \themes\yilia\layout_partial\post中新建一个valine.ejs</p>
+<pre><code>&lt;div id=&quot;vcomment&quot; class=&quot;comment&quot;&gt;&lt;/div&gt; 
+&lt;script src=&quot;//cdn1.lncld.net/static/js/3.0.4/av-min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;//unpkg.com/valine/dist/Valine.min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+   var notify = &apos;&lt;%= theme.valine.notify %&gt;&apos; == true ? true : false;
+   var verify = &apos;&lt;%= theme.valine.verify %&gt;&apos; == true ? true : false;
+    window.onload = function() {
+        new Valine({
+            el: &apos;.comment&apos;,
+            notify: notify,
+            verify: verify,
+            app_id: &quot;&lt;%= theme.valine.appid %&gt;&quot;,
+            app_key: &quot;&lt;%= theme.valine.appkey %&gt;&quot;,
+            placeholder: &quot;&lt;%= theme.valine.placeholder %&gt;&quot;,
+            avatar:&quot;&lt;%= theme.valine.avatar %&gt;&quot;
+        });
+    }
+&lt;/script&gt;</code></pre><p>添加评论头像：</p>
+<p>非自定义头像默认值</p>
+<p><img src="http://l.yumud.com/image-9-30.png" alt></p>
+<p>想要自定义，就去Gravatar注册登录，上传，使用自己的图片</p>
+]]></content>
+      <categories>
+        <category>芝士就是力量！</category>
+      </categories>
+      <tags>
+        <tag>芝士~</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>pta -1039 到底买不买</title>
+    <url>/2019/09/12/pta-1039-e5-88-b0-e5-ba-95-e4-b9-b0-e4-b8-8d-e4-b9-b0/</url>
+    <content><![CDATA[<p>题目：小红买珠子，店家给出一串珠子，小红给出一串自己想要颜色的珠子；判断店家的珠子是否满足小红的要求，如果颜色不够，输出“No *” *为缺几颗；如果颜色足够，输出“Yes *” *为多余的珠子颗数。</p>
+<a id="more"></a>
+<p>我的想法是，搞两个数组A,B存这两串珠子，然后判断B中的数据是否在A中都能找到，找不到cout++,全找到了（还要考虑颜色都有，但是个数是否匹配，就得再用一个数组，存匹配珠子的个数），A数组长度-B数组长度，得出多余的珠子。</p>
+<p>百度看到网友转的网友的思路：</p>
+<p><img src="http://l.yumud.com/image-9-28.png" alt></p>
+<p><img src="http://l.yumud.com/image-9-29.png" alt></p>
+<p>这种思路，解法过分优秀了….</p>
+]]></content>
+      <categories>
+        <category>A coin a day</category>
+      </categories>
+      <tags>
+        <tag>get一个硬币</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>pta -1009 说反话 pta -1021 个位数统计</title>
+    <url>/2019/09/11/pta-1009-e8-af-b4-e5-8f-8d-e8-af-9d/</url>
+    <content><![CDATA[<p><strong>1009</strong>说反话题目：hello peach=&gt;peach hello</p>
+<p>用do while而不是while是因为会把“h”吃掉 hello peach=&gt;peach ello</p>
+<a id="more"></a>
+<p><img src="http://l.yumud.com/image-9-26.png" alt></p>
+<p><strong>1021</strong>个位数统计题目：统计一个整数中，每种不同的数字出现的次数。（按次数的升序输出）</p>
+<p>输入：10021</p>
+<p>输出：</p>
+<p>0:2</p>
+<p>1:2</p>
+<p>2:1</p>
+<p><img src="http://l.yumud.com/image-9-27.png" alt></p>
+]]></content>
+      <categories>
+        <category>A coin a day</category>
+      </categories>
+      <tags>
+        <tag>get一个硬币</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>js字符串倒序(两种反转)</title>
+    <url>/2019/09/11/js-e5-ad-97-e7-ac-a6-e4-b8-b2-e5-80-92-e5-ba-8f-e4-b8-a4-e7-a7-8d-e5-8f-8d-e8-bd-ac/</url>
+    <content><![CDATA[<p>var str=”hello peach”</p>
+<p>全部(字母)反转 str.split(‘’).reverse().join(‘’) *引号内无空格，每一个字符都会被分割</p>
+<p>单词反转 str.split(‘ ‘).reverse().join(‘ ‘) <em>引号里面有空格</em></p>
+<p><img src="http://l.yumud.com/image-9-25.png" alt></p>
+<p>注意：split的用法，split()用于将一个字符串分割成字符串数组。</p>
+<p>reverse()数组反转，然后，Array.join转换为字符串（与String.split()方法正相反）。</p>
+]]></content>
+      <categories>
+        <category>js</category>
+      </categories>
+      <tags>
+        <tag>面试</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>wordpress 在首页不显示某些分类下的文章</title>
+    <url>/2019/09/11/wordpress-e5-9c-a8-e9-a6-96-e9-a1-b5-e4-b8-8d-e6-98-be-e7-a4-ba-e6-9f-90-e4-ba-9b-e5-88-86-e7-b1-bb-e4-b8-8b-e7-9a-84-e6-96-87-e7-ab-a0/</url>
+    <content><![CDATA[<p>在主题下的functions.php里面添加这一段代码，好评！</p>
+<p><strong>路径=&gt;xampp/htdocs/wp-content/themes/你使用的主题/function.php</strong></p>
+<a id="more"></a>
+<p>function exclude_category_home( $query ) {</p>
+<p>if ( $query-&gt;is_home ) {</p>
+<p>$query-&gt;set( ‘cat’, ‘<strong>-4,-8</strong>‘ ); //你要排除的分类ID,就是带-号</p>
+<p>}</p>
+<p>return $query;</p>
+<p>}</p>
+<p>add_filter( ‘pre_get_posts’, ‘exclude_category_home’ );</p>
+]]></content>
+      <categories>
+        <category>芝士就是力量！</category>
+      </categories>
+      <tags>
+        <tag>芝士~</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>pta -1093 字符串A+B</title>
+    <url>/2019/09/11/pta-1093-e5-ad-97-e7-ac-a6-e4-b8-b2ab/</url>
+    <content><![CDATA[<p>题目：给定两个字符串A,B，输出A+B的并集（要求：先输出A，再输出B，但是重复的元素必须剔除）</p>
+<p>思路：A中重复的字符去掉，B中重复的字符去掉，B中存在A的字符去掉。for循环把B中和A重复的字符置为0，然后输出时不输出为0的字符，实施发现麻烦，根本不是个事儿，百度发现自己解决这个问题的想法有很大的问题。</p>
+<a id="more"></a>
+<p>百度：两个字符串(A,B)连接放在C中，初始化一个全为0的数组，把C中的字符放进去过得字符都+1或置1，判断是否为0，加入加入。</p>
+<p><img src="http://l.yumud.com/image-9-23.png" alt></p>
+<p>把公司电脑vscode c的环境配置好了，所以不用dev写了，dev晚上写代码闪瞎眼。</p>
+]]></content>
+      <categories>
+        <category>A coin a day</category>
+      </categories>
+      <tags>
+        <tag>get一个硬币</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[校内互助]小程序--素材记录</title>
+    <url>/2019/09/10/e6-a0-a1-e5-86-85-e4-ba-92-e5-8a-a9-e7-b4-a0-e6-9d-90-e8-ae-b0-e5-bd-95/</url>
+    <content><![CDATA[<p>1.左滑接单 get [2019-9-10]</p>
+<p>2.不成熟的发单页面 [2019-9-10]</p>
+]]></content>
+      <categories>
+        <category>Demo</category>
+        <category>小程序</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>pta -1007素数对猜想</title>
+    <url>/2019/09/10/pta-1007-e7-b4-a0-e6-95-b0-e5-af-b9-e7-8c-9c-e6-83-b3/</url>
+    <content><![CDATA[<p>dev运行cpp文件报错，什么请求被拒绝，然后百度说杀毒软件的问题，打开任务管理器，没发现杀毒软件，但是把一个<strong>隐藏</strong>的已经运行的这个项目的<strong>exe文件结束</strong>了，问题解决。</p>
+<p>题目：两个相邻素数差2即是一个素数对。</p>
+<a id="more"></a>
+<p>思路：先求出n之内的素数，然后，判断一下相邻素数之间差值为2的，count++;</p>
+<p><img src="http://l.yumud.com/image-20.png" alt></p>
+<p><strong>这是最后的结果</strong></p>
+<p>但是我开始不是这样写的，我的是这样，这个判定为最后一个测试点运行超时，百度说，在循环判断那里，sqrt(n)减少判断的数量就好了，可是我加了之后，素数少了一半….懵…</p>
+<p><img src="http://l.yumud.com/image-9-21.png" alt></p>
+]]></content>
+      <categories>
+        <category>A coin a day</category>
+      </categories>
+      <tags>
+        <tag>get一个硬币</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>pta -1004成绩排名</title>
+    <url>/2019/09/10/pta-1001-e6-88-90-e7-bb-a9-e6-8e-92-e5-90-8d/</url>
+    <content><![CDATA[<p>题目： 读入 <em>n</em>（&gt;0）名学生的<strong>姓名、学号、成绩</strong>，分别输出<strong>成绩最高</strong>和<strong>成绩最低</strong>学生的姓名和学号。</p>
+<a id="more"></a>
+<p>挺好写的，可是我写的很幼稚，写了三个数组…</p>
+<p><img src="http://l.yumud.com/image-9-18.png" alt></p>
+<p>然后百度别人写的：</p>
+<p>用结构体数组….一下子简洁了…又写了一下</p>
+<p><img src="http://l.yumud.com/image-9-19.png" alt></p>
+<p>好看~</p>
+]]></content>
+      <categories>
+        <category>A coin a day</category>
+      </categories>
+      <tags>
+        <tag>get一个硬币</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>WeUI的初步使用--安装引入</title>
+    <url>/2019/09/09/weui-e7-9a-84-e4-bd-bf-e7-94-a8/</url>
+    <content><![CDATA[<p>安装：打开<a href="https://github.com/weui/weui-wxss/" target="_blank" rel="noopener">https://github.com/weui/weui-wxss/</a> git clone文件</p>
+<p><img src="http://l.yumud.com/image-9-15.png" alt></p>
+<p>如上图，把这个文件复制一份到你根目录下，在全局app.wxss中引用weui.wxss <strong>@import ‘weui.wxss’;</strong></p>
+]]></content>
+      <categories>
+        <category>小程序</category>
+      </categories>
+      <tags>
+        <tag>小程序！小程序！</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>pta -1003我要通过！</title>
+    <url>/2019/09/09/pta-1003-e6-88-91-e8-a6-81-e9-80-9a-e8-bf-87-ef-bc-81/</url>
+    <content><![CDATA[<p>读了一遍，题目我竟然没看懂…</p>
+<p><img src="http://l.yumud.com/image-9-14.png" alt></p>
+<p><strong>题目</strong></p>
+<a id="more"></a>
+<p>我的理解：只能存在 P A T，如果存在其他字母必须为空字符或者A进行填充。</p>
+<p>思路：判断这个字符串中是否含有其他字母，有就否决；必须由A或空字符填充。</p>
+<p>可是怎么写，又进行不动了</p>
+]]></content>
+      <categories>
+        <category>A coin a day</category>
+      </categories>
+      <tags>
+        <tag>get一个硬币</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>冒泡排序</title>
+    <url>/2019/09/07/e5-86-92-e6-b3-a1-e6-8e-92-e5-ba-8f/</url>
+    <content><![CDATA[<p>从最基础的冒泡排序开始。</p>
+<p>[等一下，回家写]–废话.jpg</p>
+<a id="more"></a>
+<p>[然而我回家也没写，我填了一下之前的坑] –废话.jpg</p>
+<p>[然而今天也没有刷题，我躺着敲工作反思，电脑很热。确切的说，不是今天没有刷题，现在已经凌晨了] –废话.jpg</p>
+<p>————————–正经.jpg ————————–</p>
+<p>相邻两个数比较一下，然后小(大)放在前面，例如1852</p>
+<p>18不需要换 1852</p>
+<p>85=&gt;58 1582</p>
+<p>82=&gt;28 1528(最大的已经到了最后)</p>
+<p>152</p>
+<p>15 不需要 152</p>
+<p>52=&gt;25 125</p>
+<p><strong>1258</strong>完成</p>
+<p>就是个嵌套的for循环，然后temp中间变量，把两个值换一下。假设有n个数，就要走n-1步，第i步中需要n-i次比较</p>
+<p>粘代码</p>
+<p>不，我用c还是java写，同学让我学c++，那这样两个就都会了，我感觉有点不对劲，但还是先用C++写吧</p>
+<p><img src="http://l.yumud.com/image-13.png" alt></p>
+]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CC卡路里 耶</title>
+    <url>/2019/09/07/cc-e5-8d-a1-e8-b7-af-e9-87-8c-e8-80-b6/</url>
+    <content><![CDATA[<p><img src="http://l.yumud.com/gh_8490c442bd64_258-1-1.jpg" alt></p>
+<a id="more"></a>
+<p>微信扫一扫查看，或搜索”CC卡路里”查看。</p>
+<p>主要功能：查询食物热量，记录每日饮食，BMI身体质量测试。</p>
+<p><strong>优化</strong>：</p>
+<p>△加数据分析，每个月或15天，对用户记录的饮食热量进行分析=&gt;但是，没有达到记录量怎么办，目前用户不多，稳定用户更少，这样做出来的数据分析不为准=&gt;没有达到记录量，弹出“记录过少，无法生成健康账单”</p>
+<p>△ 查询页面，很严重，部分手机左滑出现1/3空白；部分手机虽然进行左滑操作，页面不出现1/3空白，但是下方会出现横向滑动条。</p>
+]]></content>
+      <categories>
+        <category>Demo</category>
+        <category>小程序</category>
+      </categories>
+      <tags>
+        <tag>Demo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>pta -1002写出这个数[初级]</title>
+    <url>/2019/09/07/pta-1002-e5-86-99-e5-87-ba-e8-bf-99-e4-b8-aa-e6-95-b0/</url>
+    <content><![CDATA[<p>题目： <strong>读入一个正整数 **_</strong>n<strong>_</strong>，计算其各位数字之和，用汉语拼音写出和的每一位数字。**</p>
+<a id="more"></a>
+<p>思路=&gt;%10 /10把每一位数字存起来，写个switch case包函数里面用来判断每一位数字是什么字母</p>
+<p>我实施了一半，写不出来</p>
+<p>百度：把对应的字母存在一个二维数组中，%10 /10操作</p>
+<p><img src="http://l.yumud.com/image-9-9.png" alt></p>
+]]></content>
+      <categories>
+        <category>A coin a day</category>
+      </categories>
+      <tags>
+        <tag>get一个硬币</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>pta -1001害死人不偿命的(3n+1)猜想[初级]</title>
+    <url>/2019/09/07/pta-1001-e5-ae-b3-e6-ad-bb-e4-ba-ba-e4-b8-8d-e5-81-bf-e5-91-bd-e7-9a-843n1-e7-8c-9c-e6-83-b3/</url>
+    <content><![CDATA[<p>题目： <strong>对给定的任一不超过 1000 的正整数 **_</strong>n<strong>_</strong>，简单地数一下，需要多少步（砍几下）才能得到 <strong>_</strong>n<strong>_</strong>=1？** [对3(n+1)猜想感兴趣的自行百度哦]</p>
+<a id="more"></a>
+<p>超简单，但是我在scanf那里加了<strong>\n</strong>，然后编译执行，输入数据，就卡住了</p>
+<p>百度：scanf中的\n不是指换行，而是忽略一切空白符，直到下一个空白符出现</p>
+<p><img src="http://l.yumud.com/image-8.png" alt></p>
+<p>真的是敲代码就是个白痴–</p>
+]]></content>
+      <categories>
+        <category>A coin a day</category>
+      </categories>
+      <tags>
+        <tag>get一个硬币</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>前言【一天一块钱】</title>
+    <url>/2019/09/07/e5-89-8d-e8-a8-80/</url>
+    <content><![CDATA[<p>大一大二坚持每天刷一题，然后考了三次二级C语言，没有过哈哈哈。</p>
+<p>之前在CSDN记了几次，发现效果不大，然后就只是单纯在电脑上刷题没有记录，现在要重新开始了，每天一题！我要考证！[真的是一个敲代码的白痴–]</p>
+<p>等我的服务器稳定了，或者直接搬家到github，我再整一个目录吧(题目跳着做的)，现在笔记里面图片地址，跳转链接什么的，一搬家，全得换，啊呀。</p>
+]]></content>
+      <categories>
+        <category>A coin a day</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>第一份工作反思</title>
+    <url>/2019/09/06/e7-ac-ac-e4-b8-80-e4-bb-bd-e5-b7-a5-e4-bd-9c-e5-8f-8d-e6-80-9d/</url>
+    <content><![CDATA[<p>因为走错了另外一家公司的门hhh</p>
+<a id="more"></a>
+<p>应该是饶了一个圈子，从后门进去的，进去的一瞬间感觉像培训，又没看到人在工作，印象不太好，先做笔试题，然后三个人一起面试，面试官也没问啥，就让自我介绍了一下，然后问了一下项目，仔细介绍一下你的项目，问了那个得奖的手游怎么做的，hh，我做的模型…就是代码不是我搞，我搞的人物模型，最后问有什么想问他的，没得，疑惑脸，没有？没有想问的？然后人事过来，三个人当时留下了一个详谈，就溜溜了。</p>
+<p>晚上hr打电话说，薪资，待遇，高温补贴，节假日福利什么的，当时很不爽，怎么当时没留下，现在又来电话谈，聊了一会说考虑一下。</p>
+<p>再后来就是入职了现在的公司，签完合同才知道周一周三固定加班到九点，有点儿懵，当时应该是花呗没欠钱，不然为什么留这家公司，是两外一家公司不够大，还是五百块不是钱，还是三个月的高温补贴不是钱，鬼迷心窍，觉得两个月实习期很棒。</p>
+<p>现在真的棒棒了，房子一年的合同，工作两个月的实习期，感觉要凉凉了，为什么不选择做前端，也没有选择做小程序，感觉另外一家外包公司也不错，小小的，薪资也很nice，就是前台冷冷淡淡的，还不是漂亮姐姐，但是那是一次表现不错的面试了，小程序啊，好想去搞小程序，专门去做小程序多棒啊，现在好凉，好后悔，怎么才面试了三天，就做了决定，面了四家公司，三份offer(虽然有大有小)，但是为什么选了一份最不靠谱的，这个九月强制性996好烦啊，每天摸鱼好不爽，我不喜欢九点在公司，我想九点在家里磕代码，我想九点在江边发呆。</p>
+<p>反思: 入职之前，要留一周的思考时间，要好好想，要知道什么口头承诺都是可以变的，加班也很随便，然而钱不能，没得加班费.（花呗到底了，好难啊。）</p>
+<p>还有现在最后悔的，待遇很好的那家公司，有浙大学长学姐，好羡慕啊，现在他们已经开始校招了，我到底错过了什么啊…</p>
+]]></content>
+      <categories>
+        <category>日常</category>
+      </categories>
+      <tags>
+        <tag>hide</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【搬家二】--wordpress搬github+hexo[又：github+hexo建站]</title>
+    <url>/2019/09/06/e3-80-90-e6-90-ac-e5-ae-b6-e4-ba-8c-e3-80-91-wordpress-e6-90-acgithubhexo/</url>
+    <content><![CDATA[<p>三个月服务器快到期了hh，之前冲动消费买了一年的，啥也没干，一年过去了，这次三个月满满当当，过得可真快啊</p>
+<p>搬家搬家</p>
+<p><strong>1.创建仓库</strong></p>
+<a id="more"></a>
+<p>在github里创建一个<strong>username.github.io</strong>的仓库 [<strong>username</strong>就是你github的用户名]，创建完，就可以通过<strong>username.github.io</strong> 访问你的网站了</p>
+<p><strong>2.绑定域名</strong>[你开心就绑定]</p>
+<p>买域名，备案，解析，添加</p>
+<p><img src="http://l.yumud.com/image-10-1024x180.png" alt></p>
+<p>ip，就是你在自己电脑上ping一下username.github.io，get!</p>
+<p>然后在github中那个项目下新建一个CNAME的文件(无后缀),里面写你的域名。</p>
+<p><strong>3.配置SSH key</strong>[差不多就这样，看不懂百度]</p>
+<pre><code>ssh-keygen -t rsa -C &quot;邮件地址&quot;
+在本机生成一个.ssh\id_rsa.pub文件，把里面的东西复制到github设置中,SSH and GPG keys 添加即可。</code></pre><p><strong>4.测试是否成功</strong></p>
+<p>ssh -T <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a></p>
+<p>就是输入这个，一个字母也别改=&gt;</p>
+<p><img src="http://l.yumud.com/image-11.png" alt></p>
+<p>成功</p>
+<p>-------------------------------------- 开始搞hexo ————————————–</p>
+<p>安装 <strong>npm install -g hexo</strong></p>
+<p>认真新建一个文件夹，初始化 <strong>hexo init</strong></p>
+<p><strong>hexo g</strong> //生成</p>
+<p><strong>hexo s</strong> //启动服务</p>
+<p>原始主题不好看，可以去官网看一下 <a href="https://hexo.io/themes/" target="_blank" rel="noopener">https://hexo.io/themes/</a></p>
+<p>改成你新下载的主题:</p>
+<p>修改<code>_config.yml</code>中的<code>theme: landscape</code>改为<code>theme: 新主题名</code>，然后重新执行<code>hexo g</code>来重新生成。</p>
+<p>-------------------------------------- 上传到github————————————–</p>
+<p>修改_config.xml</p>
+<p><img src="http://l.yumud.com/image-12.png" alt></p>
+<p>deploy这部分，记得改成你自己的名字</p>
+<p>git bash中直接执行hexo d，</p>
+<p>如果报错，在git bash中执行 <strong>npm install hexo-deployer-git –save</strong>，然后hexo d</p>
+<p>——到此建站结束，要开始写文章了，不过我直接把我wordpress的导出，搞过来的</p>
+<p><strong>迁移</strong></p>
+<p>安装插件 <strong>npm install hexo-migrator-wordpress –save</strong></p>
+<p>在wordpress仪表盘中导出数据，<strong>hexo migrate wordpress</strong> source为导出的文件路径———</p>
+<p>在hexo<strong>新建</strong>写文章</p>
+<p>hexo new <title> title为文章标题</title></p>
+<p>新建的文件在/source/_posts路径下。双击打开编辑即可。（文件格式为.md）</p>
+<p>很烦，我刚注意到，我的文件是都导过去了，可是<strong>图片</strong>地址是服务器下的，那我搬的这个家，差点儿落一半…=&gt;wp-content/uploads下的图片打个包拿出来，然后，然后只能在本地一张一张的换了…所以说这个github+hexo搭网站有好有坏吧，不如云+wordpress比较方便，可以随时写两篇文章，但是免费，这一点就很优秀了…</p>
+]]></content>
+      <categories>
+        <category>芝士就是力量！</category>
+      </categories>
+      <tags>
+        <tag>芝士~</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>一些点子</title>
+    <url>/2019/09/06/e8-b6-85-e5-b0-8f-e7-9a-84demo/</url>
+    <content><![CDATA[<p><a href="https://thesecondlight.github.io/2019/09/05/e6-94-be-e5-9c-a8demo-e9-87-8c-e9-9d-a2/" target="_blank" rel="noopener">[校内互助小程序]</a></p>
+<p><a href="https://thesecondlight.github.io/2019/09/07/cc-e5-8d-a1-e8-b7-af-e9-87-8c-e8-80-b6/" target="_blank" rel="noopener">[CC卡路里]优化</a></p>
+<p>[外出安全]</p>
+<a id="more"></a>
+<p>这个还没的雏形，真的只是一个点子，起因是入职的那个周末搬家，半夜打车搬行李过来，自己一个人真的很害怕，尤其是当司机很吓人，有什么奇怪的举动的时候，手机电量低的吓人，充电宝在后备箱的行李箱里，又不敢挂断和朋友的电话，当时觉得，完了，心脏病复发的感觉，心跳好快，一直在电话里重复，“你在门口等我，我快到了”，手都在抖，并没有人在等我。</p>
+<p>然后就在那么害怕的时候，我竟然在想，做一个可以安全互助的软件，你发布紧急求助，然后别人接受，在特定的地方等你(或者直接在打车路途中等你，加入路程)，更为安全的是在你打车的之前，就和你一起，然后陪你一起到达目的地。</p>
+<p>但是女生接受这种任务可能性不大，男生你又害怕不安全，而且酬劳设置很高，不然相对时间来说，这种任务并不值得去做。</p>
+<p>或者直接报警，显然报警并不适合这种情况，你并不能在你主观觉得危险的时候就报警，得到回应的几率很小。</p>
+<p>安全啊，安全真的重要，每个人都很重要，但每个人得到的安全保障不一样，就假如我在杭州出了意外，我在北京的朋友和我对了暗号，即使知道我出事了，她也并不能立即赶过来，而且赶过来真的有用吗，她知道我出事的地点也微乎其微，只是知道，只是在平安的时候放心罢了…</p>
+]]></content>
+      <categories>
+        <category>Demo</category>
+      </categories>
+      <tags>
+        <tag>hide</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[校内互助小程序--初期构想]</title>
+    <url>/2019/09/05/e6-94-be-e5-9c-a8demo-e9-87-8c-e9-9d-a2/</url>
+    <content><![CDATA[<p>只要我留的坑多，我就一定会填的，给校内互助的构想占个位置</p>
+<p>要解决的问题和初期构想：</p>
+<p><strong>登录验证</strong> 安全问题，使用教务系统账号密码？使用身份证过于麻烦，随意注册登录没有安全性=&gt;但是好像安全方面，也不用考虑过多，平时聊天群互助，也不知道身份，也是没有安全性的，所以这方面首要考虑，<strong>到底做不做这个功能。</strong></p>
+<a id="more"></a>
+<p><strong>保证金</strong>，用户发布或者接单要不要收取一定的费用，防止资源浪费</p>
+<p><strong>垃圾任务</strong> 垃圾任务怎么挑选出来</p>
+<p><strong>紧急任务</strong> 收取费用，这个要收，hh=&gt;付费置顶任务，一天只允许三篇置顶，只有一天的时限 [暂定一天￥1,一月￥9.9]，如果是垃圾任务（hdd）就删除，防止误删,所以我要手动删。</p>
+<p>收费的话，个人小程序不允许，得有证，所以，我要留个联系方式，“ 手动收钱 ”，“ 手动置顶 ”</p>
+<p><strong>发布任务数量</strong> 一天三个，超过收费</p>
+<p><strong>接单数量</strong> 一天三个，超过收费</p>
+<p><strong>任务可被接单人数</strong> 如果没有选定是大量，则只允许三人接单，发布者进行挑选，截止时间到，进入垃圾箱，解散该任务[要不要有回收站？]选定是大量，则被允许接单为发布者选定的人数。</p>
+<p><strong>反悔</strong> 发布者取消，接单者取消，无碍？还是设置点儿惩罚</p>
+<p><strong>交易</strong> 成功后，发布者可以选定接单者，查看信息，加好友或者邮箱联系，金钱交易不在小程序中，完全的线下交易，或其他平台交易，小程序只负责发单，接单，<strong>不承担任何责任</strong></p>
+<p><strong>用户投诉</strong> 直接在主页面设置投诉</p>
+<p><strong>预留账号</strong> 记得预留一个账号，把接收的投诉信息搞出来，“投诉处理页面”，可以直接在此页面进行投诉信息处理。</p>
+]]></content>
+      <categories>
+        <category>Demo</category>
+        <category>小程序</category>
+      </categories>
+      <tags>
+        <tag>构想</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>mysql--第二次系统学习时的笔记</title>
+    <url>/2019/09/05/mysql-e7-ac-ac-e4-ba-8c-e6-ac-a1-e7-b3-bb-e7-bb-9f-e5-ad-a6-e4-b9-a0-e6-97-b6-e7-9a-84-e7-ac-94-e8-ae-b0/</url>
+    <content><![CDATA[<p>直接粘贴会串行，贴个链接[有道云笔记]</p>
+<p>文档：hhhMYSQL.note<br>链接：</p>
+<p><a href="http://note.youdao.com/noteshare?id=6d7727b115b2b7c3498c726b876bcfbd&sub=155CA2FFD61948EFAF00D4936D406087" target="_blank" rel="noopener">http://note.youdao.com/noteshare?id=6d7727b115b2b7c3498c726b876bcfbd&amp;sub=155CA2FFD61948EFAF00D4936D406087</a></p>
+]]></content>
+      <categories>
+        <category>mysql</category>
+      </categories>
+      <tags>
+        <tag>mysql</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>我一点一点了解的正则表达式</title>
+    <url>/2019/09/05/e6-88-91-e4-b8-80-e7-82-b9-e4-b8-80-e7-82-b9-e4-ba-86-e8-a7-a3-e7-9a-84-e6-ad-a3-e5-88-99-e8-a1-a8-e8-be-be-e5-bc-8f/</url>
+    <content><![CDATA[<p>[TOC]<br>目录见右下方…</p>
+<h4 id="1"><a href="#1" class="headerlink" title="1.\"></a>1.\</h4><p><strong>/</strong>\*<em>/*</em>g, “” 全局用空替换\ [第一个\为转义字符]</p>
+<h4 id="2-小程序的模糊查询"><a href="#2-小程序的模糊查询" class="headerlink" title="2.小程序的模糊查询"></a>2.小程序的模糊查询</h4><p>在做CC卡路里的时候，用到了模糊查询</p>
+<p><img src="http://l.yumud.com/image-7.png" alt></p>
+<a id="more"></a>
+<p>在数据库test中，根据用户输入的字段，查询数据库，显示模糊查询的结果，i为大小写不敏感</p>
+<p>微信小程序文档“正则”=&gt;</p>
+<p><a href="https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-client-api/database/db.regexp.html" target="_blank" rel="noopener">https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-client-api/database/db.regexp.html</a></p>
+<h4 id="3-正向预查-反向预查"><a href="#3-正向预查-反向预查" class="headerlink" title="3.正向预查 反向预查"></a>3.正向预查 反向预查</h4><p>正向预查(?=)满足前面的表达式 eg: /\b[/w]+(?=ing\b)/g/匹配全局带ing的单词，但是不要ing</p>
+<p>反向预查(?&lt;=)满足后面的表达式 eg:/(?&lt;=index\.ts)/ 匹配以.ts结尾 ,左边是index</p>
+<p>/g 全局匹配</p>
+<p>/w匹配字母，数字，下划线</p>
+<p>/d匹配数字</p>
+<p>/b匹配单词的边界</p>
+<p>^匹配字符串的开始</p>
+<p>$ 匹配字符串的结束</p>
+<h4 id="4"><a href="#4" class="headerlink" title="4."></a>4.</h4>]]></content>
+      <categories>
+        <category>正则表达式</category>
+      </categories>
+      <tags>
+        <tag>正则表达式</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>git--基本操作</title>
+    <url>/2019/09/05/git-e5-9f-ba-e6-9c-ac-e6-93-8d-e4-bd-9c/</url>
+    <content><![CDATA[<p>是大一开始用git，随手记的笔记，加粗为常用【记得把本地生成的ssh搞到github的设置里】【有点儿乱，但是只要之前粗略了解过，你再用这个查操作就很简单了，不乱！】</p>
+<p>总而言之，言而总之</p>
+<p><strong>【你啥也没有，只是下载了git，如下操作】新建一个仓库，上传到github</strong></p>
+<p>git init</p>
+<p>git add .</p>
+<p>git commit -m ‘备注’</p>
+<a id="more"></a>
+<p>git remote add origin <a href="https://balabal" target="_blank" rel="noopener">https://balabal</a></p>
+<p>git pull –rebase origin master[远程仓库不为空，必须做这一步]</p>
+<p>git push -u origin master</p>
+<p><strong>【你git clone完代码，也修改了，要上传，如下操作】</strong></p>
+<p>git add .</p>
+<p>git commit -m “备注”</p>
+<p>git push origin master (从远程库更新本地库)</p>
+<p>git pull origin <branch> 上传到某一分支<branch></branch></branch></p>
+<p><img src="http://l.yumud.com/image-9-6.png" alt></p>
+<p>很久了，忘了从哪里截的–</p>
+<p><strong>git status查看项目的当前状态</strong></p>
+<p>git init 将该文件夹变为git仓库<br>将工作目录的文件放入git仓库只需要两步：</p>
+<p>-git add 文件名</p>
+<p>-git commit -m “你干了什么”</p>
+<p><strong>git log</strong>命令显示从最近到最远的提交日志 <strong>查看历史</strong></p>
+<p>type 显示txt中的内容<br>查看状态 git status</p>
+<p>倒退一步（最近的一次操作）: 、</p>
+<p>git reset HARD~</p>
+<p>git reset –hard 版本号（commit_d前几位就行，次数不多的情况下）</p>
+<p>使用git log查看提交记录，以便于要回退到哪个版本</p>
+<p>git reflog查看命令历史<br>恢复原有操作（就是撤销你的这次的操作）：</p>
+<p>将暂存区域恢复之前的状态哦</p>
+<p>git checkout – 文件名</p>
+<p>放入暂存区撤销</p>
+<p>git reset head 文件名</p>
+<p>git checkout – 文件名<br>删除</p>
+<p>在cmd中del 文件名</p>
+<p>git rm 文件名</p>
+<p>git commit -m “”</p>
+<p>在版本库里删除无法找回</p>
+<p>在误删的情况下可以</p>
+<p>git checkout – 文件名  </p>
+<p>关联一个远程库</p>
+<p>本地-&gt;远程git remote add origin <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:thesecondlight/xxx.git</p>
+<p>关联后推送内容 git push -u origin master 第一次推送master分支所有内容之后git push origin master<br>『出现remote origin already exists git remote rm origin』<br>从远程库克隆下一个本地库 远程库-&gt;本地库git clone <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:thesecondlight/xxx.git</p>
+<p>从远程库更新本地库git pull origin master</p>
+<p>新建一个.txt</p>
+<p>echo “this is a txt”&gt;&gt;read.txt<br><strong>查看尚未缓存的改动 变更的内容git diff</strong></p>
+<p>查看已缓存的改动 git diff –cashed<br>删除文件 git rm -f(强制) <file><br>重命名 git mv old new<br><strong>创建分支 git branch (branchname)</strong></file></p>
+<p><strong>切换分支git checkout (branchname)</strong><br>创建并切换git checkout -b branchname<br>合并分支命令git merge branchname</p>
+<p>合并（branchname）指定分支到当前分支列出分支git branch<br>删除分支git branch -d branchname<br>常见报错<a href="http://blog.csdn.net/dengjianqiang2011/article/details/9260435" target="_blank" rel="noopener">http://blog.csdn.net/dengjianqiang2011/article/details/9260435</a><br><strong>git pull origin master更新本地库push推送</strong></p>
+]]></content>
+      <categories>
+        <category>git</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>koa小知识</title>
+    <url>/2019/09/04/koa-e5-b0-8f-e7-9f-a5-e8-af-86/</url>
+    <content><![CDATA[<p><strong>全局添加层级：</strong></p>
+<p><img src="http://l.yumud.com/image-9-2.png" alt></p>
+<p>加了一个yumu层</p>
+<a id="more"></a>
+<p><img src="http://l.yumud.com/image-9-3.png" alt></p>
+<p>访问时需要加一个/yumu,然后加/**,才能访问到，下面还是这么写就行，访问时注意就好了。[注意，此为全局设置]</p>
+<p><img src="http://l.yumud.com/image-9-3.png" alt></p>
+<p><strong>单个页面添加层级：</strong></p>
+<p><img src="http://l.yumud.com/image-9-3.png" alt></p>
+<p>酱样儿</p>
+]]></content>
+      <categories>
+        <category>koa</category>
+      </categories>
+      <tags>
+        <tag>koa</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>koa-bodyparser中间件的使用[未完]</title>
+    <url>/2019/09/04/koa-bodyparser-e4-b8-ad-e9-97-b4-e4-bb-b6-e7-9a-84-e4-bd-bf-e7-94-a8/</url>
+    <content><![CDATA[<p>可以自己写代码解析post请求，例如酱样儿</p>
+<p><img src="http://l.yumud.com/image-9-0.png" alt></p>
+<p><img src="http://l.yumud.com/image-9-1.png" alt></p>
+<p>文件夹根目录下新建index.js</p>
+<a id="more"></a>
+<p>也可以使用koa-bodyparser这个中间件，一个造好的轮子=&gt;</p>
+<p>koa-bodyparser可以把koa2上下文的formData数据解析到ctx.request.body中,来看一下代码</p>
+<p>先安装 npm install –save koa-bodyparser@3</p>
+<p><a href="https://blog.csdn.net/zhouzy539/article/details/97247916" target="_blank" rel="noopener">https://blog.csdn.net/zhouzy539/article/details/97247916</a>（npm install, npm install –save, npm install –save-dev的区别）</p>
+<p>等一下，看一下视频，看文档没懂</p>
+]]></content>
+      <categories>
+        <category>koa</category>
+      </categories>
+      <tags>
+        <tag>koa</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>egg-mysql</title>
+    <url>/2019/08/30/egg-mysql/</url>
+    <content><![CDATA[<p>首先，安装与配置</p>
+<p>npm install egg-mysql</p>
+<p><img src="http://l.yumud.com/image-60.png" alt></p>
+<a id="more"></a>
+<p>config/plugin.js</p>
+<p>然后在config/config.default.js里面按照下图添加一下，password是连接mysql的密码（注意数据库的版本，版本过低可能报错==&gt;报这个” Client does not support authentication protocol requested by server; consider upgrading MySQL client（客户端不支持服务器请求的身份验证协议；请考虑升级MySQL客户端） “====&gt;升级mysql(即重装哈哈哈哈哈)）</p>
+<p><img src="http://l.yumud.com/image-61.png" alt></p>
+<p>config/config.default.js</p>
+<p>然后简单的操作一下</p>
+<p>在app/controller下新建一个suibian.js，查询test1表中的所有数据</p>
+<p>‘use strict’;<br>const Controller = require(‘egg’).Controller;<br>class HomeController extends Controller { async index() { const result=<strong>await this.app.mysql.query(“select * from test1”);</strong> this.ctx.body=result; }}<br>module.exports = HomeController;  </p>
+<p>如果你没出错，就完成了，其他的操作语句，去官方文档看一下，报错一般是mysql版本问题</p>
+<p>#注意mysql配置那里是否正确，语句是否出现错误，流程没错，注意router。</p>
+<p>github地址：<a href="https://github.com/thesecondlight/egg_mysql" target="_blank" rel="noopener">https://github.com/thesecondlight/egg_mysql</a> 注册登录</p>
+]]></content>
+      <categories>
+        <category>嗨~egg</category>
+      </categories>
+      <tags>
+        <tag>egg</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>别人的芝士~</title>
+    <url>/2019/08/29/e5-88-ab-e4-ba-ba-e7-9a-84-e8-8a-9d-e5-a3-ab/</url>
+    <content><![CDATA[<p>1.get和post的区别</p>
+<p><a href="https://www.cnblogs.com/logsharing/p/8448446.html" target="_blank" rel="noopener">https://www.cnblogs.com/logsharing/p/8448446.html</a></p>
+<p><img src="http://l.yumud.com/image-59.png" alt></p>
+<a id="more"></a>
+<p>提取的重点</p>
+<p>2.egg连接数据库报错：Client does not support authentication protocol requested by server; consider upgrading MySQL client（客户端不支持服务器请求的身份验证协议；请考虑升级MySQL客户端）</p>
+<p>（我的错误显示在页面中为insert等操作未定义）</p>
+<p>升级数据库===&gt;重装哈哈哈哈哈</p>
+<p>3.正则 <a href="https://www.cnblogs.com/minz/p/5975444.html" target="_blank" rel="noopener">https://www.cnblogs.com/minz/p/5975444.html</a></p>
+<p>4.pta乙级题目分类整理 <a href="https://blog.csdn.net/zhanshen112/article/details/84640183" target="_blank" rel="noopener">https://blog.csdn.net/zhanshen112/article/details/84640183</a> 刷题必备</p>
+<p>他的csdn里面还有对应的答案解析 <a href="https://blog.csdn.net/zhanshen112/article/details/84672638" target="_blank" rel="noopener">https://blog.csdn.net/zhanshen112/article/details/84672638</a></p>
+]]></content>
+      <categories>
+        <category>芝士就是力量！</category>
+        <category>面试</category>
+      </categories>
+      <tags>
+        <tag>面试</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>egg --Can't find viewEngine for 某某</title>
+    <url>/2019/08/27/egg-cant-find-viewengine-for/</url>
+    <content><![CDATA[<p>关于在egg中使用view，报错“can’t find viewEngine for ***”</p>
+<p>的修改方法</p>
+<p>参考文档：<a href="https://www.npmjs.com/package/egg-view" target="_blank" rel="noopener">https://www.npmjs.com/package/egg-view</a></p>
+<a id="more"></a>
+<p>npm install egg-view-ejs –save</p>
+<p>然后修改config文件夹下的这两个js文件</p>
+<p><img src="http://l.yumud.com/image-54.png" alt></p>
+<p>config/plugin.js</p>
+<p><img src="http://l.yumud.com/image-55.png" alt></p>
+<p>config/config.default.js<br>————————————————-分割线——————————————————分割线————————————————————————–</p>
+<p>我的具体操作，截图，画圈</p>
+<p><img src="http://l.yumud.com/image-56.png" alt></p>
+<p>app/view/home/home.ejs  </p>
+<p>这里也可以链接前端的css，js文件，如下图，改成你自己的链接即可。</p>
+<p><img src="http://l.yumud.com/image-58.png" alt></p>
+<p><img src="http://l.yumud.com/image-57.png" alt></p>
+<p>app/controller/home.js</p>
+]]></content>
+      <categories>
+        <category>嗨~egg</category>
+      </categories>
+      <tags>
+        <tag>egg</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>egg-get post 以及post跨域问题</title>
+    <url>/2019/08/26/egg-e5-82-bb-e8-9b-8b-e7-9a-84get-post-e4-bb-a5-e5-8f-8apost-e8-b7-a8-e5-9f-9f-e9-97-ae-e9-a2-98/</url>
+    <content><![CDATA[<p>一、get请求 *gg为get，pp为post</p>
+<p>代码截图：</p>
+<p><img src="http://yumud.com/wp-content/uploads/2019/08/image-42.png" alt></p>
+<a id="more"></a>
+<p>app/router.js</p>
+<p><img src="http://yumud.com/wp-content/uploads/2019/08/image-43.png" alt></p>
+<p>app/controller/gg.js</p>
+<p>使用postman，输入地址，send即可，得到数据就是成功了，鼓掌！</p>
+<p><img src="http://yumud.com/wp-content/uploads/2019/08/image-44.png" alt></p>
+<p>成功截图！</p>
+<p>二、post请求</p>
+<p>也是截图：</p>
+<p><img src="http://yumud.com/wp-content/uploads/2019/08/image-45.png" alt></p>
+<p>app/router.js</p>
+<p><img src="http://yumud.com/wp-content/uploads/2019/08/image-46.png" alt></p>
+<p>app/controller/pp.js</p>
+<p><img src="http://yumud.com/wp-content/uploads/2019/08/image-47.png" alt></p>
+<p>成功截图！</p>
+<p>但是你没有成功截图，hh 使用egg调用POST请求时，浏览器会触发405报错</p>
+<p>需要使用egg-cors插件</p>
+<p>npm i egg-cors –save</p>
+<p>设置config/config.default.js</p>
+<p><img src="http://yumud.com/wp-content/uploads/2019/08/image-52.png" alt></p>
+<p>里面的链接写你自己的hh</p>
+<p>设置config/plugin.js</p>
+<p><img src="http://yumud.com/wp-content/uploads/2019/08/image-53.png" alt></p>
+<p>酱样子</p>
+<p>就可以成功了-_-</p>
+<p>三、jsonp请求</p>
+<p><img src="http://yumud.com/wp-content/uploads/2019/08/image-48.png" alt></p>
+<p>app/router.js</p>
+<p><img src="http://yumud.com/wp-content/uploads/2019/08/image-50.png" alt></p>
+<p>app/demo/count.json</p>
+<p><img src="http://yumud.com/wp-content/uploads/2019/08/image-51.png" alt></p>
+<p>app/controller/demo.js</p>
+<p><img src="http://yumud.com/wp-content/uploads/2019/08/image-49.png" alt></p>
+<p>成功~</p>
+<p>参考文章： <a href="https://www.jianshu.com/p/45c9cb7c4a54" target="_blank" rel="noopener">https://www.jianshu.com/p/45c9cb7c4a54</a> 上面更为详细。</p>
+]]></content>
+      <categories>
+        <category>嗨~egg</category>
+      </categories>
+      <tags>
+        <tag>egg</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>js的一些题（在公司的考核题目） [九待补充]</title>
+    <url>/2019/08/23/js-e7-9a-84-e4-b8-80-e4-ba-9b-e9-a2-98-e3-80-90-e5-be-85-e8-a1-a5-e5-85-85-e3-80-91/</url>
+    <content><![CDATA[<p>一、string的方法 注释略写，贴个链接</p>
+<p>string.split() 分割成字符串数组</p>
+<p>string.charAt 返回指定字符</p>
+<p>string.indexOf 返回指定值索引 eg: “abc” str.indexOf(“b”)=&gt;1</p>
+<a id="more"></a>
+<p>string.concat(str1,str2) 合并</p>
+<p>string.slice() 提取部分并返回</p>
+<p>string.toUppercase() 大写</p>
+<p>string.toLowerCase() 小写</p>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/charAt" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/charAt</a> 左侧</p>
+<p>二、array的方法</p>
+<p>Array,isArray() 检测数组</p>
+<p>Array.push() 追加(最后)</p>
+<p>Array.pop() 删除(最后)</p>
+<p>Array.shift() 删除(开头)</p>
+<p>Array.unshift() 追加(开头)</p>
+<p>Array.reverse() 反转</p>
+<p>Array.sort() 排序</p>
+<p>Array.concat() 连接</p>
+<p>Array.slice() 分割</p>
+<p>Array.forEach() 遍历</p>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray</a> 左侧</p>
+<p>三、object的方法</p>
+<p>Object.keys() 返回对象属性名</p>
+<p>obj.seal() 禁止对象配置</p>
+<p>obj.isSealed() 判断对象是否可配置</p>
+<p>obj.freeze() 冻结对象</p>
+<p>obj.isFrozen() 判断是否被冻结</p>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/keys" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/keys</a> 左侧</p>
+<p>四、五个常用的引用类型</p>
+<p><strong>array，Function，object，date，RegExp</strong></p>
+<p>五、写出一个方法，将输入的参数是什么数据类型返回出来</p>
+<p>eg：show(1)=&gt;number ; show(null)=&gt;null</p>
+<p><strong>Object.prototype.toString.call(参数)</strong></p>
+<p>六、写出控制台输出</p>
+<p>① function show(){<br>function log(){return 1}<br>setTimeout(()=&gt;{<br>return log()<br>});<br>}<br>console.log(show())=&gt;<strong>undefined</strong></p>
+<p>② function show(){<br>function log(){return 1}<br>setTimeout(()=&gt;{<br>return console.log(log())<br>});<br>}<br>show()=&gt;<strong>1</strong></p>
+<p>七、随机生成字母+数字的验证码</p>
+<p><strong>Math.random().toString(36).slice(2)</strong></p>
+<p>八、实现obj.num===7 &amp;&amp; obj.num===8 obj.num===9为true</p>
+<p><strong>var num=7;<br>Object.defineProperty(this,’a’,{<br>get(){<br>return num++;<br>}<br>})<br>console.log(a==7&amp;&amp;a==8&amp;&amp;a==9)</strong></p>
+<p>九、实现一个方法满足下列条件：</p>
+<p>show(1,2,{add:true})===&gt;3</p>
+<p>show(1,2,4,5,7,8,9,{add:true})==&gt;36</p>
+<p>show({add:true},1,2)==&gt;3</p>
+<p>show(‘a’,1)==&gt;’参数错误’</p>
+<p>show({add：false}，1,0,5)==&gt;0</p>
+<p>//？？？？有错误，待补充</p>
+<p>十、冒泡排序和二分法排序</p>
+<p>冒泡排序：</p>
+<pre><code>function sort(arr){
+    for(var i=0;i&lt;arr.length-1;i++){
+        for(var j=0;j&lt;arr.length-i-1;j++){
+            if(arr[j]&gt;arr[j+1]){
+                var temp=arr[j];
+                arr[j]=arr[j+1];
+                arr[j+1]=temp;
+            }
+        }
+    }
+    console.log(arr)
+}
+var arr=[1,9,3,5,6]
+sort(arr)</code></pre><p>二分法排序：</p>
+<p>function sort2(array) {<br>var len = array.length,<br>i, j, tmp, low, high, mid, result;<br>result = array.slice(0);<br>for(i = 1; i &lt; len; i++){ tmp = result[i]; low = 0; high = i - 1; while(low &lt;= high){ mid = parseInt((low + high)/2, 10); if(tmp &lt; result[mid]) high = mid - 1; else low = mid + 1; } for(j = i - 1; j &gt;= high+1; j–){<br>result[j+1] = result[j];<br>}<br>result[j+1] = tmp;<br>}<br>return result;<br>}<br>var arr=[1,9,3,5,6];<br>document.write(sort2(arr));</p>
+]]></content>
+      <categories>
+        <category>js</category>
+        <category>面试</category>
+      </categories>
+      <tags>
+        <tag>面试</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>一些node，js题目</title>
+    <url>/2019/08/22/e4-b8-80-e4-ba-9bnode-ef-bc-8cjs-e9-a2-98-e7-9b-ae/</url>
+    <content><![CDATA[<p>一、fs api 读取文件，同步读取文件，书写文件，同步书写文件，删除文件，同步删除文件</p>
+<p>readFile readFileSync writeFile writeFileSync unlink unlinkSync</p>
+<p>具体使用（截图）</p>
+<p><img src="http://l.yumud.com/image-36.png" alt></p>
+<a id="more"></a>
+<p>二、利用http模块，将远程图片下载到本地</p>
+<p><img src="http://l.yumud.com/image-37.png" alt></p>
+<p>三、实现一个js文件</p>
+<p>在命令行输入node app cat=&gt;is cat</p>
+<p>node app dog=&gt;is dog</p>
+<p><strong>console.log(‘is’+process.argv.slice(2))</strong></p>
+<p>四、node的全局变量</p>
+<p>global, setTimeout, clearTimeout, console, buffer, process</p>
+<p>五、实现一个js文件，在命令行输入node app=&gt;‘您正在执行***’//当前文件的路径和名称</p>
+<p><strong>console.log(‘您正在执行’+__dirname+__filename)</strong></p>
+<p>__dirname和__filename都是全局对象，都是全路径，__filename显示全路径下的文件名</p>
+<p>六、let xlxs=require(‘node-xlsx’)//这是一个三方模块</p>
+<p>写出这句代码其加载依赖的全过程</p>
+<p>※首先模块分为系统模块和第三方模块，搞一张截图</p>
+<p><img src="http://l.yumud.com/image-38.png" alt></p>
+<p>详细如图所示</p>
+<p>模块加载机制（面试=&gt;说一下require的加载机制）</p>
+<p>在nodejs中模块加载一般会经历三个步骤：<strong>路径分析，文件定位，编译执行</strong></p>
+<p>按照模块的分类，按照以下顺序进行优先加载：</p>
+<p>系统缓存</p>
+<p>系统模块</p>
+<p>文件模块</p>
+<p>目录做为模块</p>
+<p>node_modules目录加载</p>
+<p>嗝~贴个链接 <a href="https://www.imooc.com/article/284624" target="_blank" rel="noopener">https://www.imooc.com/article/284624</a></p>
+<p>七、nodejs在64位操作系统和32位操作系统下内存分别为多少</p>
+<p><strong>1.4GB 0.7GB</strong></p>
+<p>八、使用http模块监听3080端口</p>
+<p><img src="http://l.yumud.com/image-39.png" alt></p>
+<p>九、js的事件循环机制//浏览器环境</p>
+<p><a href="https://www.cnblogs.com/yzg1/p/7514514.html" target="_blank" rel="noopener">https://www.cnblogs.com/yzg1/p/7514514.html</a></p>
+<p>js代码执行机制：</p>
+<p>所有的同步任务在主线程的栈中执行。</p>
+<p>主线程之外，还存在一个任务队列（task queue）。 只要异步任务有了结果，就在任务队列之中放置一个事件。</p>
+<p>一旦栈中的所有同步任务执行完成没系统就会读取‘任务队列’，选择出需要首先执行的任务（由浏览器决定，并不按序）</p>
+<p>十、js在node环境的循环机制，</p>
+<p><a href="https://www.cnblogs.com/onepixel/p/7143769.html" target="_blank" rel="noopener">https://www.cnblogs.com/onepixel/p/7143769.html</a></p>
+<p>十一、使用events模块实现一个简单的队列机制//所有异步代码按序执行</p>
+<p>不造–</p>
+<p>十二、实现一个方法</p>
+<p>show([1,2,3,4,5,6,7],8)==&gt;[1,7],[2,6],[3,5]</p>
+<p>结果中的第二个参数是题目中第一个参数中不重复的两个数相加，和为题目中第二个参数</p>
+<p><img src="http://l.yumud.com/image-40.png" alt></p>
+<p>三个数相加</p>
+<p><img src="http://l.yumud.com/image-41.png" alt></p>
+<p>十一题待补充，待到啥时候就不知道了hhh</p>
+]]></content>
+      <categories>
+        <category>js</category>
+        <category>node</category>
+        <category>面试</category>
+      </categories>
+      <tags>
+        <tag>node</tag>
+        <tag>js</tag>
+        <tag>面试</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JS闭包</title>
+    <url>/2019/08/21/js-e9-97-ad-e5-8c-85/</url>
+    <content><![CDATA[<p>闭包闭包</p>
+<p>就是一个函数，一个可以<strong>访问其他函数的作用域中的变量</strong> 的函数</p>
+<p>但是我不懂，所以贴个链接，懂了我再继续写</p>
+<a id="more"></a>
+<p>这个链接不对，删掉了，我都看完了，妈耶</p>
+<p>这个就对了=&gt;<a href="https://www.cnblogs.com/onepixel/p/5062456.html" target="_blank" rel="noopener">https://www.cnblogs.com/onepixel/p/5062456.html</a></p>
+<p>简而言之，函数A的内部函数B，被函数A外的一个变量C引用=&gt;<strong>当一个内部函数被其外部函数之外的变量引用时，就形成了一个闭包</strong>。</p>
+<p>用途：希望一些变量保存在内存中，但又不污染全局变量。</p>
+]]></content>
+      <categories>
+        <category>js</category>
+      </categories>
+      <tags>
+        <tag>闭包</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Generator-语法糖 async/await</title>
+    <url>/2019/08/21/generator-e8-af-ad-e6-b3-95-e7-b3-96-async-await/</url>
+    <content><![CDATA[<p>对async/await的支持从v7.6.0开始，so</p>
+<p><img src="http://l.yumud.com/image-32.png" alt></p>
+<p>公司是这个，我没得搞[后来搞egg，我又给升级了hhhh]</p>
+<p>跟着教程意念上来一遍–&gt;</p>
+<a id="more"></a>
+<p>async关键字后面的函数有异步操作，await代表等待一个异步方法执行完成。</p>
+<p>声明异步函数只需在普通函数前面加一个关键字async即可。</p>
+<p>async function yumu(){}</p>
+<p>和promise同理，当遇到await异步等待，先执行函数后面的同步任务，同步任务执行完，再接着await等待的位置继续往下执行。</p>
+<p>截个图</p>
+<p><img src="http://l.yumud.com/image-31.png" alt></p>
+<p>然后就是当await后面的promise状态变为rejected，整个async函数都会中断执行，所以为了保存错误位置和错误信息，使用try..catch进行封装多个await过程。</p>
+<p>继续截个图，我写的不能运行，怕出错误导–</p>
+<p><img src="http://l.yumud.com/image-33.png" alt></p>
+<p>你好，王二麻子</p>
+<p>和之前一篇的then链式写法相比，简单顺眼多了hhh</p>
+<p><img src="http://l.yumud.com/image-34.png" alt></p>
+<p>你好，麻烦的王二麻子</p>
+<p>很耐斯！<a href="https://segmentfault.com/a/1190000015488033" target="_blank" rel="noopener">https://segmentfault.com/a/1190000015488033</a></p>
+]]></content>
+      <categories>
+        <category>es6</category>
+      </categories>
+      <tags>
+        <tag>es6</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>node之Promise</title>
+    <url>/2019/08/20/node-e4-b9-8bpromise/</url>
+    <content><![CDATA[<p><strong>·</strong> Promise.prototype.then() *Promise实例在生成后立即执行，而then方法只有在所有同步任务执行完后才会执行</p>
+<p><img src="http://l.yumud.com/image-29.png" alt></p>
+<p>截的别人的图 -_-<a id="more"></a>差不多就是这个意思，让等待，就直接往下执行，不用等</p>
+<p><strong>·</strong>链式调用then方法（异步调用变成了很长的then链，新的解决方法Generator=&gt;语法糖async/await）</p>
+<p>关于Promise的具体内容在这里 <a href="https://segmentfault.com/a/1190000015488033" target="_blank" rel="noopener">https://segmentfault.com/a/1190000015488033</a> 的前半部分，后半部分是async/await,很nice~</p>
+<p>【详细–但是有点儿乱】方法上有all,reject,resolve</p>
+<p>原型上有.then.catchの方法</p>
+<p>.catch在想要上面所有的promise其中一个出错就终止下面的所有promise执行时使用。</p>
+<p>promise只有三种状态，未完成，完成(fulfilled)，失败(rejected)</p>
+<p>.then方法可以接受三个函数作为参数，前两个分别为fulfilled,rejected的回调函数，第三个函数用于处理进度信息（也有说接受两个函数作为参数，分别为resolved状态和rejected状态的回调函数，而这两个回调函数接受的参数分别为Promise实例中resolve函数和reject函数中的参数，+rejected状态的回调函数时可省略的）</p>
+<p>promise.all比单个来要快</p>
+<p><img src="http://l.yumud.com/image-30.png" alt></p>
+<p>【结束–开始写Generator语法糖–开一个新的文章嘻嘻】</p>
+<p>附：链接 ***（又要换服务器了，链接又得换来换去，直接在主页搜吧，语法糖）</p>
+]]></content>
+      <categories>
+        <category>node</category>
+      </categories>
+      <tags>
+        <tag>node</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>同步异步阻塞非阻塞！！！！</title>
+    <url>/2019/08/20/e5-90-8c-e6-ad-a5-e5-bc-82-e6-ad-a5-e9-98-bb-e5-a1-9e-e9-9d-9e-e9-98-bb-e5-a1-9e-ef-bc-81-ef-bc-81-ef-bc-81-ef-bc-81/</url>
+    <content><![CDATA[<p>同步：一个功能被调用，没有结果之前，就不会有返回</p>
+<p>异步：调用在发出后，这个调用就直接返回了，所以没有返回结果（告诉你我在查了，通过一个回调先通知你一下）</p>
+<p>阻塞：调用结果返回前，当前线程会被挂起</p>
+<p>非堵塞：在不能立刻得到结果之前，该调用不会阻塞当前的线程</p>
+]]></content>
+      <categories>
+        <category>芝士就是力量！</category>
+      </categories>
+      <tags>
+        <tag>芝士~</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>node避免回调地狱</title>
+    <url>/2019/08/20/node-e9-81-bf-e5-85-8d-e5-9b-9e-e8-b0-83-e5-9c-b0-e7-8b-b1/</url>
+    <content><![CDATA[<p>回调地狱怎么产生的？</p>
+<p>node.js为什么需要异步编程？</p>
+<p>为什么？</p>
+<a id="more"></a>
+<p>node.js的主要应用场景为处理高并发（单位时间内加大的访问量），i/o请求密集（i/o操作往往非常耗时）的场景下。异步的关键在于解决i/o耗时问题。详情主页搜索’同步异步’。</p>
+<p>这时候就需要异步解决这个问题，callbacks 回调函数是一种，但是过多的回调会造成callback hell，一层一层一串一串的</p>
+<p><img src="http://l.yumud.com/image-8-35.png" alt></p>
+<p>所以权衡之下Generator语法糖async/await是最好的解决方案，但是限制node版本在v7.6.0及以上，退而求其次，promise也ok！ （*去看看 这两篇文章，主页搜索即可<br>Generator-语法糖 async/await</p>
+<p><a href="https://thesecondlight.github.io/2019/08/20/node-e4-b9-8bpromise/" target="_blank" rel="noopener">node之Promise</a></p>
+<p>*）</p>
+<p>方法【</p>
+<p>模块化: 将回调函数转化为独立的函数</p>
+<p>使用流程控制库 eg: [async]</p>
+<p>使用Promise</p>
+<p>使用async/await</p>
+<p>】</p>
+]]></content>
+      <categories>
+        <category>node</category>
+        <category>芝士就是力量！</category>
+        <category>面试</category>
+      </categories>
+      <tags>
+        <tag>node</tag>
+        <tag>面试</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>node基础API</title>
+    <url>/2019/08/20/node-e5-9f-ba-e7-a1-80api/</url>
+    <content><![CDATA[<p>一、PATH</p>
+<p>1.path.normalize(path)</p>
+<p>规范化给定的path，并解析’..’ ‘.’片段</p>
+<a id="more"></a>
+<p><img src="http://l.yumud.com/image-22.png" alt></p>
+<p><img src="http://l.yumud.com/image-23.png" alt></p>
+<p>2.path.join([…paths])</p>
+<p>path.join()方法使用平台特定的分隔符把全部给定的path片段连接起来，并规范化</p>
+<p><img src="http://l.yumud.com/image-24.png" alt></p>
+<p><img src="http://l.yumud.com/image-25.png" alt></p>
+<p>3.path.resolve([…paths])</p>
+<p>将路径解析为一个绝对路径</p>
+<p>const {resolve}=require(‘path’)</p>
+<p>console.log(resolve(‘./‘))</p>
+<p>4.basename文件名 extname文件扩展名 dirname目录名文件所在的路径</p>
+<p>const {dirname,extname,basename}=require(‘path’);</p>
+<p>const filePath=’/user/local/bin/yumu.txt’</p>
+<p>console.log(dirname(filePath)); //‘/user/local/bin’</p>
+<p>extname(filePath) //‘.txt’</p>
+<p>basename(filePath) //‘yumu.txt’</p>
+<p>5.path.parse,path.format</p>
+<p>path.parse()方法返回一个对象，对象的属性表示path的元素，返回的对象有一下属性：root dir base ext name</p>
+<p>path.format()返回一个路径字符串，与path.parse()相反</p>
+<p><img src="http://l.yumud.com/image-26.png" alt></p>
+<p>截的别人的图</p>
+<p>6.sep delimiter win32 posix</p>
+<p>delimiter提供平台特定的路径分隔符</p>
+<p>win: <strong>;</strong></p>
+<p>posix: <strong>:</strong></p>
+<p>sep路径片段分隔符</p>
+<p>win \</p>
+<p>posiz /</p>
+<p><code>path.win32</code> 属性提供了 <code>path</code> 方法针对 Windows 的实现;</p>
+<p><code>path.posix</code> 属性提供了 <code>path</code> 方法针对 POSIX 的实现。</p>
+<p>不想写了，贴个别人的网址</p>
+<p><a href="https://www.jianshu.com/p/08e014f786a4" target="_blank" rel="noopener">https://www.jianshu.com/p/08e014f786a4</a></p>
+<p>看完了，简略的写一下</p>
+<p><strong>path buffer event fs</strong></p>
+<p><strong>PATH</strong></p>
+<p>[[</p>
+<p>path.normalize()</p>
+<p>path.join()</p>
+<p>path.resolve()</p>
+<p>basename extname dirname</p>
+<p>path.parse,path.format</p>
+<p>sep,delimiter,win32,posix</p>
+<p>]]</p>
+<p><strong>buffer</strong></p>
+<p>[[</p>
+<p>buffer.alloc()</p>
+<p>buffer.allocUnsafe()</p>
+<p>buffer.from()</p>
+<p>buffer.byteLength()</p>
+<p>buffer.isBuffer()</p>
+<p>buffer.concat()</p>
+<p><strong>buffer的实例方法</strong></p>
+<p>buf.length buf.toString()</p>
+<p>buf.fill()</p>
+<p>buf.equals()</p>
+<p>buf.indexOf()</p>
+<p>]]</p>
+<p><strong>event事件机制</strong></p>
+<p>开放了一个.on函数</p>
+<p>具体使用如图</p>
+<p><img src="http://l.yumud.com/image-27.png" alt></p>
+<p><img src="http://l.yumud.com/image-28.png" alt></p>
+<p>删除事件ce.removeListener(事件名，具体方法)</p>
+<p>删除事件的所有方法 ce.removeAllLiateners(事件名)</p>
+<p><strong>fs：文件系统</strong></p>
+<p>fs.readFile读文件</p>
+<p>fs.writerFile写文件</p>
+<p>fs.stat 返回的stats判断是否为文件或文件夹 stats.isFile() stats.isDirectory() stats详细信息</p>
+<p>fs.rename重命名</p>
+<p>fs.unlink删除</p>
+<p>fs.readdir查找文件夹</p>
+<p>fs.mkdir创建文件夹</p>
+<p>fs.rmdir删除文件夹</p>
+<p>fs.watch坚实文件的变化</p>
+]]></content>
+      <categories>
+        <category>node</category>
+        <category>芝士就是力量！</category>
+        <category>面试</category>
+      </categories>
+      <tags>
+        <tag>node</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>node 杂七杂八</title>
+    <url>/2019/08/20/node-e6-9d-82-e4-b8-83-e6-9d-82-e5-85-ab/</url>
+    <content><![CDATA[<p><img src="http://l.yumud.com/image-8-20.png" alt></p>
+<p>this的值是全局对象，在浏览器中就是windows对象</p>
+<p><strong>.call .apply方法可以改变this的值</strong></p>
+<p>.call接受参数列表，.apply接受一个参数数组</p>
+<p><img src="http://l.yumud.com/image-8-21.png" alt></p>
+<p>prototype为子类定义属性和方法，重写和调用父类函数</p>
+]]></content>
+      <categories>
+        <category>node</category>
+        <category>芝士就是力量！</category>
+        <category>面试</category>
+      </categories>
+      <tags>
+        <tag>node</tag>
+        <tag>面试</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Async/await</title>
+    <url>/2019/08/20/async-await/</url>
+    <content><![CDATA[<p>这里的await类似于yield</p>
+<p><img src="http://l.yumud.com/image-18.png" alt></p>
+<p>yield写法 yield就是中断点</p>
+<p><img src="http://l.yumud.com/image-19.png" alt></p>
+<p>并发操作 yield[a.save(), b.save()]</p>
+]]></content>
+      <categories>
+        <category>es6</category>
+        <category>芝士就是力量！</category>
+        <category>面试</category>
+      </categories>
+      <tags>
+        <tag>es6</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>node初步--上传及下载包</title>
+    <url>/2019/08/19/node-e5-88-9d-e6-ad-a5/</url>
+    <content><![CDATA[<p>新建一个hello.js，存放在hello文件夹中，</p>
+<p>执行<strong>npm init</strong> （帮助你生成package.json文件）</p>
+<p>注册账号，将包发布到仓库中 <strong>npm adduser</strong>(密码设置10位及以上，否则报错)=&gt;npm login登录一下</p>
+<a id="more"></a>
+<p>上传包 npm publish <folder>在本文件夹中 npm publish <strong>.</strong> （推送失败=&gt;<strong>没有激活邮箱</strong>hh或者是<strong>文件夹已存在</strong>，和网上别人发布的包名重复，在package.json中把name改了）</folder></p>
+<p>安装自己上传的包 npm install 包名</p>
+]]></content>
+      <categories>
+        <category>node</category>
+        <category>芝士就是力量！</category>
+        <category>面试</category>
+      </categories>
+      <tags>
+        <tag>node</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>es6--Object</title>
+    <url>/2019/08/16/es6-object/</url>
+    <content><![CDATA[<p><img src="http://l.yumud.com/image-8-11.png" alt></p>
+<ol>
+<li><strong>Object.is()</strong><a id="more"></a>
+<img src="http://l.yumud.com/image-8-13.png" alt></li>
+</ol>
+<ul>
+<li>比较两个值是否严格相等，与（===）的差别只有两个</li>
+</ul>
+<p><img src="http://l.yumud.com/image-8-14.png" alt></p>
+<p><img src="http://l.yumud.com/image-8-15.png" alt></p>
+<p><strong>2.Object.assgin() 对象的合并</strong> 同名属性，后面的覆盖前面的（浅拷贝）</p>
+<p><img src="http://l.yumud.com/image-8-16.png" alt></p>
+<p>null和undefined无法转化为对象，所以以他们为参数，会报错</p>
+<p>只要null和undefined不在首参数，就不会报错</p>
+<p>☆其他类型的值不在首参数也不会报错，但是不输出，只输出字符串类型，布尔和数值被忽略</p>
+<p>==&gt;浅拷贝</p>
+<p><img src="http://l.yumud.com/image-8-17.png" alt></p>
+<p>改变了对象原来的值</p>
+<p>有一个好玩的，用它处理数组，Object.assign([1,2,3],[4,5])输出[4,5,3]</p>
+<p>它是按照下标来覆盖的</p>
+]]></content>
+      <categories>
+        <category>es6</category>
+        <category>芝士就是力量！</category>
+        <category>面试</category>
+      </categories>
+      <tags>
+        <tag>es6</tag>
+        <tag>面试</tag>
+        <tag>芝士就是力量！</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>js-4 canvas</title>
+    <url>/2019/08/13/js-4-canvas/</url>
+    <content><![CDATA[<p><img src="http://l.yumud.com/image-8-10.png" alt></p>
+<p>ctx.fillStyle</p>
+<p>ctx.fillRect（起点x,y，宽高x,y）</p>
+]]></content>
+      <categories>
+        <category>js</category>
+        <category>芝士就是力量！</category>
+        <category>面试</category>
+      </categories>
+      <tags>
+        <tag>面试</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>js-3 defer async</title>
+    <url>/2019/08/13/js-3-defer-async/</url>
+    <content><![CDATA[<p>为了使脚本按页面中的顺序加载，采用<strong>defer</strong>，这样调用顺序就确定了，不会造成后两个脚本中依赖jquery的函数产生错误。</p>
+<p><img src="http://l.yumud.com/image-8-8.png" alt></p>
+<p><strong>async</strong> 异步属性</p>
+<a id="more"></a>
+<p>告知浏览器在遇到<script>元素时不要中断后续html内容的加载</p>
+<p><img src="http://l.yumud.com/image-8-9.png" alt=""></p>
+</script></p>]]></content>
+      <categories>
+        <category>js</category>
+        <category>芝士就是力量！</category>
+        <category>面试</category>
+      </categories>
+      <tags>
+        <tag>面试</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>js-2 prototype</title>
+    <url>/2019/08/13/js-2-prototype/</url>
+    <content><![CDATA[<p>Person.prototype 是一个可以被Person的所以实例共享的对象，他是一个名叫原型链（prototype chain）的查询链的一部分。</p>
+<p><img src="http://l.yumud.com/image-8-6.png" alt></p>
+<p>给已存在的对象添加额外的方法</p>
+<p><img src="http://l.yumud.com/image-8-7.png" alt></p>
+]]></content>
+      <categories>
+        <category>js</category>
+        <category>芝士就是力量！</category>
+        <category>面试</category>
+      </categories>
+      <tags>
+        <tag>面试</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>js-1 数组</title>
+    <url>/2019/08/12/js-1/</url>
+    <content><![CDATA[<p>1-1</p>
+<p>数组的基本方法</p>
+<p><img src="http://l.yumud.com/image-5.png" alt></p>
+<p>for of 遍历数组 输出value值</p>
+<p>for in 遍历对象（常用于）输出key值</p>
+<a id="more"></a>
+<p><img src="http://l.yumud.com/image.png" alt></p>
+<p><img src="http://l.yumud.com/image-1.png" alt></p>
+<p>1-2</p>
+<p>不限制函数的参数</p>
+<p><img src="http://l.yumud.com/image-8-2.png" alt></p>
+<p>arguments函数体内的一个内部函数，包括了所有被传入的参数，这样可接收任意个数的参数。</p>
+<p>但是过于繁琐，可以使用剩余参数来替换arguments的使用，</p>
+<p>形式: …variable (<strong>它将包含在调用函数时使用的未捕获整个参数列表到这个变量中时。</strong>)</p>
+<p>例子：</p>
+<p><img src="http://l.yumud.com/image-3.png" alt></p>
+<p><img src="http://l.yumud.com/image-4.png" alt></p>
+<p>要用数组做参数，使用avg.apply(<strong>null</strong>,[1,2,3,4])</p>
+<p>再看再补。</p>
+]]></content>
+      <categories>
+        <category>js</category>
+        <category>芝士就是力量！</category>
+        <category>面试</category>
+      </categories>
+      <tags>
+        <tag>js</tag>
+        <tag>面试</tag>
+        <tag>芝士就是力量！</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>记——杭州第一次面试</title>
+    <url>/2019/07/29/e8-ae-b0-e6-9d-ad-e5-b7-9e-e7-ac-ac-e4-b8-80-e6-ac-a1-e9-9d-a2-e8-af-95/</url>
+    <content><![CDATA[<p>摸摸耳朵，羞愧….</p>
+<p>明明自己整理的，啥也不会，以后一定写代码的时候，记一下，不，不在笔记上记，在脑子里记一下。</p>
+<p>1. null和undefined的区别</p>
+<a id="more"></a>
+<p>null 表示尚未存在的对象，常用来表示函数企图返回一个不存在的对象；undefined 声明的变量尚未被初始化</p>
+<p>2.let和var，const</p>
+<p><img src="http://l.yumud.com/image-15.png" alt></p>
+<p>声明了未赋值，表现相同 undefined，</p>
+<p>未声明，let为报错ReferenceError: 某某 is not defined，var为undefined</p>
+<p><img src="http://l.yumud.com/image-16.png" alt></p>
+<p>3.es6新特性</p>
+<p>我先叭叭几个</p>
+<p>变量，新加了let const（为了解决var溢出）</p>
+<p>函数方面，箭头函数 ()=&gt;{}</p>
+<p>去重 set</p>
+<p>解析 …array 合并</p>
+<p><img src="http://l.yumud.com/image-17.png" alt></p>
+<p>详细看这个链接=&gt;</p>
+<p><a href="https://www.jianshu.com/p/87008f4f8513" target="_blank" rel="noopener">https://www.jianshu.com/p/87008f4f8513</a> 【评论有说有很多错的，那就暂为参考，详细还是去阮一峰的es6入门看看吧=&gt;<a href="http://es6.ruanyifeng.com/" target="_blank" rel="noopener">http://es6.ruanyifeng.com/</a>】</p>
+<p>4.想起来再加</p>
+]]></content>
+      <categories>
+        <category>芝士就是力量！</category>
+        <category>面试</category>
+      </categories>
+      <tags>
+        <tag>芝士~</tag>
+        <tag>面试</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>记——电面题目</title>
+    <url>/2019/07/20/e8-ae-b0-e7-94-b5-e9-9d-a2-e9-a2-98-e7-9b-ae/</url>
+    <content><![CDATA[<p><strong>1.</strong> vue为什么是一个单页面应用</p>
+<p><strong>资源加载一次，数据操作交互由router和ajax完成</strong></p>
+<p><strong>2.</strong>vuex，为什么选择vuex（和window.global.a相比）</p>
+<a id="more"></a>
+<p><a href="http://www.imooc.com/wenda/detail/428097" target="_blank" rel="noopener"><strong>http://www.imooc.com/wenda/detail/428097</strong></a> <strong>vuex管理多个组件共享状态。（大型单页应用）代码量少，统一数据来源</strong></p>
+<p><img src="http://106.12.29.51/wp-content/uploads/2019/07/image-3.png" alt></p>
+<p><strong>3.</strong>vue生命周期</p>
+<p><strong>创建，挂载，更新，销毁 （前）created,mounted,updated,destroyed</strong></p>
+<p><img src="http://106.12.29.51/wp-content/uploads/2019/07/image-4.png" alt></p>
+<p><img src="http://106.12.29.51/wp-content/uploads/2019/07/image-5.png" alt></p>
+<p><strong>4.</strong>假如一个页面出错，渲染了100多次，你在生命周期的那个阶段阻止他？</p>
+<p><strong>应该是updated之前</strong></p>
+<p><img src="http://106.12.29.51/wp-content/uploads/2019/07/image-14-1024x231.png" alt></p>
+<p>——————————-我是一个分割线————————————————————————</p>
+<p>朋友的笔试题目hhh</p>
+<p><strong>1.</strong>求最大连续子序列</p>
+<p><strong>动态规划</strong></p>
+<p><img src="http://106.12.29.51/wp-content/uploads/2019/07/image-9.png" alt></p>
+<p><strong>2.</strong>给定数组，求k个最大值</p>
+<p><img src="http://106.12.29.51/wp-content/uploads/2019/07/image-6.png" alt></p>
+<p><strong>3.</strong>反转字符串</p>
+<p><strong>注意split的分割方法</strong></p>
+<p><img src="http://106.12.29.51/wp-content/uploads/2019/07/image-7.png" alt></p>
+<p><strong>运行结果</strong></p>
+<p><img src="http://106.12.29.51/wp-content/uploads/2019/07/image-8.png" alt></p>
+<p><strong>4.</strong>分割 slice的用法（ 取前不取后 ）</p>
+<p><img src="http://106.12.29.51/wp-content/uploads/2019/07/image-10.png" alt></p>
+<p><strong>运行结果</strong></p>
+<p><img src="http://106.12.29.51/wp-content/uploads/2019/07/image-11.png" alt></p>
+<p><strong>5.</strong>set去重</p>
+<p><img src="http://106.12.29.51/wp-content/uploads/2019/07/image-12.png" alt></p>
+<p><strong>运行结果</strong></p>
+<p><img src="http://106.12.29.51/wp-content/uploads/2019/07/image-13.png" alt></p>
+<p>就先记录这些，真的是一本正经的回答，答什么错什么 -_-</p>
+<p>有疑问留言呀，一起来battle！</p>
+]]></content>
+      <categories>
+        <category>芝士就是力量！</category>
+        <category>面试</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>打地鼠 pia!</title>
+    <url>/2019/07/15/e6-89-93-e5-9c-b0-e9-bc-a0-pia/</url>
+    <content><![CDATA[<p>打地鼠pia！<a href="https://thesecondlight.github.io/whole/beat" target="_blank" rel="noopener">戳一下</a><br>一起来尝试地域模式把，皮卡丘！</p>
+<a id="more"></a>
+<p>–不用服务器了，用github+hexo搭的博客，那我的游戏放哪儿？放一个单独文件夹里，应该没啥大问题。<br> 在项目页中，头部添加layout: false，具体如下图<br><img src="http://l.yumud.com/beat.png" alt><br>图中被包裹的内容为你的项目主页面</p>
+]]></content>
+      <categories>
+        <category>Demo</category>
+        <category>小游戏</category>
+      </categories>
+      <tags>
+        <tag>玩游戏！</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>云服务器的配置问题（windows）【从零开始建站】</title>
+    <url>/2019/07/07/e4-ba-91-e6-9c-8d-e5-8a-a1-e5-99-a8-e7-9a-84-e9-85-8d-e7-bd-ae-e9-97-ae-e9-a2-98-ef-bc-88windows-ef-bc-89/</url>
+    <content><![CDATA[<p>建议先搞一个免费试用的玩一下，直接买个一年的可能兴趣扁扁-_-</p>
+<p>华为云最近有一个七天免费试用，阿里云之前好像有搞过三个月几块钱，反正短期都挺便宜的。</p>
+<ol>
+<li>搞来云服务器<a id="more"></a></li>
+<li>点开控制台，点击实例，看一下自己的IP（公网IP），重置一下密码（就在这一栏标题为操作，点开找找）</li>
+<li>mstsc远程连接，输入IP，点开详细，输入用户名，密码，用户名差不多是Administrator(购买成功后系统会发送信息给你，里面有用户名),密码就是第二步你重置的那个密码⭐（进不来刷新几次）</li>
+<li>进入服务器，下载xampp,wordpress，把xampp里面的htdocs文件中的内容删除，wordpress里面的内容复制到xampp的htdocs文件夹中</li>
+<li>点击xampp-control进入</li>
+</ol>
+<p><img src="http://l.yumud.com/image-2.png" alt></p>
+<p>点击apache，mysql前面的XX，变成√，点击后面的start，变成如图，点击mysql后面的Admin，进入phpmyadmin</p>
+<p>6.新建一个数据库</p>
+<p>7.输入IP，输入打不开，回控制台配置安全组，允许80端口⭐</p>
+<p>8.输入IP，按提示一步一步走，数据库名就是第六步你建的数据库名字，记住你wordpress的用户名和密码</p>
+<p>9.就没啥大问题了，进来到处点点，换换主题，写写文章（把你想上线的项目放到htdocs文件夹下，通过ip/项目文件夹名访问）</p>
+<p>又写完了，鼓掌！</p>
+<p>有问题留言哦，末尾放一个B站的教程视频，很耐思，他还出了一个linux的教程，视频很短，不过讲的很棒</p>
+<p><a href="https://www.bilibili.com/video/av52657003" target="_blank" rel="noopener">https://www.bilibili.com/video/av52657003</a></p>
+<p><strong>友情提示，不会就找个靠谱的问一下，或者百度视频教程，自己越搞越糊涂，可能会很丧，例如我那可怜的一年的云服务器</strong></p>
+]]></content>
+      <categories>
+        <category>芝士就是力量！</category>
+      </categories>
+      <tags>
+        <tag>芝士~</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【搬家一】--wordpress搬家</title>
+    <url>/2019/07/07/wordpress-e6-90-ac-e5-ae-b6/</url>
+    <content><![CDATA[<p>给我可怜的七天免费试用搬了个家。</p>
+<p>1. 导出phpmyadmin里面的某个sql文件，（某个—&gt;就是里面有你wordpress相关内容的一个数据库）</p>
+<p>2.进入wordpress后台，选择工具-&gt;导出（这步应该和第三步重复了某些内容，但是保险起见，都备份比较好）</p>
+<p>3.把htdocs里面的文件打包，搞出来（比较方便，因为里面有你的主题或者插件什么的）</p>
+<a id="more"></a>
+<p>4.在导入的时候，安装插件，但是失败—&gt;在服务器里面安装，刷新几次(有个教程让改权限，我没得改)</p>
+<p>5.IP问题！！！⭐ 咋还是原来的ip地址呢！！！在phpmyadmin里面（就是第一步你导出的那个sql文件），找到wp-options，改一下第一条记录</p>
+<p><img src="http://l.yumud.com/image_wp.png" alt></p>
+<p>就是这个，点开改成你现在用的IP。</p>
+<p>6.wordpress后台，点击仪表盘-&gt;设置，改一下wordpress地址，和站点地址</p>
+<p>到此结束！鼓掌！</p>
+<p>划重点（但是应该都知道）：不用非得在服务器里面改这些，毕竟很卡，你可以在外面ip/wp-admin，也可以访问的 -_-</p>
+]]></content>
+      <categories>
+        <category>芝士就是力量！</category>
+      </categories>
+      <tags>
+        <tag>芝士~</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>微信小程序登录-静态页面</title>
+    <url>/2019/07/02/e5-be-ae-e4-bf-a1-e5-b0-8f-e7-a8-8b-e5-ba-8f-e7-99-bb-e5-bd-95-e9-9d-99-e6-80-81-e9-a1-b5-e9-9d-a2/</url>
+    <content><![CDATA[<p>初期上手小程序的时候做的一个小demo，可以初期作练习用<br>简单的无后台登录注册</p>
+<a id="more"></a>
+<p><img src="http://l.yumud.com/ac7379b183fa3f24c3e6aca4e24476b.png" alt></p>
+<p>效果图</p>
+<p>具体步骤在CSDN我写的一篇文章有<a href="https://blog.csdn.net/qq_36664799/article/details/88736849" target="_blank" rel="noopener">https://blog.csdn.net/qq_36664799/article/details/88736849</a></p>
+<p>里面有源码，需要其它内容的可以留言。</p>
+]]></content>
+      <categories>
+        <category>小程序</category>
+        <category>芝士就是力量！</category>
+      </categories>
+      <tags>
+        <tag>芝士~</tag>
+        <tag>小揪揪</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于这个bug集</title>
+    <url>/2019/07/02/e7-9e-a7-e4-b8-80-e7-9e-a7-e7-9c-8b-e4-b8-80-e7-9c-8b-e8-b5-b0-e8-bf-87-e8-b7-af-e8-bf-87-e4-b8-8d-e8-a6-81-e9-94-99-e8-bf-87-e4-ba-86/</url>
+    <content><![CDATA[<p>关于这个博客，博客还是那个博客，域名还是那个域名，只不过搬了好几次家…</p>
+<a id="more"></a>
+<p>———————-<em>分类介绍</em>———————-</p>
+<p>芝士就是力量==&gt;里面主要是遇到的各种bug，小芝士，还有建站，<strong>云服务器+wordpress</strong>，<strong>github+hexo</strong>都有哦</p>
+<p>Demo==&gt;小游戏，小程序，管理系统等等等，做的demo都会存上来</p>
+<p>A coin a day==&gt;里面是刷的题，磕代码！</p>
+<p>其他文件夹如名所示。</p>
+<p>想要其他笔记的可以发邮箱，或者评论哒，有道云还存了一些，没得感情一点点挪了hh</p>
+<p>————————<em>点子</em>————————</p>
+<p>来做一个真正不错的小程序怎么样，初期构思是一个校内互助小程序，已经在写策划，准备素材了 [联系邮箱:<a href="mailto:1092876640@qq.com" target="_blank" rel="noopener">1092876640@qq.com</a>]</p>
+]]></content>
+      <categories>
+        <category>Demo</category>
+        <category>小程序</category>
+        <category>芝士就是力量！</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>奶茶店APP --单页面 (vue)</title>
+    <url>/2019/06/30/e4-bb-bf-e9-a5-bf-e4-ba-86-e4-b9-88-e5-8d-95-e9-a1-b5-e9-9d-a2vue/</url>
+    <content><![CDATA[<p>使用vue2+vue-router2+vue-cli2+vue-resource+stylus+webpack</p>
+<p>展示地址<a href="http://thesecondlight.github.io/whole/eleme" target="_blank" rel="noopener">戳一下</a></p>
+<a id="more"></a>
+<p>---------------------------------------------------------------------------------------------------------------------</p>
+<p>需要注意的几个点(我做的时候出现的错误+重要的点):</p>
+<p><strong>1.</strong>有些教程给的是vue1.0的一些写法，然后vue2.0就各种报错。</p>
+<p><strong>2.</strong>初始化vue项目的时候打开了eslint，注意空格</p>
+<p><strong>3.</strong>better-scroll插件设置click:true，否则移动端滑动没得效果</p>
+<p><strong>4.</strong>设备上的像素=样式像素*设备像素比</p>
+<p><strong>5.</strong>背景模糊filter:blur(10px)</p>
+<p><strong>6.</strong>transition过渡效果(添加的动态效果)</p>
+<pre><code>fade-enter
+
+fade-enter-active
+
+fade-leave
+
+fade-leave-active</code></pre><p>具体-&gt;<a href="https://cn.vuejs.org/v2/api/#transition" target="_blank" rel="noopener">https://cn.vuejs.org/v2/api/#transition</a></p>
+<p><strong>7.</strong>页面切换时，避免重新渲染  keep-alive</p>
+<pre><code>&lt;keep-alive&gt;  &lt;router-view:seller=&quot;seller&quot;&gt;&lt;/router-view&gt;  &lt;/keep-     alive&gt;</code></pre><p><strong>8.</strong>vue1.0页面跳转用<a>，so你用<router-link to>来进行导航的编写</router-link></a></p>
+<p><strong>9.</strong>安装vue-resource，通过this.$http.get发送get请求，then()获取数据，具体看这个<a href="https://blog.csdn.net/qq_36664799/article/details/93740511" target="_blank" rel="noopener">https://blog.csdn.net/qq_36664799/article/details/93740511</a> 踩坑之后写的一篇博客，很多种方法获取数据</p>
+<p>10.注意引用组件的时候，写对地址呀亲</p>
+<p>建议结合视频（并百度）进行练习，实话说，不建议用这个做练习，这个应该正式的一点点做，这么多bug，视频前期还是1.0，很坑。</p>
+<p>教程biu我</p>
+]]></content>
+      <categories>
+        <category>Demo</category>
+      </categories>
+      <tags>
+        <tag>Demo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>图书管理系统(php实现)</title>
+    <url>/2019/06/30/e5-9b-be-e4-b9-a6-e7-ae-a1-e7-90-86-e7-b3-bb-e7-bb-9fphp-e5-ae-9e-e7-8e-b0/</url>
+    <content><![CDATA[<p>大二时学习php，做了一个简单的使用php实现对图书的增删改查。</p>
+<p>展示地址: <a href="http://yumud.com/vfp" target="_blank" rel="noopener">http://yumud.com/vfp</a><br>展示地址也展示不了多久了，服务器要过期了，天天处在要过期的边缘，贴一下github这个项目的地址，可以自己下载看一下哦<br><a href="https://github.com/thesecondlight/php_Library-Management-System" target="_blank" rel="noopener">https://github.com/thesecondlight/php_Library-Management-System</a><br>下载地址: <a href="https://github.com/thesecondlight/php_Library-Management-System.git" target="_blank" rel="noopener">https://github.com/thesecondlight/php_Library-Management-System.git</a></p>
+]]></content>
+      <categories>
+        <category>Demo</category>
+      </categories>
+      <tags>
+        <tag>Demo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>vue调用接口</title>
+    <url>/2019/06/30/vue-e8-b0-83-e7-94-a8-e6-8e-a5-e5-8f-a3/</url>
+    <content><![CDATA[<p>这是我在csdn写的一篇关于vue调用接口的链接(贴图太麻烦了，直接转过去吧)，真的可以用，但是你要注意认真写，不要落这个落那个，检查代码中使用的API是否还可以用，仔细看。</p>
+<p>展示地址:<a href="https://blog.csdn.net/qq_36664799/article/details/93740511" target="_blank" rel="noopener">https://blog.csdn.net/qq_36664799/article/details/93740511</a></p>
+]]></content>
+      <categories>
+        <category>芝士就是力量！</category>
+      </categories>
+      <tags>
+        <tag>芝士~</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>微信小程序后台传值wx.request，出现undefined</title>
+    <url>/2019/06/30/e5-be-ae-e4-bf-a1-e5-b0-8f-e7-a8-8b-e5-ba-8f-e5-90-8e-e5-8f-b0-e4-bc-a0-e5-80-bcwx-request-ef-bc-8c-e5-87-ba-e7-8e-b0undefined/</url>
+    <content><![CDATA[<p>用数据集记录中的字段进行查询where({字段:this.data.前台输入绑定的value}) 注意：</p>
+<p><img src="http://l.yumud.com/20190408184534200.png" alt></p>
+<p>res.data<strong>[0]</strong>.name，不然会输出undefined；</p>
+<p>还有一种可能是： 后台使用string类型，前端输出undefined，可使用JSON.stringify(res.data[0].age）进行转换</p>
+]]></content>
+      <categories>
+        <category>小程序</category>
+      </categories>
+      <tags>
+        <tag>小啾啾</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>你看这个bug它又大又圆！</title>
+    <url>/2019/06/30/hello-world/</url>
+    <content><![CDATA[<p>记录各种各样的bug~</p>
+<p>请关注一下这个可爱但是鸡肋的小程序吧</p>
+<p><img src="http://l.yumud.com/gh_8490c442bd64_258-1-1.jpg" alt></p>
+<p>虽然本意是做一个热量查询,饮食调节的小程序,但是功能不怎么完善，不过当成随手记挺方便的,后续会不断完善，公众号也会好好做起来，争取一周发一次健康养生小文章吧(公众号也叫”CC卡路里”)。</p>
+<p>这是我的csdn地址<a href="https://blog.csdn.net/qq_36664799" target="_blank" rel="noopener">https://blog.csdn.net/qq_36664799</a>，里面有各种bug和吐槽~</p>
+]]></content>
+      <categories>
+        <category>小程序</category>
+        <category>芝士就是力量！</category>
+      </categories>
+      <tags>
+        <tag>芝士~</tag>
+        <tag>Demo</tag>
+      </tags>
+  </entry>
+</search>

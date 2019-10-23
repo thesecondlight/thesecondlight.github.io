@@ -8,19 +8,19 @@
   <link rel="dns-prefetch" href>
   <title>我一点一点了解的正则表达式 | Yumuのblog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="/\*/*g, “” 全局用空替换\ [第一个\为转义字符] 在做CC卡路里的时候，用到了模糊查询">
+  <meta name="description" content="[TOC]目录见右下方… 1.\/\*/*g, “” 全局用空替换\ [第一个\为转义字符] 2.小程序的模糊查询在做CC卡路里的时候，用到了模糊查询">
 <meta name="keywords" content="正则表达式">
 <meta property="og:type" content="article">
 <meta property="og:title" content="我一点一点了解的正则表达式">
 <meta property="og:url" content="/2019/09/05/e6-88-91-e4-b8-80-e7-82-b9-e4-b8-80-e7-82-b9-e4-ba-86-e8-a7-a3-e7-9a-84-e6-ad-a3-e5-88-99-e8-a1-a8-e8-be-be-e5-bc-8f/index.html">
 <meta property="og:site_name" content="Yumuのblog">
-<meta property="og:description" content="/\*/*g, “” 全局用空替换\ [第一个\为转义字符] 在做CC卡路里的时候，用到了模糊查询">
+<meta property="og:description" content="[TOC]目录见右下方… 1.\/\*/*g, “” 全局用空替换\ [第一个\为转义字符] 2.小程序的模糊查询在做CC卡路里的时候，用到了模糊查询">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://l.yumud.com/image-7.png">
-<meta property="og:updated_time" content="2019-10-23T02:07:40.032Z">
+<meta property="og:updated_time" content="2019-10-23T02:43:19.221Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="我一点一点了解的正则表达式">
-<meta name="twitter:description" content="/\*/*g, “” 全局用空替换\ [第一个\为转义字符] 在做CC卡路里的时候，用到了模糊查询">
+<meta name="twitter:description" content="[TOC]目录见右下方… 1.\/\*/*g, “” 全局用空替换\ [第一个\为转义字符] 2.小程序的模糊查询在做CC卡路里的时候，用到了模糊查询">
 <meta name="twitter:image" content="http://l.yumud.com/image-7.png">
   
     <link rel="alternative" href="/atom.xml" title="Yumuのblog" type="application/atom+xml">
@@ -100,7 +100,7 @@
 		        
 			</div>
 		</nav>
-		<!-- <span class="post-count">13.7k</span> -->
+		<!-- <span class="post-count">13.8k</span> -->
 		
 	</header>		
 </div>
@@ -187,7 +187,7 @@
 
 
             <div align="center" class="post-count" style="font-size: 7px;color:grey;padding-top:15px;padding-left:25px">
-                <text>字数:102字 | 预计阅读时长 :1分钟</text>
+                <text>字数:223字 | 预计阅读时长 :1分钟</text>
           
               </div>
                <!-- 统计阅读量 首页不显示阅读量 -->
@@ -214,17 +214,23 @@
      
 
 	
-		<ol>
-<li><strong>/</strong>\*<em>/*</em>g, “” 全局用空替换\ [第一个\为转义字符]</li>
-<li>在做CC卡路里的时候，用到了模糊查询</li>
-</ol>
+		<p>[TOC]<br>目录见右下方…</p>
+<h4 id="1"><a href="#1" class="headerlink" title="1.\"></a>1.\</h4><p><strong>/</strong>\*<em>/*</em>g, “” 全局用空替换\ [第一个\为转义字符]</p>
+<h4 id="2-小程序的模糊查询"><a href="#2-小程序的模糊查询" class="headerlink" title="2.小程序的模糊查询"></a>2.小程序的模糊查询</h4><p>在做CC卡路里的时候，用到了模糊查询</p>
 <p><img src="http://l.yumud.com/image-7.png" alt></p>
 <a id="more"></a>
 <p>在数据库test中，根据用户输入的字段，查询数据库，显示模糊查询的结果，i为大小写不敏感</p>
 <p>微信小程序文档“正则”=&gt;</p>
 <p><a href="https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-client-api/database/db.regexp.html" target="_blank" rel="noopener">https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-client-api/database/db.regexp.html</a></p>
-<p>3.用一个，记录一个hh</p>
-
+<h4 id="3-正向预查-反向预查"><a href="#3-正向预查-反向预查" class="headerlink" title="3.正向预查 反向预查"></a>3.正向预查 反向预查</h4><p>正向预查(?=)满足前面的表达式 eg: /\b[/w]+(?=ing\b)/g/匹配全局带ing的单词，但是不要ing</p>
+<p>反向预查(?&lt;=)满足后面的表达式 eg:/(?&lt;=index\.ts)/ 匹配以.ts结尾 ,左边是index</p>
+<p>/g 全局匹配</p>
+<p>/w匹配字母，数字，下划线</p>
+<p>/d匹配数字</p>
+<p>/b匹配单词的边界</p>
+<p>^匹配字符串的开始</p>
+<p>$ 匹配字符串的结束</p>
+<h4 id="4"><a href="#4" class="headerlink" title="4."></a>4.</h4>
 	
 
     </div>
@@ -355,7 +361,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1"><span class="toc-number">1.</span> <span class="toc-text">1.\</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-小程序的模糊查询"><span class="toc-number">2.</span> <span class="toc-text">2.小程序的模糊查询</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-正向预查-反向预查"><span class="toc-number">3.</span> <span class="toc-text">3.正向预查 反向预查</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4"><span class="toc-number">4.</span> <span class="toc-text">4.</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -534,39 +540,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">玩游戏！</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">egg</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">koa</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">闭包</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">get一个硬币</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">小程序！小程序！</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">小啾啾</a>
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">小揪揪</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">小啾啾</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -578,7 +560,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+                <a href="javascript:void(0)" class="js-tag color5">玩游戏！</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hide</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">egg</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -590,7 +580,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hide</a>
+                <a href="javascript:void(0)" class="js-tag color3">闭包</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">koa</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">get一个硬币</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">小程序！小程序！</a>
               </li>
             
             <div class="clearfix"></div>
@@ -657,7 +663,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">日常-bug-demo-磕代码</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">pta刷题终止记录了，在github上传了leetcode的刷题笔记~</div>
   	  	
     	</section>
     
