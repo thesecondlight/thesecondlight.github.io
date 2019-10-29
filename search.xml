@@ -49,6 +49,10 @@
 <p>/b匹配单词的边界</p>
 <p>^匹配字符串的开始</p>
 <p>$ 匹配字符串的结束</p>
+<p>eg:</p>
+<p>\ba\w<em>\b   \b开始  a，任意(0或更多)数量的字母或数字(\w\</em>) \b结束</p>
+<p>\d+ 匹配一个或更多连续的数字(+一次或更多，*0次或更多)</p>
+<p>\b\w{6}\b 匹配刚好6个字符的单词</p>
 <h4 id="5-尾调用优化"><a href="#5-尾调用优化" class="headerlink" title="5.尾调用优化"></a>5.尾调用优化</h4><p>尾调用：在函数的最后一步是直接返回调用另一个函数</p>
 <p>优化：在函数A的内部调用函数B  在A的调用记录上方，会形成一个B的调用记录，等到B的运行结束，将结果返回A，B的调用记录消失。(确保函数的最后一步只调用自身)</p>
 <p>所有的调用记录形调用栈</p>
@@ -91,13 +95,15 @@
 <p>select * from (select * from others) temp;   temp即派生表</p>
 <h4 id="11-事件循环"><a href="#11-事件循环" class="headerlink" title="11.事件循环"></a>11.事件循环</h4><h4 id="12-事务-乐观锁-悲观锁"><a href="#12-事务-乐观锁-悲观锁" class="headerlink" title="12.事务 乐观锁 悲观锁"></a>12.事务 乐观锁 悲观锁</h4><h5 id="①事务"><a href="#①事务" class="headerlink" title="①事务"></a>①事务</h5><p>START TRANSACTION;</p>
 <p>COMMIT;/ROLLBACK;</p>
-<h5 id="②悲观锁-乐观锁"><a href="#②悲观锁-乐观锁" class="headerlink" title="②悲观锁 乐观锁"></a>②悲观锁 乐观锁</h5><p>乐观锁 update tb set version=version+1 where version=version</p>
+<h5 id="②悲观锁-乐观锁"><a href="#②悲观锁-乐观锁" class="headerlink" title="②悲观锁 乐观锁"></a>②悲观锁 乐观锁</h5><p>乐观锁 update tb set version=version+1 where version=version    在写操作频繁的场景下会不断发生重试，也会影响吞吐量</p>
 <p>悲观锁 set autocommit=0 (不允许自动提交)</p>
 <p>​    用for update给每行数据加排他锁 (使用条件:InnoDB，<strong>BEGIN/COMMIT</strong>)</p>
 <p>​    1)根据主键进行查询，查询到数据，主键字段产生行锁 (只是查询的那个字段的数据产生锁，查询这个字段的其他数据不会产生锁)</p>
 <p>​    2)没有查询到数据，不产生锁</p>
 <p>​    3)根据主键，非主键含索引进行查询，查询到数据，主键字段产生行锁，非主键字段产生表锁（非主键字段的所有数据都会有锁）</p>
 <p>​    4)….</p>
+<p>sequelize加排它锁</p>
+<p>await Accounts.findOne({<br>    where: { name: ‘HelKyle’ },<br>    lock: Sequelize.Transaction.LOCK.UPDATE<br>});</p>
 <h4 id="13-tcp-ip"><a href="#13-tcp-ip" class="headerlink" title="13.tcp/ip"></a>13.tcp/ip</h4><p> <a href="https://blog.csdn.net/u012371712/article/details/80795297" target="_blank" rel="noopener">https://blog.csdn.net/u012371712/article/details/80795297</a> </p>
 <p><img src="http://l.yumud.com/1571379820232.png" alt="1571379820232"></p>
 <p>五层：应用层  传输层 网络层  连接层 物理层</p>
@@ -125,7 +131,19 @@
 <p>drop index [sy1] on t2019;</p>
 <p>唯一索引</p>
 <p>create unique index sy4 on t2019 (site)</p>
-<h4 id="18"><a href="#18" class="headerlink" title="18."></a>18.</h4>]]></content>
+<h4 id="18-sequelize事务，加锁"><a href="#18-sequelize事务，加锁" class="headerlink" title="18.sequelize事务，加锁"></a>18.sequelize事务，加锁</h4><p>t1 //is a transaction</p>
+<p>Model.findAll({</p>
+<pre><code>where:...</code></pre><p>},{</p>
+<p>​    transaction: t1,  //**注意</p>
+<p>​    lock: t1.LOCK.UPDATE,   //**注意</p>
+<p>​    lock: t1.LOCK.SHARE</p>
+<p>})</p>
+<h4 id="19-与-或-异或-左移-右移-按二进制位进行运算"><a href="#19-与-或-异或-左移-右移-按二进制位进行运算" class="headerlink" title="19.与 或 异或  左移 右移(按二进制位进行运算)"></a>19.与 或 异或  左移 右移(按二进制位进行运算)</h4><p>与 &amp;  同1为1，否则为0</p>
+<p>或 |  有1则1</p>
+<p>异或 ^  相同为1，不同为0</p>
+<p>左移 &lt;&lt;  左移，移出位丢弃，右边的空位补0</p>
+<p>右移 &gt;&gt;  右移，移出位丢弃，左边的空位补0</p>
+]]></content>
       <categories>
         <category>A coin a day</category>
       </categories>
