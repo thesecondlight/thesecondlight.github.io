@@ -28,7 +28,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://l.yumud.com/1571377276911.png">
 <meta property="og:image" content="http://l.yumud.com/1571379820232.png">
-<meta property="og:updated_time" content="2019-10-29T10:37:23.414Z">
+<meta property="og:updated_time" content="2019-10-30T10:14:25.796Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="学习记录">
 <meta name="twitter:description" content="[TOC]目录看右下角… 1.文件权限rwx 1 2 4 d rwx r_x r_x d文件目录">
@@ -429,16 +429,27 @@
 <p> sql快速参考xi：<a href="https://www.runoob.com/sql/sql-quickref.html" target="_blank" rel="noopener">https://www.runoob.com/sql/sql-quickref.html</a> </p>
 <h4 id="4-正则-正向预查-反向预查"><a href="#4-正则-正向预查-反向预查" class="headerlink" title="4.正则 正向预查 反向预查"></a>4.正则 正向预查 反向预查</h4><p>正向预查(?=)满足前面的表达式  eg: /\b[/w]+(?=ing\b)/g/匹配全局带ing的单词，但是不要ing</p>
 <p>反向预查(?&lt;=)满足后面的表达式 eg:/(?&lt;=index\.ts)/ 匹配以.ts结尾 ,左边是index</p>
-<p>/g 全局匹配</p>
-<p>/w匹配字母，数字，下划线</p>
-<p>/d匹配数字</p>
-<p>/b匹配单词的边界</p>
+<p>\g 全局匹配</p>
+<p>. 匹配除换行符外的任意字符</p>
+<p>\w匹配字母，数字，下划线</p>
+<p>\d匹配数字</p>
+<p>\b匹配单词的边界</p>
 <p>^匹配字符串的开始</p>
 <p>$ 匹配字符串的结束</p>
+<p>\ 取消字符的特殊意义</p>
+<p>+重复一次或多次</p>
+<p>*重复0次或多次</p>
+<p>？重复0次或1次</p>
+<p>{n}重复n次</p>
+<p>{n,}重复n次或多次</p>
+<p>{n,m}重复n到m次</p>
+<p>| 或</p>
 <p>eg:</p>
 <p>\ba\w<em>\b   \b开始  a，任意(0或更多)数量的字母或数字(\w\</em>) \b结束</p>
 <p>\d+ 匹配一个或更多连续的数字(+一次或更多，*0次或更多)</p>
 <p>\b\w{6}\b 匹配刚好6个字符的单词</p>
+<p>^\d{5,12}}$ 匹配5-12位的数字 </p>
+<p>\(?0\d{2}[) -]?\d{8}  \转义字符，（能出现0/1次,跟一个0，两个数字，)空格-出现0/1次，八位数字</p>
 <h4 id="5-尾调用优化"><a href="#5-尾调用优化" class="headerlink" title="5.尾调用优化"></a>5.尾调用优化</h4><p>尾调用：在函数的最后一步是直接返回调用另一个函数</p>
 <p>优化：在函数A的内部调用函数B  在A的调用记录上方，会形成一个B的调用记录，等到B的运行结束，将结果返回A，B的调用记录消失。(确保函数的最后一步只调用自身)</p>
 <p>所有的调用记录形调用栈</p>
@@ -529,7 +540,7 @@
 <p>异或 ^  相同为1，不同为0</p>
 <p>左移 &lt;&lt;  左移，移出位丢弃，右边的空位补0</p>
 <p>右移 &gt;&gt;  右移，移出位丢弃，左边的空位补0</p>
-
+<h4 id="20"><a href="#20" class="headerlink" title="20."></a>20.</h4>
       
     </div>
     <div class="article-footer">
