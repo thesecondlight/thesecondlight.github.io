@@ -3,8 +3,7 @@
   <entry>
     <title>学习记录</title>
     <url>/2019/10/21/record/</url>
-    <content><![CDATA[<p>[TOC]<br>目录看右下角…</p>
-<h4 id="1-文件权限"><a href="#1-文件权限" class="headerlink" title="1.文件权限"></a>1.文件权限</h4><p>rwx 1 2 4</p>
+    <content><![CDATA[<h4 id="1-文件权限"><a href="#1-文件权限" class="headerlink" title="1.文件权限"></a>1.文件权限</h4><p>rwx 1 2 4</p>
 <p>d rwx r_x r_x</p>
 <p>d文件目录</p>
 <a id="more"></a>
@@ -158,9 +157,6 @@
       <categories>
         <category>A coin a day</category>
       </categories>
-      <tags>
-        <tag>get一个硬币</tag>
-      </tags>
   </entry>
   <entry>
     <title>用户访问浏览器全过程</title>
@@ -171,9 +167,6 @@
         <category>面试</category>
         <category>芝士就是力量！</category>
       </categories>
-      <tags>
-        <tag>面试</tag>
-      </tags>
   </entry>
   <entry>
     <title>egg单元测试</title>
@@ -241,9 +234,6 @@ describe(&apos;get()&apos;, () =&gt; {
       <categories>
         <category>嗨~egg</category>
       </categories>
-      <tags>
-        <tag>egg</tag>
-      </tags>
   </entry>
   <entry>
     <title>hexo添加valine评论</title>
@@ -287,9 +277,6 @@ describe(&apos;get()&apos;, () =&gt; {
       <categories>
         <category>芝士就是力量！</category>
       </categories>
-      <tags>
-        <tag>芝士~</tag>
-      </tags>
   </entry>
   <entry>
     <title>pta -1039 到底买不买</title>
@@ -305,9 +292,6 @@ describe(&apos;get()&apos;, () =&gt; {
       <categories>
         <category>A coin a day</category>
       </categories>
-      <tags>
-        <tag>get一个硬币</tag>
-      </tags>
   </entry>
   <entry>
     <title>pta -1009 说反话 pta -1021 个位数统计</title>
@@ -327,9 +311,6 @@ describe(&apos;get()&apos;, () =&gt; {
       <categories>
         <category>A coin a day</category>
       </categories>
-      <tags>
-        <tag>get一个硬币</tag>
-      </tags>
   </entry>
   <entry>
     <title>js字符串倒序(两种反转)</title>
@@ -344,9 +325,6 @@ describe(&apos;get()&apos;, () =&gt; {
       <categories>
         <category>js</category>
       </categories>
-      <tags>
-        <tag>面试</tag>
-      </tags>
   </entry>
   <entry>
     <title>wordpress 在首页不显示某些分类下的文章</title>
@@ -365,9 +343,6 @@ describe(&apos;get()&apos;, () =&gt; {
       <categories>
         <category>芝士就是力量！</category>
       </categories>
-      <tags>
-        <tag>芝士~</tag>
-      </tags>
   </entry>
   <entry>
     <title>pta -1093 字符串A+B</title>
@@ -382,9 +357,6 @@ describe(&apos;get()&apos;, () =&gt; {
       <categories>
         <category>A coin a day</category>
       </categories>
-      <tags>
-        <tag>get一个硬币</tag>
-      </tags>
   </entry>
   <entry>
     <title>[校内互助]小程序--素材记录</title>
@@ -412,9 +384,6 @@ describe(&apos;get()&apos;, () =&gt; {
       <categories>
         <category>A coin a day</category>
       </categories>
-      <tags>
-        <tag>get一个硬币</tag>
-      </tags>
   </entry>
   <entry>
     <title>pta -1004成绩排名</title>
@@ -431,9 +400,6 @@ describe(&apos;get()&apos;, () =&gt; {
       <categories>
         <category>A coin a day</category>
       </categories>
-      <tags>
-        <tag>get一个硬币</tag>
-      </tags>
   </entry>
   <entry>
     <title>WeUI的初步使用--安装引入</title>
@@ -445,9 +411,6 @@ describe(&apos;get()&apos;, () =&gt; {
       <categories>
         <category>小程序</category>
       </categories>
-      <tags>
-        <tag>小程序！小程序！</tag>
-      </tags>
   </entry>
   <entry>
     <title>pta -1003我要通过！</title>
@@ -463,9 +426,6 @@ describe(&apos;get()&apos;, () =&gt; {
       <categories>
         <category>A coin a day</category>
       </categories>
-      <tags>
-        <tag>get一个硬币</tag>
-      </tags>
   </entry>
   <entry>
     <title>冒泡排序</title>
@@ -492,9 +452,6 @@ describe(&apos;get()&apos;, () =&gt; {
       <categories>
         <category>算法</category>
       </categories>
-      <tags>
-        <tag>算法</tag>
-      </tags>
   </entry>
   <entry>
     <title>CC卡路里 耶</title>
@@ -511,9 +468,6 @@ describe(&apos;get()&apos;, () =&gt; {
         <category>Demo</category>
         <category>小程序</category>
       </categories>
-      <tags>
-        <tag>Demo</tag>
-      </tags>
   </entry>
   <entry>
     <title>pta -1002写出这个数[初级]</title>
@@ -528,9 +482,6 @@ describe(&apos;get()&apos;, () =&gt; {
       <categories>
         <category>A coin a day</category>
       </categories>
-      <tags>
-        <tag>get一个硬币</tag>
-      </tags>
   </entry>
   <entry>
     <title>pta -1001害死人不偿命的(3n+1)猜想[初级]</title>
@@ -545,9 +496,6 @@ describe(&apos;get()&apos;, () =&gt; {
       <categories>
         <category>A coin a day</category>
       </categories>
-      <tags>
-        <tag>get一个硬币</tag>
-      </tags>
   </entry>
   <entry>
     <title>前言【一天一块钱】</title>
@@ -625,9 +573,6 @@ describe(&apos;get()&apos;, () =&gt; {
       <categories>
         <category>芝士就是力量！</category>
       </categories>
-      <tags>
-        <tag>芝士~</tag>
-      </tags>
   </entry>
   <entry>
     <title>一些点子</title>
@@ -672,9 +617,6 @@ describe(&apos;get()&apos;, () =&gt; {
         <category>Demo</category>
         <category>小程序</category>
       </categories>
-      <tags>
-        <tag>构想</tag>
-      </tags>
   </entry>
   <entry>
     <title>mysql--第二次系统学习时的笔记</title>
@@ -686,9 +628,6 @@ describe(&apos;get()&apos;, () =&gt; {
       <categories>
         <category>mysql</category>
       </categories>
-      <tags>
-        <tag>mysql</tag>
-      </tags>
   </entry>
   <entry>
     <title>我一点一点了解的正则表达式</title>
@@ -713,9 +652,6 @@ describe(&apos;get()&apos;, () =&gt; {
       <categories>
         <category>正则表达式</category>
       </categories>
-      <tags>
-        <tag>正则表达式</tag>
-      </tags>
   </entry>
   <entry>
     <title>git--基本操作</title>
@@ -772,9 +708,6 @@ describe(&apos;get()&apos;, () =&gt; {
       <categories>
         <category>git</category>
       </categories>
-      <tags>
-        <tag>git</tag>
-      </tags>
   </entry>
   <entry>
     <title>koa小知识</title>
@@ -793,9 +726,6 @@ describe(&apos;get()&apos;, () =&gt; {
       <categories>
         <category>koa</category>
       </categories>
-      <tags>
-        <tag>koa</tag>
-      </tags>
   </entry>
   <entry>
     <title>koa-bodyparser中间件的使用[未完]</title>
@@ -814,9 +744,6 @@ describe(&apos;get()&apos;, () =&gt; {
       <categories>
         <category>koa</category>
       </categories>
-      <tags>
-        <tag>koa</tag>
-      </tags>
   </entry>
   <entry>
     <title>egg-mysql</title>
@@ -839,9 +766,6 @@ describe(&apos;get()&apos;, () =&gt; {
       <categories>
         <category>嗨~egg</category>
       </categories>
-      <tags>
-        <tag>egg</tag>
-      </tags>
   </entry>
   <entry>
     <title>别人的芝士~</title>
@@ -862,9 +786,6 @@ describe(&apos;get()&apos;, () =&gt; {
         <category>芝士就是力量！</category>
         <category>面试</category>
       </categories>
-      <tags>
-        <tag>面试</tag>
-      </tags>
   </entry>
   <entry>
     <title>egg --Can't find viewEngine for 某某</title>
@@ -890,9 +811,6 @@ describe(&apos;get()&apos;, () =&gt; {
       <categories>
         <category>嗨~egg</category>
       </categories>
-      <tags>
-        <tag>egg</tag>
-      </tags>
   </entry>
   <entry>
     <title>egg-get post 以及post跨域问题</title>
@@ -939,9 +857,6 @@ describe(&apos;get()&apos;, () =&gt; {
       <categories>
         <category>嗨~egg</category>
       </categories>
-      <tags>
-        <tag>egg</tag>
-      </tags>
   </entry>
   <entry>
     <title>js的一些题（在公司的考核题目） [九待补充]</title>
@@ -1016,9 +931,6 @@ sort(arr)</code></pre><p>二分法排序：</p>
         <category>js</category>
         <category>面试</category>
       </categories>
-      <tags>
-        <tag>面试</tag>
-      </tags>
   </entry>
   <entry>
     <title>一些node，js题目</title>
@@ -1080,11 +992,6 @@ sort(arr)</code></pre><p>二分法排序：</p>
         <category>node</category>
         <category>面试</category>
       </categories>
-      <tags>
-        <tag>node</tag>
-        <tag>js</tag>
-        <tag>面试</tag>
-      </tags>
   </entry>
   <entry>
     <title>JS闭包</title>
@@ -1101,9 +1008,6 @@ sort(arr)</code></pre><p>二分法排序：</p>
       <categories>
         <category>js</category>
       </categories>
-      <tags>
-        <tag>闭包</tag>
-      </tags>
   </entry>
   <entry>
     <title>Generator-语法糖 async/await</title>
@@ -1131,9 +1035,6 @@ sort(arr)</code></pre><p>二分法排序：</p>
       <categories>
         <category>es6</category>
       </categories>
-      <tags>
-        <tag>es6</tag>
-      </tags>
   </entry>
   <entry>
     <title>node之Promise</title>
@@ -1156,9 +1057,6 @@ sort(arr)</code></pre><p>二分法排序：</p>
       <categories>
         <category>node</category>
       </categories>
-      <tags>
-        <tag>node</tag>
-      </tags>
   </entry>
   <entry>
     <title>同步异步阻塞非阻塞！！！！</title>
@@ -1171,9 +1069,6 @@ sort(arr)</code></pre><p>二分法排序：</p>
       <categories>
         <category>芝士就是力量！</category>
       </categories>
-      <tags>
-        <tag>芝士~</tag>
-      </tags>
   </entry>
   <entry>
     <title>node避免回调地狱</title>
@@ -1200,10 +1095,6 @@ sort(arr)</code></pre><p>二分法排序：</p>
         <category>芝士就是力量！</category>
         <category>面试</category>
       </categories>
-      <tags>
-        <tag>node</tag>
-        <tag>面试</tag>
-      </tags>
   </entry>
   <entry>
     <title>node基础API</title>
@@ -1292,9 +1183,6 @@ sort(arr)</code></pre><p>二分法排序：</p>
         <category>芝士就是力量！</category>
         <category>面试</category>
       </categories>
-      <tags>
-        <tag>node</tag>
-      </tags>
   </entry>
   <entry>
     <title>node 杂七杂八</title>
@@ -1311,10 +1199,6 @@ sort(arr)</code></pre><p>二分法排序：</p>
         <category>芝士就是力量！</category>
         <category>面试</category>
       </categories>
-      <tags>
-        <tag>node</tag>
-        <tag>面试</tag>
-      </tags>
   </entry>
   <entry>
     <title>Async/await</title>
@@ -1330,9 +1214,6 @@ sort(arr)</code></pre><p>二分法排序：</p>
         <category>芝士就是力量！</category>
         <category>面试</category>
       </categories>
-      <tags>
-        <tag>es6</tag>
-      </tags>
   </entry>
   <entry>
     <title>node初步--上传及下载包</title>
@@ -1349,9 +1230,6 @@ sort(arr)</code></pre><p>二分法排序：</p>
         <category>芝士就是力量！</category>
         <category>面试</category>
       </categories>
-      <tags>
-        <tag>node</tag>
-      </tags>
   </entry>
   <entry>
     <title>es6--Object</title>
@@ -1382,11 +1260,6 @@ sort(arr)</code></pre><p>二分法排序：</p>
         <category>芝士就是力量！</category>
         <category>面试</category>
       </categories>
-      <tags>
-        <tag>es6</tag>
-        <tag>面试</tag>
-        <tag>芝士就是力量！</tag>
-      </tags>
   </entry>
   <entry>
     <title>js-4 canvas</title>
@@ -1400,9 +1273,6 @@ sort(arr)</code></pre><p>二分法排序：</p>
         <category>芝士就是力量！</category>
         <category>面试</category>
       </categories>
-      <tags>
-        <tag>面试</tag>
-      </tags>
   </entry>
   <entry>
     <title>js-3 defer async</title>
@@ -1419,9 +1289,6 @@ sort(arr)</code></pre><p>二分法排序：</p>
         <category>芝士就是力量！</category>
         <category>面试</category>
       </categories>
-      <tags>
-        <tag>面试</tag>
-      </tags>
   </entry>
   <entry>
     <title>js-2 prototype</title>
@@ -1436,9 +1303,6 @@ sort(arr)</code></pre><p>二分法排序：</p>
         <category>芝士就是力量！</category>
         <category>面试</category>
       </categories>
-      <tags>
-        <tag>面试</tag>
-      </tags>
   </entry>
   <entry>
     <title>js-1 数组</title>
@@ -1468,11 +1332,6 @@ sort(arr)</code></pre><p>二分法排序：</p>
         <category>芝士就是力量！</category>
         <category>面试</category>
       </categories>
-      <tags>
-        <tag>js</tag>
-        <tag>面试</tag>
-        <tag>芝士就是力量！</tag>
-      </tags>
   </entry>
   <entry>
     <title>记——杭州第一次面试</title>
@@ -1502,10 +1361,6 @@ sort(arr)</code></pre><p>二分法排序：</p>
         <category>芝士就是力量！</category>
         <category>面试</category>
       </categories>
-      <tags>
-        <tag>芝士~</tag>
-        <tag>面试</tag>
-      </tags>
   </entry>
   <entry>
     <title>记——电面题目</title>
@@ -1562,9 +1417,6 @@ sort(arr)</code></pre><p>二分法排序：</p>
         <category>Demo</category>
         <category>小游戏</category>
       </categories>
-      <tags>
-        <tag>玩游戏！</tag>
-      </tags>
   </entry>
   <entry>
     <title>云服务器的配置问题（windows）【从零开始建站】</title>
@@ -1592,9 +1444,6 @@ sort(arr)</code></pre><p>二分法排序：</p>
       <categories>
         <category>芝士就是力量！</category>
       </categories>
-      <tags>
-        <tag>芝士~</tag>
-      </tags>
   </entry>
   <entry>
     <title>【搬家一】--wordpress搬家</title>
@@ -1615,9 +1464,6 @@ sort(arr)</code></pre><p>二分法排序：</p>
       <categories>
         <category>芝士就是力量！</category>
       </categories>
-      <tags>
-        <tag>芝士~</tag>
-      </tags>
   </entry>
   <entry>
     <title>微信小程序登录-静态页面</title>
@@ -1633,10 +1479,6 @@ sort(arr)</code></pre><p>二分法排序：</p>
         <category>小程序</category>
         <category>芝士就是力量！</category>
       </categories>
-      <tags>
-        <tag>芝士~</tag>
-        <tag>小揪揪</tag>
-      </tags>
   </entry>
   <entry>
     <title>关于这个bug集</title>
@@ -1689,9 +1531,6 @@ fade-leave-active</code></pre><p>具体-&gt;<a href="https://cn.vuejs.org/v2/api
       <categories>
         <category>Demo</category>
       </categories>
-      <tags>
-        <tag>Demo</tag>
-      </tags>
   </entry>
   <entry>
     <title>图书管理系统(php实现)</title>
@@ -1702,9 +1541,6 @@ fade-leave-active</code></pre><p>具体-&gt;<a href="https://cn.vuejs.org/v2/api
       <categories>
         <category>Demo</category>
       </categories>
-      <tags>
-        <tag>Demo</tag>
-      </tags>
   </entry>
   <entry>
     <title>vue调用接口</title>
@@ -1715,9 +1551,6 @@ fade-leave-active</code></pre><p>具体-&gt;<a href="https://cn.vuejs.org/v2/api
       <categories>
         <category>芝士就是力量！</category>
       </categories>
-      <tags>
-        <tag>芝士~</tag>
-      </tags>
   </entry>
   <entry>
     <title>微信小程序后台传值wx.request，出现undefined</title>
@@ -1730,9 +1563,6 @@ fade-leave-active</code></pre><p>具体-&gt;<a href="https://cn.vuejs.org/v2/api
       <categories>
         <category>小程序</category>
       </categories>
-      <tags>
-        <tag>小啾啾</tag>
-      </tags>
   </entry>
   <entry>
     <title>你看这个bug它又大又圆！</title>
@@ -1747,9 +1577,5 @@ fade-leave-active</code></pre><p>具体-&gt;<a href="https://cn.vuejs.org/v2/api
         <category>小程序</category>
         <category>芝士就是力量！</category>
       </categories>
-      <tags>
-        <tag>Demo</tag>
-        <tag>芝士~</tag>
-      </tags>
   </entry>
 </search>
