@@ -44,7 +44,7 @@
     <link href="/2019/09/24/%E7%94%A8%E6%88%B7%E8%AE%BF%E9%97%AE%E6%B5%8F%E8%A7%88%E5%99%A8%E5%85%A8%E8%BF%87%E7%A8%8B/"/>
     <id>/2019/09/24/用户访问浏览器全过程/</id>
     <published>2019-09-24T05:45:00.000Z</published>
-    <updated>2019-11-07T10:19:48.715Z</updated>
+    <updated>2019-11-08T08:02:25.900Z</updated>
     
     <content type="html"><![CDATA[<p>详细过程： <a href="https://www.cnblogs.com/yihr/p/9720715.html" target="_blank" rel="noopener">https://www.cnblogs.com/yihr/p/9720715.html</a><br>1.用户输入要访问的域名  <a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a><br>2.浏览器请求解析DNS服务器。把域名<a href="http://www.baidu.com转换成web服务器的ip地址" target="_blank" rel="noopener">www.baidu.com转换成web服务器的ip地址</a><br>3.浏览器从访问的ip地址中解析出默认的端口号 80<br>4.浏览器通过解析后得到的ip地址和端口号与web服务器建立一条TCP连接通道<br>  三次握手<br>5.建立TCP连接之后，浏览器向web服务器发送一条HTTP请求报文<br>6.web服务器响应并读取浏览器的请求信息，然后返回一条HTTP响应报文<br>7.web服务器关闭HTTP连接，关闭TCP连接，web服务器显示访问的网站内容到屏幕上<br>  四次挥手</p>]]></content>
     
@@ -59,8 +59,6 @@
     
     
       <category term="面试" scheme="/categories/%E9%9D%A2%E8%AF%95/"/>
-    
-      <category term="芝士就是力量！" scheme="/categories/%E9%9D%A2%E8%AF%95/%E8%8A%9D%E5%A3%AB%E5%B0%B1%E6%98%AF%E5%8A%9B%E9%87%8F%EF%BC%81/"/>
     
     
   </entry>
@@ -226,7 +224,7 @@
     <link href="/2019/09/10/e6-a0-a1-e5-86-85-e4-ba-92-e5-8a-a9-e7-b4-a0-e6-9d-90-e8-ae-b0-e5-bd-95/"/>
     <id>/2019/09/10/e6-a0-a1-e5-86-85-e4-ba-92-e5-8a-a9-e7-b4-a0-e6-9d-90-e8-ae-b0-e5-bd-95/</id>
     <published>2019-09-10T08:01:59.000Z</published>
-    <updated>2019-11-07T09:19:00.480Z</updated>
+    <updated>2019-11-08T08:03:54.144Z</updated>
     
     <content type="html"><![CDATA[<p>1.左滑接单 get [2019-9-10]</p><p>2.不成熟的发单页面 [2019-9-10]</p>]]></content>
     
@@ -243,8 +241,6 @@
     
     
       <category term="Demo" scheme="/categories/Demo/"/>
-    
-      <category term="小程序" scheme="/categories/Demo/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
     
     
   </entry>
@@ -367,7 +363,7 @@
     <link href="/2019/09/07/cc-e5-8d-a1-e8-b7-af-e9-87-8c-e8-80-b6/"/>
     <id>/2019/09/07/cc-e5-8d-a1-e8-b7-af-e9-87-8c-e8-80-b6/</id>
     <published>2019-09-07T06:42:35.000Z</published>
-    <updated>2019-11-07T10:21:36.946Z</updated>
+    <updated>2019-11-08T08:03:02.437Z</updated>
     
     <content type="html"><![CDATA[<p><img src="http://l.yumud.com/gh_8490c442bd64_258-1-1.jpg" alt></p><a id="more"></a><p>微信扫一扫查看，或搜索”CC卡路里”查看。</p><p>主要功能：查询食物热量，记录每日饮食，BMI身体质量测试。</p><p><strong>优化</strong>：</p><p>△加数据分析，每个月或15天，对用户记录的饮食热量进行分析=&gt;但是，没有达到记录量怎么办，目前用户不多，稳定用户更少，这样做出来的数据分析不为准=&gt;没有达到记录量，弹出“记录过少，无法生成健康账单”</p><p>△ 查询页面，很严重，部分手机左滑出现1/3空白；部分手机虽然进行左滑操作，页面不出现1/3空白，但是下方会出现横向滑动条。</p>]]></content>
     
@@ -379,8 +375,6 @@
     
     
       <category term="Demo" scheme="/categories/Demo/"/>
-    
-      <category term="小程序" scheme="/categories/Demo/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
     
     
   </entry>
@@ -454,25 +448,25 @@
   </entry>
   
   <entry>
-    <title>第一份工作反思</title>
-    <link href="/2019/09/06/e7-ac-ac-e4-b8-80-e4-bb-bd-e5-b7-a5-e4-bd-9c-e5-8f-8d-e6-80-9d/"/>
-    <id>/2019/09/06/e7-ac-ac-e4-b8-80-e4-bb-bd-e5-b7-a5-e4-bd-9c-e5-8f-8d-e6-80-9d/</id>
-    <published>2019-09-06T11:47:31.000Z</published>
-    <updated>2019-10-23T03:09:38.741Z</updated>
+    <title>【搬家二】--wordpress搬github+hexo[又：github+hexo建站]</title>
+    <link href="/2019/09/06/e3-80-90-e6-90-ac-e5-ae-b6-e4-ba-8c-e3-80-91-wordpress-e6-90-acgithubhexo/"/>
+    <id>/2019/09/06/e3-80-90-e6-90-ac-e5-ae-b6-e4-ba-8c-e3-80-91-wordpress-e6-90-acgithubhexo/</id>
+    <published>2019-09-06T08:09:03.000Z</published>
+    <updated>2019-11-07T09:16:12.438Z</updated>
     
-    <content type="html"><![CDATA[<p>因为走错了另外一家公司的门hhh</p><a id="more"></a><p>应该是饶了一个圈子，从后门进去的，进去的一瞬间感觉像培训，又没看到人在工作，印象不太好，先做笔试题，然后三个人一起面试，面试官也没问啥，就让自我介绍了一下，然后问了一下项目，仔细介绍一下你的项目，问了那个得奖的手游怎么做的，hh，我做的模型…就是代码不是我搞，我搞的人物模型，最后问有什么想问他的，没得，疑惑脸，没有？没有想问的？然后人事过来，三个人当时留下了一个详谈，就溜溜了。</p><p>晚上hr打电话说，薪资，待遇，高温补贴，节假日福利什么的，当时很不爽，怎么当时没留下，现在又来电话谈，聊了一会说考虑一下。</p><p>再后来就是入职了现在的公司，签完合同才知道周一周三固定加班到九点，有点儿懵，当时应该是花呗没欠钱，不然为什么留这家公司，是两外一家公司不够大，还是五百块不是钱，还是三个月的高温补贴不是钱，鬼迷心窍，觉得两个月实习期很棒。</p><p>现在真的棒棒了，房子一年的合同，工作两个月的实习期，感觉要凉凉了，为什么不选择做前端，也没有选择做小程序，感觉另外一家外包公司也不错，小小的，薪资也很nice，就是前台冷冷淡淡的，还不是漂亮姐姐，但是那是一次表现不错的面试了，小程序啊，好想去搞小程序，专门去做小程序多棒啊，现在好凉，好后悔，怎么才面试了三天，就做了决定，面了四家公司，三份offer(虽然有大有小)，但是为什么选了一份最不靠谱的，这个九月强制性996好烦啊，每天摸鱼好不爽，我不喜欢九点在公司，我想九点在家里磕代码，我想九点在江边发呆。</p><p>反思: 入职之前，要留一周的思考时间，要好好想，要知道什么口头承诺都是可以变的，加班也很随便，然而钱不能，没得加班费.（花呗到底了，好难啊。）</p><p>还有现在最后悔的，待遇很好的那家公司，有浙大学长学姐，好羡慕啊，现在他们已经开始校招了，我到底错过了什么啊…</p>]]></content>
+    <content type="html"><![CDATA[<p>三个月服务器快到期了hh，之前冲动消费买了一年的，啥也没干，一年过去了，这次三个月满满当当，过得可真快啊</p><p>搬家搬家</p><p><strong>1.创建仓库</strong></p><a id="more"></a><p>在github里创建一个<strong>username.github.io</strong>的仓库 [<strong>username</strong>就是你github的用户名]，创建完，就可以通过<strong>username.github.io</strong> 访问你的网站了</p><p><strong>2.绑定域名</strong>[你开心就绑定]</p><p>买域名，备案，解析，添加</p><p><img src="http://l.yumud.com/image-10-1024x180.png" alt></p><p>ip，就是你在自己电脑上ping一下username.github.io，get!</p><p>然后在github中那个项目下新建一个CNAME的文件(无后缀),里面写你的域名。</p><p><strong>3.配置SSH key</strong>[差不多就这样，看不懂百度]</p><pre><code>ssh-keygen -t rsa -C &quot;邮件地址&quot;在本机生成一个.ssh\id_rsa.pub文件，把里面的东西复制到github设置中,SSH and GPG keys 添加即可。</code></pre><p><strong>4.测试是否成功</strong></p><p>ssh -T <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a></p><p>就是输入这个，一个字母也别改=&gt;</p><p><img src="http://l.yumud.com/image-11.png" alt></p><p>成功</p><p>-------------------------------------- 开始搞hexo ————————————–</p><p>安装 <strong>npm install -g hexo</strong></p><p>认真新建一个文件夹，初始化 <strong>hexo init</strong></p><p><strong>hexo g</strong> //生成</p><p><strong>hexo s</strong> //启动服务</p><p>原始主题不好看，可以去官网看一下 <a href="https://hexo.io/themes/" target="_blank" rel="noopener">https://hexo.io/themes/</a></p><p>改成你新下载的主题:</p><p>修改<code>_config.yml</code>中的<code>theme: landscape</code>改为<code>theme: 新主题名</code>，然后重新执行<code>hexo g</code>来重新生成。</p><p>-------------------------------------- 上传到github————————————–</p><p>修改_config.xml</p><p><img src="http://l.yumud.com/image-12.png" alt></p><p>deploy这部分，记得改成你自己的名字</p><p>git bash中直接执行hexo d，</p><p>如果报错，在git bash中执行 <strong>npm install hexo-deployer-git –save</strong>，然后hexo d</p><p>——到此建站结束，要开始写文章了，不过我直接把我wordpress的导出，搞过来的</p><p><strong>迁移</strong></p><p>安装插件 <strong>npm install hexo-migrator-wordpress –save</strong></p><p>在wordpress仪表盘中导出数据，<strong>hexo migrate wordpress</strong> source为导出的文件路径———</p><p>在hexo<strong>新建</strong>写文章</p><p>hexo new <title> title为文章标题</title></p><p>新建的文件在/source/_posts路径下。双击打开编辑即可。（文件格式为.md）</p><p>很烦，我刚注意到，我的文件是都导过去了，可是<strong>图片</strong>地址是服务器下的，那我搬的这个家，差点儿落一半…=&gt;wp-content/uploads下的图片打个包拿出来，然后，然后只能在本地一张一张的换了…所以说这个github+hexo搭网站有好有坏吧，不如云+wordpress比较方便，可以随时写两篇文章，但是免费，这一点就很优秀了…</p>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;因为走错了另外一家公司的门hhh&lt;/p&gt;
+      &lt;p&gt;三个月服务器快到期了hh，之前冲动消费买了一年的，啥也没干，一年过去了，这次三个月满满当当，过得可真快啊&lt;/p&gt;
+&lt;p&gt;搬家搬家&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1.创建仓库&lt;/strong&gt;&lt;/p&gt;
     
     </summary>
     
     
-      <category term="日常" scheme="/categories/%E6%97%A5%E5%B8%B8/"/>
+      <category term="芝士就是力量！" scheme="/categories/%E8%8A%9D%E5%A3%AB%E5%B0%B1%E6%98%AF%E5%8A%9B%E9%87%8F%EF%BC%81/"/>
     
-    
-      <category term="hide" scheme="/tags/hide/"/>
     
   </entry>
   
