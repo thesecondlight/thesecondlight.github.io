@@ -40,7 +40,7 @@
 <p>NOW()当前系统日期和时间</p>
 <p>FORMAT()格式化字段显示 eg：select data_format(now(),’%Y-%m’) from t2019;</p>
 <p> sql快速参考xi：<a href="https://www.runoob.com/sql/sql-quickref.html" target="_blank" rel="noopener">https://www.runoob.com/sql/sql-quickref.html</a> </p>
-<h4 id><a href="#" class="headerlink" title></a><img src="http://l.yumud.com/note_.png" alt></h4><p>《正则表达式30分钟入门》 <a href="https://deerchao.cn/tutorials/regex/regex.htm" target="_blank" rel="noopener">https://deerchao.cn/tutorials/regex/regex.htm</a> </p>
+<h4 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a><img src="http://l.yumud.com/note_.png" alt>正则表达式</h4><p>《正则表达式30分钟入门》 <a href="https://deerchao.cn/tutorials/regex/regex.htm" target="_blank" rel="noopener">https://deerchao.cn/tutorials/regex/regex.htm</a> </p>
 <p>正向预查(?=)满足<strong>前面</strong>的表达式  eg: /\b[/w]+(?=ing\b)/g/匹配全局带ing的单词，但是不要ing</p>
 <p>反向预查(?&lt;=)满足<strong>后面</strong>的表达式 eg:/(?&lt;=index\.ts)/ 匹配以.ts结尾 ,左边是index</p>
 <p>\g 全局匹配</p>
@@ -217,6 +217,8 @@
 <p>最后删掉这个分支feature</p>
 <h4 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a><img src="http://l.yumud.com/note_.png" alt>二分查找</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">binarySearch</span>(<span class="params">arr,target</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">let</span> start =<span class="number">0</span></span><br><span class="line">  <span class="keyword">let</span> end=arr.length<span class="number">-1</span>;</span><br><span class="line">  <span class="keyword">while</span>(start&lt;=end)&#123;</span><br><span class="line">      <span class="keyword">let</span> mid=<span class="built_in">parseInt</span>(start+(end-start)/<span class="number">2</span>)</span><br><span class="line">      <span class="keyword">if</span>(target==arr[mid])</span><br><span class="line">      &#123;</span><br><span class="line">          <span class="keyword">return</span> mid</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">else</span> <span class="keyword">if</span>(target&gt;arr[mid])&#123;</span><br><span class="line">          start=mid+<span class="number">1</span></span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">else</span>&#123;</span><br><span class="line">          end=mid<span class="number">-1</span></span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">-1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<p>Math.ceil(1.6)  2</p>
+<p>Math.floor(1.6)  1</p>
 ]]></content>
       <categories>
         <category>A coin a day</category>
