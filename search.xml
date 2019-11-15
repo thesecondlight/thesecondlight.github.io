@@ -5,14 +5,14 @@
     <url>/2019/10/21/record/</url>
     <content><![CDATA[<a id="more"></a>
 <p>点击页面左下方，在页面右边显示文章目录。</p>
-<h4 id="文件权限"><a href="#文件权限" class="headerlink" title="文件权限"></a><img src="http://l.yumud.com/note.png" alt>文件权限</h4><p>rwx 1 2 4</p>
+<h4 id="文件权限"><a href="#文件权限" class="headerlink" title="文件权限"></a><img src="http://l.yumud.com/note_.png" alt>文件权限</h4><p>rwx 1 2 4</p>
 <p>d rwx r_x r_x</p>
 <p>d文件目录</p>
 <p>rwx文件所有者</p>
 <p>r_x文件所属组</p>
 <p>r_x其他人</p>
 <p>chmod更改权限 chomd 755 idnex.txt</p>
-<h4 id="sql变量"><a href="#sql变量" class="headerlink" title="sql变量"></a><img src="http://l.yumud.com/note.png" alt>sql变量</h4><h5 id="系统变量-全局变量-global-会话变量-session"><a href="#系统变量-全局变量-global-会话变量-session" class="headerlink" title="系统变量{全局变量(global) 会话变量(session)}"></a>系统变量{全局变量(global) 会话变量(session)}</h5><h5 id="自定义变量-局部变量-用户-赋值-变量"><a href="#自定义变量-局部变量-用户-赋值-变量" class="headerlink" title="自定义变量{局部变量 用户(赋值)变量}"></a>自定义变量{局部变量 用户(赋值)变量}</h5><p><u><em>全局级别加global，会话界别加session，不加默认session</em></u></p>
+<h4 id="sql变量"><a href="#sql变量" class="headerlink" title="sql变量"></a><img src="http://l.yumud.com/note_.png" alt>sql变量</h4><h5 id="系统变量-全局变量-global-会话变量-session"><a href="#系统变量-全局变量-global-会话变量-session" class="headerlink" title="系统变量{全局变量(global) 会话变量(session)}"></a>系统变量{全局变量(global) 会话变量(session)}</h5><h5 id="自定义变量-局部变量-用户-赋值-变量"><a href="#自定义变量-局部变量-用户-赋值-变量" class="headerlink" title="自定义变量{局部变量 用户(赋值)变量}"></a>自定义变量{局部变量 用户(赋值)变量}</h5><p><u><em>全局级别加global，会话界别加session，不加默认session</em></u></p>
 <p>show variables;优先显示会话级变量的值，如果不存在，则显示全局级变量的值</p>
 <p>查看所有的系统变量 :show global variables;</p>
 <p>查看满足条件的部分系统变量：show  variables like ‘%char%’</p>
@@ -21,7 +21,7 @@
 <p>用户变量 赋值 set @sum=10; set @sum:=10;</p>
 <p>局部变量 声明 declare sum int(20); declare sum int default 10;</p>
 <p>​                 赋值 set sum=10; select @sum:=10;</p>
-<h4 id="sql函数"><a href="#sql函数" class="headerlink" title="sql函数"></a><img src="http://l.yumud.com/note.png" alt>sql函数</h4><p>avg()平均值</p>
+<h4 id="sql函数"><a href="#sql函数" class="headerlink" title="sql函数"></a><img src="http://l.yumud.com/note_.png" alt>sql函数</h4><p>avg()平均值</p>
 <p>count()返回行数</p>
 <p>MAX()</p>
 <p>MIN()</p>
@@ -40,7 +40,7 @@
 <p>NOW()当前系统日期和时间</p>
 <p>FORMAT()格式化字段显示 eg：select data_format(now(),’%Y-%m’) from t2019;</p>
 <p> sql快速参考xi：<a href="https://www.runoob.com/sql/sql-quickref.html" target="_blank" rel="noopener">https://www.runoob.com/sql/sql-quickref.html</a> </p>
-<h4 id><a href="#" class="headerlink" title></a><img src="http://l.yumud.com/note.png" alt></h4><p>《正则表达式30分钟入门》 <a href="https://deerchao.cn/tutorials/regex/regex.htm" target="_blank" rel="noopener">https://deerchao.cn/tutorials/regex/regex.htm</a> </p>
+<h4 id><a href="#" class="headerlink" title></a><img src="http://l.yumud.com/note_.png" alt></h4><p>《正则表达式30分钟入门》 <a href="https://deerchao.cn/tutorials/regex/regex.htm" target="_blank" rel="noopener">https://deerchao.cn/tutorials/regex/regex.htm</a> </p>
 <p>正向预查(?=)满足<strong>前面</strong>的表达式  eg: /\b[/w]+(?=ing\b)/g/匹配全局带ing的单词，但是不要ing</p>
 <p>反向预查(?&lt;=)满足<strong>后面</strong>的表达式 eg:/(?&lt;=index\.ts)/ 匹配以.ts结尾 ,左边是index</p>
 <p>\g 全局匹配</p>
@@ -74,7 +74,7 @@
 <p>eg： a.*b  匹配最长的以a开始，b结束的字符串</p>
 <p>​         a.*?b 匹配最短的以a开始，b结束的字符串</p>
 <p>嘻嘻：\a 报警字符(打印时，电脑嘀一声)</p>
-<h4 id="尾调用优化"><a href="#尾调用优化" class="headerlink" title="尾调用优化"></a><img src="http://l.yumud.com/note.png" alt>尾调用优化</h4><p>尾调用：在函数的最后一步是直接返回调用另一个函数</p>
+<h4 id="尾调用优化"><a href="#尾调用优化" class="headerlink" title="尾调用优化"></a><img src="http://l.yumud.com/note_.png" alt>尾调用优化</h4><p>尾调用：在函数的最后一步是直接返回调用另一个函数</p>
 <p>优化：在函数A的内部调用函数B  在A的调用记录上方，会形成一个B的调用记录，等到B的运行结束，将结果返回A，B的调用记录消失。(确保函数的最后一步只调用自身)</p>
 <p>所有的调用记录形调用栈</p>
 <p>eg:</p>
@@ -88,20 +88,20 @@
 <p>​    if(n==1) return total; </p>
 <p>​    return f(n-1,n*total)</p>
 <p>}</p>
-<h4 id="mocha覆盖率"><a href="#mocha覆盖率" class="headerlink" title="mocha覆盖率"></a><img src="http://l.yumud.com/note.png" alt>mocha覆盖率</h4><p>%stmts %Branch % Funcs %Lines</p>
+<h4 id="mocha覆盖率"><a href="#mocha覆盖率" class="headerlink" title="mocha覆盖率"></a><img src="http://l.yumud.com/note_.png" alt>mocha覆盖率</h4><p>%stmts %Branch % Funcs %Lines</p>
 <p>语句覆盖率 分之覆盖率 函数覆盖率 行覆盖率</p>
 <p>（最弱覆盖）                                      （最全）</p>
-<h4 id="递归和迭代的转化-区别"><a href="#递归和迭代的转化-区别" class="headerlink" title="递归和迭代的转化 区别"></a><img src="http://l.yumud.com/note.png" alt>递归和迭代的转化 区别</h4><p><img src="http://l.yumud.com/1571377276911.png" alt="1571377276911"></p>
+<h4 id="递归和迭代的转化-区别"><a href="#递归和迭代的转化-区别" class="headerlink" title="递归和迭代的转化 区别"></a><img src="http://l.yumud.com/note_.png" alt>递归和迭代的转化 区别</h4><p><img src="http://l.yumud.com/1571377276911.png" alt="1571377276911"></p>
 <!--(借用了别人借用的图)-->
 
-<h4 id="版本号"><a href="#版本号" class="headerlink" title="版本号"></a><img src="http://l.yumud.com/note.png" alt>版本号</h4><p>主版本号  次版本号  修订号  先行版本号  版本编译元数据(不在优先级比较的列表中)</p>
+<h4 id="版本号"><a href="#版本号" class="headerlink" title="版本号"></a><img src="http://l.yumud.com/note_.png" alt>版本号</h4><p>主版本号  次版本号  修订号  先行版本号  版本编译元数据(不在优先级比较的列表中)</p>
 <p>​      X               Y               Z</p>
 <p>X 当API的兼容性变化时，递增</p>
 <p>Y 增加功能，不影响API的兼容性，递增</p>
 <p>Z Bug修复，不影响API兼容性，递增</p>
 <p>^主版本号不变  ^1.2.3==&gt;1.2.3&lt;=版本号&lt;2.0.0     1.x.x</p>
 <p>~主次不变         ~1.2.3==&gt;1.2.3&lt;=版本号&lt;1.3.0      1.2.x</p>
-<h4 id="SQL自定义函数"><a href="#SQL自定义函数" class="headerlink" title="SQL自定义函数"></a><img src="http://l.yumud.com/note.png" alt>SQL自定义函数</h4><p>delimiter //</p>
+<h4 id="SQL自定义函数"><a href="#SQL自定义函数" class="headerlink" title="SQL自定义函数"></a><img src="http://l.yumud.com/note_.png" alt>SQL自定义函数</h4><p>delimiter //</p>
 <p>create function countSum(id int) return int(11)</p>
 <p>​    DETERMINISTIC</p>
 <p>begin</p>
@@ -111,10 +111,10 @@
 <p>end</p>
 <p>//</p>
 <p>**deterministic</p>
-<h4 id="临时表-派生表"><a href="#临时表-派生表" class="headerlink" title="临时表 派生表"></a><img src="http://l.yumud.com/note.png" alt>临时表 派生表</h4><h5 id="临时表"><a href="#临时表" class="headerlink" title="临时表"></a>临时表</h5><p>内部临时表（MySQL自动创建） 外部临时表（create temporary table）</p>
+<h4 id="临时表-派生表"><a href="#临时表-派生表" class="headerlink" title="临时表 派生表"></a><img src="http://l.yumud.com/note_.png" alt>临时表 派生表</h4><h5 id="临时表"><a href="#临时表" class="headerlink" title="临时表"></a>临时表</h5><p>内部临时表（MySQL自动创建） 外部临时表（create temporary table）</p>
 <h5 id="派生表"><a href="#派生表" class="headerlink" title="派生表"></a>派生表</h5><p>查询结果生成的表 ，类似于临时表</p>
 <p>select * from (select * from others) temp;   temp即派生表</p>
-<h4 id="事件循环"><a href="#事件循环" class="headerlink" title="事件循环"></a><img src="http://l.yumud.com/note.png" alt>事件循环</h4><h4 id="事务-乐观锁-悲观锁"><a href="#事务-乐观锁-悲观锁" class="headerlink" title="事务 乐观锁 悲观锁"></a><img src="http://l.yumud.com/note.png" alt>事务 乐观锁 悲观锁</h4><h5 id="①事务"><a href="#①事务" class="headerlink" title="①事务"></a>①事务</h5><p>START TRANSACTION;</p>
+<h4 id="事件循环"><a href="#事件循环" class="headerlink" title="事件循环"></a><img src="http://l.yumud.com/note_.png" alt>事件循环</h4><h4 id="事务-乐观锁-悲观锁"><a href="#事务-乐观锁-悲观锁" class="headerlink" title="事务 乐观锁 悲观锁"></a><img src="http://l.yumud.com/note_.png" alt>事务 乐观锁 悲观锁</h4><h5 id="①事务"><a href="#①事务" class="headerlink" title="①事务"></a>①事务</h5><p>START TRANSACTION;</p>
 <p>COMMIT;/ROLLBACK;</p>
 <h5 id="②悲观锁-乐观锁"><a href="#②悲观锁-乐观锁" class="headerlink" title="②悲观锁 乐观锁"></a>②悲观锁 乐观锁</h5><p>乐观锁 update tb set version=version+1 where version=version    在写操作频繁的场景下会不断发生重试，也会影响吞吐量</p>
 <p>悲观锁 set autocommit=0 (不允许自动提交)</p>
@@ -125,18 +125,18 @@
 <p>​    4)….</p>
 <p>sequelize加排它锁</p>
 <p>await Accounts.findOne({<br>    where: { name: ‘HelKyle’ },<br>    lock: Sequelize.Transaction.LOCK.UPDATE<br>});</p>
-<h4 id="tcp-ip"><a href="#tcp-ip" class="headerlink" title="tcp/ip"></a><img src="http://l.yumud.com/note.png" alt>tcp/ip</h4><p> <a href="https://blog.csdn.net/u012371712/article/details/80795297" target="_blank" rel="noopener">https://blog.csdn.net/u012371712/article/details/80795297</a> </p>
+<h4 id="tcp-ip"><a href="#tcp-ip" class="headerlink" title="tcp/ip"></a><img src="http://l.yumud.com/note_.png" alt>tcp/ip</h4><p> <a href="https://blog.csdn.net/u012371712/article/details/80795297" target="_blank" rel="noopener">https://blog.csdn.net/u012371712/article/details/80795297</a> </p>
 <p><img src="http://l.yumud.com/1571379820232.png" alt="1571379820232"></p>
 <p>五层：应用层  传输层 网络层  连接层 物理层</p>
-<h4 id="请求方式"><a href="#请求方式" class="headerlink" title="请求方式"></a><img src="http://l.yumud.com/note.png" alt>请求方式</h4><p>get put post delete</p>
+<h4 id="请求方式"><a href="#请求方式" class="headerlink" title="请求方式"></a><img src="http://l.yumud.com/note_.png" alt>请求方式</h4><p>get put post delete</p>
 <p>post时，填写参数  ，返回参数ctx.request.query</p>
-<h4 id="content-type"><a href="#content-type" class="headerlink" title="content-type"></a><img src="http://l.yumud.com/note.png" alt>content-type</h4><p>application/json  消息主体是 序列化后的JSON字符串</p>
+<h4 id="content-type"><a href="#content-type" class="headerlink" title="content-type"></a><img src="http://l.yumud.com/note_.png" alt>content-type</h4><p>application/json  消息主体是 序列化后的JSON字符串</p>
 <p>application/x-www-form-urlencoded  数据被编码为名称/值对。这是标准的编码格式</p>
 <p>multipart/form-data   需要在表单中进行文件上传时，使用。</p>
 <p>text/plain  数据以纯文本形式(text/json/xml/html)进行编码，不含任何控件或格式字符</p>
-<h4 id="string-split-arr-join"><a href="#string-split-arr-join" class="headerlink" title="string.split arr.join"></a><img src="http://l.yumud.com/note.png" alt>string.split arr.join</h4><p>string.split(“*”) 字符串转数组 以星号作分割依据</p>
+<h4 id="string-split-arr-join"><a href="#string-split-arr-join" class="headerlink" title="string.split arr.join"></a><img src="http://l.yumud.com/note_.png" alt>string.split arr.join</h4><p>string.split(“*”) 字符串转数组 以星号作分割依据</p>
 <p>arr.join(“*”) 数组转字符串  用星号作连接</p>
-<h4 id="索引"><a href="#索引" class="headerlink" title="索引"></a><img src="http://l.yumud.com/note.png" alt>索引</h4><p>索引</p>
+<h4 id="索引"><a href="#索引" class="headerlink" title="索引"></a><img src="http://l.yumud.com/note_.png" alt>索引</h4><p>索引</p>
 <p>唯一索引：查到符合条件的继续查找下一项，如果下一项不符合再返回</p>
 <p>普通索引：查到符合条件的项后直接返回</p>
 <p>创建索引</p>
@@ -152,28 +152,28 @@
 <p>drop index [sy1] on t2019;</p>
 <p>唯一索引</p>
 <p>create unique index sy4 on t2019 (site)</p>
-<h4 id="sequelize事务，加锁"><a href="#sequelize事务，加锁" class="headerlink" title="sequelize事务，加锁"></a><img src="http://l.yumud.com/note.png" alt>sequelize事务，加锁</h4><p>t1 //is a transaction</p>
+<h4 id="sequelize事务，加锁"><a href="#sequelize事务，加锁" class="headerlink" title="sequelize事务，加锁"></a><img src="http://l.yumud.com/note_.png" alt>sequelize事务，加锁</h4><p>t1 //is a transaction</p>
 <p>Model.findAll({</p>
 <pre><code>where:...</code></pre><p>},{</p>
 <p>​    transaction: t1,  //**注意</p>
 <p>​    lock: t1.LOCK.UPDATE,   //**注意</p>
 <p>​    lock: t1.LOCK.SHARE</p>
 <p>})</p>
-<h4 id="与-或-异或-左移-右移-按二进制位进行运算"><a href="#与-或-异或-左移-右移-按二进制位进行运算" class="headerlink" title="与 或 异或  左移 右移(按二进制位进行运算)"></a><img src="http://l.yumud.com/note.png" alt>与 或 异或  左移 右移(按二进制位进行运算)</h4><p>与 &amp;  同1为1，否则为0</p>
+<h4 id="与-或-异或-左移-右移-按二进制位进行运算"><a href="#与-或-异或-左移-右移-按二进制位进行运算" class="headerlink" title="与 或 异或  左移 右移(按二进制位进行运算)"></a><img src="http://l.yumud.com/note_.png" alt>与 或 异或  左移 右移(按二进制位进行运算)</h4><p>与 &amp;  同1为1，否则为0</p>
 <p>或 |  有1则1</p>
 <p>异或 ^  相同为1，不同为0</p>
 <p>左移 &lt;&lt;  左移，移出位丢弃，右边的空位补0</p>
 <p>右移 &gt;&gt;  右移，移出位丢弃，左边的空位补0</p>
-<h4 id="node-api"><a href="#node-api" class="headerlink" title="node api"></a><img src="http://l.yumud.com/note.png" alt>node api</h4><p>path.normalize(path)规范化path</p>
+<h4 id="node-api"><a href="#node-api" class="headerlink" title="node api"></a><img src="http://l.yumud.com/note_.png" alt>node api</h4><p>path.normalize(path)规范化path</p>
 <p>path.join([…paths])使用平台特定的分隔符把全部给定的 path 片段连接到一起，并规范</p>
 <p>path.resolve([…paths])把路径解析为一个绝对路径</p>
-<h4 id="队列-BFS-DFS"><a href="#队列-BFS-DFS" class="headerlink" title="队列 BFS DFS"></a><img src="http://l.yumud.com/note.png" alt>队列 BFS DFS</h4><p>队列 FIFO</p>
+<h4 id="队列-BFS-DFS"><a href="#队列-BFS-DFS" class="headerlink" title="队列 BFS DFS"></a><img src="http://l.yumud.com/note_.png" alt>队列 BFS DFS</h4><p>队列 FIFO</p>
 <p>BFS应用场景：遍历和找出最短路径</p>
 <p>栈 LIFO</p>
 <p> <a href="https://leetcode-cn.com/explore/learn/card/queue-stack/218/stack-last-in-first-out-data-structure/875/" target="_blank" rel="noopener">https://leetcode-cn.com/explore/learn/card/queue-stack/218/stack-last-in-first-out-data-structure/875/</a> </p>
-<h4 id="Number-MAX-SAFE-INTEGER-Number-MAX-VALUE"><a href="#Number-MAX-SAFE-INTEGER-Number-MAX-VALUE" class="headerlink" title="Number.MAX_SAFE_INTEGER      Number.MAX_VALUE"></a><img src="http://l.yumud.com/note.png" alt>Number.MAX_SAFE_INTEGER      Number.MAX_VALUE</h4><p>Number.MAX_SAFE_INTEGER   9007199254740991 小于该值能精确表示</p>
+<h4 id="Number-MAX-SAFE-INTEGER-Number-MAX-VALUE"><a href="#Number-MAX-SAFE-INTEGER-Number-MAX-VALUE" class="headerlink" title="Number.MAX_SAFE_INTEGER      Number.MAX_VALUE"></a><img src="http://l.yumud.com/note_.png" alt>Number.MAX_SAFE_INTEGER      Number.MAX_VALUE</h4><p>Number.MAX_SAFE_INTEGER   9007199254740991 小于该值能精确表示</p>
 <p>Number.MAX_VALUE   1.7976931348623157e+308  大于该值得到的是Infinity，介于Infinity和安全值之间的无法精确表示</p>
-<h4 id="mocha"><a href="#mocha" class="headerlink" title="mocha"></a><img src="http://l.yumud.com/note.png" alt>mocha</h4><h5 id="主要api"><a href="#主要api" class="headerlink" title="主要api"></a>主要api</h5><p>describe(name,fn) 定义一组测试</p>
+<h4 id="mocha"><a href="#mocha" class="headerlink" title="mocha"></a><img src="http://l.yumud.com/note_.png" alt>mocha</h4><h5 id="主要api"><a href="#主要api" class="headerlink" title="主要api"></a>主要api</h5><p>describe(name,fn) 定义一组测试</p>
 <p>it(name,fn)              定义一项测试</p>
 <h5 id="第三方断言库"><a href="#第三方断言库" class="headerlink" title="第三方断言库"></a>第三方断言库</h5><p>assert，chai</p>
 <p>const assert = require(‘assert’)</p>
@@ -188,20 +188,20 @@
 <p>运行结果：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">  top</span><br><span class="line">top before</span><br><span class="line">top beforeEach</span><br><span class="line">top test1</span><br><span class="line">    √ test1</span><br><span class="line">top afterEach</span><br><span class="line">top beforeEach</span><br><span class="line">top test2</span><br><span class="line">    √ test2</span><br><span class="line">top afterEach</span><br><span class="line">    sublevel</span><br><span class="line">sublevel before</span><br><span class="line">top beforeEach</span><br><span class="line">sublevel beforeEach</span><br><span class="line">sublevel test1</span><br><span class="line">      √ test1</span><br><span class="line">sublevel afterEach</span><br><span class="line">top afterEach</span><br><span class="line">top beforeEach</span><br><span class="line">sublevel beforeEach</span><br><span class="line">sublevel test2</span><br><span class="line">      √ test2</span><br><span class="line">sublevel afterEach</span><br><span class="line">top afterEach</span><br><span class="line">sublevel after</span><br><span class="line">top after</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  4 passing (12ms)</span><br></pre></td></tr></table></figure>
 
-<h4 id="取反-再取反"><a href="#取反-再取反" class="headerlink" title="~~ 取反 再取反"></a><img src="http://l.yumud.com/note.png" alt>~~ 取反 再取反</h4><p><del>~  不超过32位时可以用 ~</del> 达到Math.floor的效果</p>
+<h4 id="取反-再取反"><a href="#取反-再取反" class="headerlink" title="~~ 取反 再取反"></a><img src="http://l.yumud.com/note_.png" alt>~~ 取反 再取反</h4><p><del>~  不超过32位时可以用 ~</del> 达到Math.floor的效果</p>
 <p><del>按位取反，</del>变回原操作数，但是省略了小数部分</p>
-<h4 id="桶排序"><a href="#桶排序" class="headerlink" title="桶排序"></a><img src="http://l.yumud.com/note.png" alt>桶排序</h4><p>先找出桶中最大值最小值max min</p>
+<h4 id="桶排序"><a href="#桶排序" class="headerlink" title="桶排序"></a><img src="http://l.yumud.com/note_.png" alt>桶排序</h4><p>先找出桶中最大值最小值max min</p>
 <p>按照桶的个数num，给5</p>
 <p>桶的大小 size=(max-min+1)/num</p>
 <p>桶 buckets = new Array(num*2)</p>
 <p>初始化桶buckets[i]=[]</p>
 <p>分配数据到桶（按照数据值的分布来匹配，(arr[i]-min)/size）</p>
 <p>对每个桶进行排序</p>
-<h4 id="process-argv"><a href="#process-argv" class="headerlink" title="process.argv"></a><img src="http://l.yumud.com/note.png" alt>process.argv</h4><p>process.argv[0] 启动node.js进程的可执行文件的所在绝对路径</p>
+<h4 id="process-argv"><a href="#process-argv" class="headerlink" title="process.argv"></a><img src="http://l.yumud.com/note_.png" alt>process.argv</h4><p>process.argv[0] 启动node.js进程的可执行文件的所在绝对路径</p>
 <p>process.argv[1] 正在执行的js文件的路径</p>
 <p>其他元素将是任何其他命令行的参数</p>
 <p><img src="http://l.yumud.com/record_process_argv.png" alt="eg"></p>
-<h4 id="git提交冲突"><a href="#git提交冲突" class="headerlink" title="git提交冲突"></a><img src="http://l.yumud.com/note.png" alt>git提交冲突</h4><h5 id="git提交冲突-1"><a href="#git提交冲突-1" class="headerlink" title="git提交冲突"></a>git提交冲突</h5><p>先切一个分支feature</p>
+<h4 id="git提交冲突"><a href="#git提交冲突" class="headerlink" title="git提交冲突"></a><img src="http://l.yumud.com/note_.png" alt>git提交冲突</h4><h5 id="git提交冲突-1"><a href="#git提交冲突-1" class="headerlink" title="git提交冲突"></a>git提交冲突</h5><p>先切一个分支feature</p>
 <p>操作操作</p>
 <p>git add .</p>
 <p>git commit -m “操作操作”</p>
@@ -215,7 +215,7 @@
 <p>git merge –no-ff feature</p>
 <p>git push origin dev</p>
 <p>最后删掉这个分支feature</p>
-<h4 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a><img src="http://l.yumud.com/note.png" alt>二分查找</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">binarySearch</span>(<span class="params">arr,target</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">let</span> start =<span class="number">0</span></span><br><span class="line">  <span class="keyword">let</span> end=arr.length<span class="number">-1</span>;</span><br><span class="line">  <span class="keyword">while</span>(start&lt;=end)&#123;</span><br><span class="line">      <span class="keyword">let</span> mid=<span class="built_in">parseInt</span>(start+(end-start)/<span class="number">2</span>)</span><br><span class="line">      <span class="keyword">if</span>(target==arr[mid])</span><br><span class="line">      &#123;</span><br><span class="line">          <span class="keyword">return</span> mid</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">else</span> <span class="keyword">if</span>(target&gt;arr[mid])&#123;</span><br><span class="line">          start=mid+<span class="number">1</span></span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">else</span>&#123;</span><br><span class="line">          end=mid<span class="number">-1</span></span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">-1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a><img src="http://l.yumud.com/note_.png" alt>二分查找</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">binarySearch</span>(<span class="params">arr,target</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">let</span> start =<span class="number">0</span></span><br><span class="line">  <span class="keyword">let</span> end=arr.length<span class="number">-1</span>;</span><br><span class="line">  <span class="keyword">while</span>(start&lt;=end)&#123;</span><br><span class="line">      <span class="keyword">let</span> mid=<span class="built_in">parseInt</span>(start+(end-start)/<span class="number">2</span>)</span><br><span class="line">      <span class="keyword">if</span>(target==arr[mid])</span><br><span class="line">      &#123;</span><br><span class="line">          <span class="keyword">return</span> mid</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">else</span> <span class="keyword">if</span>(target&gt;arr[mid])&#123;</span><br><span class="line">          start=mid+<span class="number">1</span></span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">else</span>&#123;</span><br><span class="line">          end=mid<span class="number">-1</span></span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">-1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
       <categories>
