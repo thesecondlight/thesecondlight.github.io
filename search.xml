@@ -1371,7 +1371,8 @@ sort(arr)</code></pre><p>二分法排序：</p>
 <p>函数方面，箭头函数 ()=&gt;{}</p>
 <p>去重 set</p>
 <p>解析 …array 合并</p>
-<p><img src="http://l.yumud.com/image-17.png" alt></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> num1=[<span class="number">2</span>,[<span class="number">2</span>],<span class="number">2</span>,<span class="number">2</span>,<span class="number">21</span>]</span><br><span class="line"><span class="keyword">let</span> num2=[<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">21</span>]</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params">...arr</span>)</span>&#123;</span><br><span class="line"><span class="keyword">let</span> m=<span class="built_in">Array</span>.from(<span class="keyword">new</span> <span class="built_in">Set</span>(arr))</span><br><span class="line"><span class="built_in">console</span>.log(m)</span><br><span class="line">&#125;</span><br><span class="line">test(num1,num2)</span><br></pre></td></tr></table></figure>
+
 <p>详细看这个链接=&gt;</p>
 <p><a href="https://www.jianshu.com/p/87008f4f8513" target="_blank" rel="noopener">https://www.jianshu.com/p/87008f4f8513</a> 【评论有说有很多错的，那就暂为参考，详细还是去阮一峰的es6入门看看吧=&gt;<a href="http://es6.ruanyifeng.com/" target="_blank" rel="noopener">http://es6.ruanyifeng.com/</a>】</p>
 <p>4.想起来再加</p>
